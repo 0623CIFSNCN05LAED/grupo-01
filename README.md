@@ -1,6 +1,5 @@
 # grupo-01
 
-## GRUPO 01
 
 ## Integrantes:
 - Dupuy Alejandro
@@ -20,7 +19,7 @@ Apuntaremos a un público joven y variado que esté interesado en la moda, difer
 
 ## Referentes del mercado
 
- [Mattelsa] (https://www.mattelsa.net/)
+ [Mattelsa](https://www.mattelsa.net/)
 Elegimos este sitio porque además de vender ropa en su web con un sencillo  y muy variado catálogo, tiene una interfaz que mantiene interesado al usuario con estilos dinámicos originales, además incluye información útil a modo de destacar sus valores como empresa textil y agentes de cambio.
 
  [Agua Bendita](https://www.aguabendita.com.co/)
