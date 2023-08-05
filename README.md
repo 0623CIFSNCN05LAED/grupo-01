@@ -32,3 +32,15 @@ La página de esta conocida tienda en queenstown nos ofrece un abanico de opcion
 De esta web también dirigida a un público que hace senderísmo, trakking, entre otros; podemos destacar el abastecimiento de información útil que va a aclarar las dudas más comunes evitando que se pierda el interés y en caso contrario permite asegurar que la calidad de sus prendas son excepcionales.
 [Van como piña](https://vancomopina.com.ar/)
 Esta es una tienda argentina de indumentaria masculina que nos permite tomar como base su sencilla estructura en la cual consideramos que sin tener muy alta complejidad destaca lo necesario de su catálogo de prendas.
+
+
+## Wireframe de las siguientes páginas: 
+    - Home 
+    - Detalle de producto 
+    - Carrito de compras 
+    - Formulario de registro 
+    - Formulario de login
+
+En el siguiente link de pueden visualizar los wireframes mencionados.
+
+https://www.figma.com/file/n5ZaiTApRsoFlj91eTuRwv/Proyecto-integrador?type=design&node-id=0%3A1&mode=design&t=BEMPL8xGLw8D6v8Q-1
