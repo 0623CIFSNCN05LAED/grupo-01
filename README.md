@@ -43,4 +43,9 @@ Esta es una tienda argentina de indumentaria masculina que nos permite tomar com
 
 En el siguiente link de pueden visualizar los wireframes mencionados.
 
-https://www.figma.com/file/n5ZaiTApRsoFlj91eTuRwv/Proyecto-integrador?type=design&node-id=0%3A1&mode=design&t=BEMPL8xGLw8D6v8Q-1
+[Figma](https://www.figma.com/file/n5ZaiTApRsoFlj91eTuRwv/Proyecto-integrador?type=design&node-id=0%3A1&mode=design&t=BEMPL8xGLw8D6v8Q-1/)
+
+
+## Tablero de trabajo
+
+[Trello](https://trello.com/b/A0cTn2dP/integrating-project/)
