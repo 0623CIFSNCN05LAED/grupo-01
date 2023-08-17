@@ -1,4 +1,16 @@
-{
+{ 
+  "name": "grupo-01",
+  "version": "1.0.0",
+  "description": "Sitio web tipo ecommerce, ofrecemos moda urbana y moderna para el publico juvenil contemporaneo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+
+  "keywords": [],
+  "author": "grupo-01",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
   }
