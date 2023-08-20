@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-image: url(../images/banner-formulario-log-in.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.form-ingreso {
+    width: 400px;
+    height: 340px;
+    background: #66347F;
+    margin: auto;
+    margin-top: 180px;
+    box-shadow: 5px 12px 30px #37306B;
+    padding: 20px 30px;
+    border-top: 2px solid #9E4784;
+    color: white;
+    border-radius: 20px;
+}
+
+.form-ingreso h5 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    
+}
+
+.controles {
+    width: 100%;
+    border: 1px solid #37306B;
+    margin-bottom: 11px;
+    padding: 11px 10px;
+    background-color: #9E4784;
+    border-radius: 20px;
+
+}
+
+.boton {
+    width: 100%;
+    height: 40px;
+    background: #D27685;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    border-radius: 20px;
+}
+
+.form-ingreso p{
+    height: 40px;
+    text-align: center;
+}
+
+.form-ingreso a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-ingreso a:hover {
+    text-decoration: underline;
+}
