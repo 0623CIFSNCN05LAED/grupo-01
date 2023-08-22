@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname , `../public`)));
 const PORT = 3002;
 
 app.listen(PORT , ()=> {
-    console.log(`Servidor Funcionando`);
+    console.log(`Servidor Funcionando en el puerto ${PORT}`);
 })
 
 app.get(`/` , (req , res) => {
