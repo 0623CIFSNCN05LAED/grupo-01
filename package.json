@@ -1,4 +1,4 @@
-{ 
+{
   "name": "grupo-01",
   "version": "1.0.0",
   "description": "Sitio web tipo ecommerce, ofrecemos moda urbana y moderna para el publico juvenil contemporaneo",
@@ -7,11 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js"
   },
-
   "keywords": [],
   "author": "grupo-01",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0623CIFSNCN05LAED/grupo-01.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0623CIFSNCN05LAED/grupo-01/issues"
+  },
+  "homepage": "https://github.com/0623CIFSNCN05LAED/grupo-01#readme"
 }

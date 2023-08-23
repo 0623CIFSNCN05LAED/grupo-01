@@ -1,19 +1,22 @@
-const express =  require(`express`);
+const express = require(`express`);
 const path = require(`path`);
 const app = express();
 
-app.use(express.static(path.join(__dirname , `../public`)));
+app.use(express.static(path.join(__dirname, `../public`)));
 
 const PORT = 3002;
 
-app.listen(PORT , ()=> {
-    console.log(`Servidor Funcionando en el puerto ${PORT}`);
-})
-
-app.get(`/` , (req , res) => {
-    res.sendFile (path.join(__dirname , `./view/index.html`));
+app.listen(PORT, () => {
+  console.log(`Servidor Funcionando en el puerto ${PORT}`);
 });
 
-app.get(`/login`, (req , res) => {
-    res.sendFile (path.join(__dirname, `./view/login.html`))
+app.get(`/`, (req, res) => {
+  res.sendFile(path.join(__dirname, `./view/index.html`));
+});
+
+app.get(`/login`, (req, res) => {
+  res.sendFile(path.join(__dirname, `./view/login.html`));
+});
+app.get(`/register`, (req, res) => {
+  res.sendFile(path.join(__dirname, `./view/register.html`));
 });
