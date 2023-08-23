@@ -1,13 +1,13 @@
-const express =  require(`express`);
+const express = require(`express`);
 const path = require(`path`);
 const app = express();
 
 app.use(express.static(path.join(__dirname , `../public`)));
 const PORT = 3002;
 
-app.listen(PORT , ()=> {
-    console.log(`Servidor Funcionando en el puerto ${PORT}`);
-})
+app.listen(PORT, () => {
+  console.log(`Servidor Funcionando en el puerto ${PORT}`);
+});
 
 app.get('/' , (req , res) => {
     res.sendFile (path.join(__dirname , './view/index.html'));
