@@ -1,0 +1,52 @@
+.container-modal{
+    width: 90%;
+    height: 100vh;
+    top: 0;left: 0;
+    background-color: rgba (144, 148, 150 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.container-register {
+  background: #37306B;
+    margin: auto;
+    margin-top: 180px;
+    box-shadow: 5px 12px 30px #66347F;
+    padding-top: 30px ;
+    padding-left: 15px;
+    color: white;
+    border-radius: 5px;
+}
+label{
+    font-size: 15px;
+}
+.button {
+    
+    width: 140px;
+    height: 50px;    
+    border: 2px #D27685 solid;
+    background: rgba(107, 104, 132, 0.55);
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    
+}
+.button:hover{
+    background: linear-gradient(131deg, #D27685 0%, rgba(102, 52, 127, 0.55) 100%);
+}
+.style-box{
+    background-color: #d2768587; 
+    border: 1px #fff solid;
+    border-radius: 5px;
+}
+.df{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
