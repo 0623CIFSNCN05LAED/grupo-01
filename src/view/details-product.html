@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/details-product.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@
     <!-- Header and NavBar -->
     <header class="header-container">
         <div class="header-logo">
-            <a href="#"><img  src="/images/logo-desktop.png" alt="logo-maunganui" srcset=""></a>
+            <a href="/"><img  src="/images/logo-desktop.png" alt="logo-maunganui" srcset=""></a>
         </div>
         <nav class="header-container__navbar">
             <ul class="header-container__nav-links">
@@ -40,51 +41,50 @@
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Banner principal -->
-        <div class="container-banner__img">
-            <img src="/images/banner-principal-1.jpg" alt="banner-principal-1">
-            <img src="/images/imagen-home-banner-1-mobile.jpg" alt="imagen-home-banner-1-mobile">
-            <button class="container-banner-button">Mujer</button>
-            <button class="container-banner-button">Hombre</button>
+        <div class="breadcrumb">
+            <a href="/">Home</a> /
+            <span>Campera Universitaria</span>
         </div>
-        <!-- Vitrina numero 1 -->
-        <section class="section-title__container">
-            <h2>DESTACADOS</h2>
-        </section class="section">
-        <section class="section-product__container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <div class="section-product">
-                        <a href="/detalle-producto">
-                            <img class="section-product__img" src="/images/producto-1-vitrina-1.jpg" alt="">
-                        </a>
-                        <h3>Campera Universitaria</h3>
-                        <p>$ 80.000 </p>
-                    </div>
-                    <div class="section-product">
-                        <a href="#">
-                            <img class="section-product__img" src="/images/producto-2-vitrina-1.jpg" alt="">
-                        </a>
-                        <h3>Conjunto Denim</h3>
-                        <p>$ 90.000</p>
-                    </div>
-                    <div class="section-product">
-                        <a href="#">
-                            <img class="section-product__img" src="/images/producto-3-vitrina-1.jpg" alt="">
-                        </a>
-                        <h3>Blusa Animal Print</h3>
-                        <p>$ 30.000</p>
-                    </div>
+        <div class="container-product">
+            <div class="container-product__img">
+                <img src="/images/producto-1-vitrina-1.jpg" alt="producto-1-vitrina-1.jpg">
+            </div>
+            <div class="container-product__info">
+                <h3>Campera Universitaria</h3>
+                <p>$ 80.000 </p>
+                <h4>Color: Yellow</h4>
+                <section class='container-product__colors'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="25" viewBox="0 0 128 25" fill="none">
+                        <rect width="24.2745" height="24.2745" rx="12.1373" fill="#FDBC41" fill-opacity="0.5"/>
+                        <rect x="0.5" y="0.5" width="23.2745" height="23.2745" rx="11.6373" stroke="#15122F" stroke-opacity="0.5"/>
+                        <rect x="33.9844" width="24.2745" height="24.2745" rx="12.1373" fill="#FD2C2C" fill-opacity="0.5"/>
+                        <rect x="34.4844" y="0.5" width="23.2745" height="23.2745" rx="11.6373" stroke="#15122F" stroke-opacity="0.5"/>
+                        <rect x="69.1824" width="24.2745" height="24.2745" rx="12.1373" fill="#03C819" fill-opacity="0.5"/>
+                        <rect x="69.6824" y="0.5" width="23.2745" height="23.2745" rx="11.6373" stroke="#15122F" stroke-opacity="0.5"/>
+                        <rect x="103.167" width="24.2745" height="24.2745" rx="12.1373" fill="#B8A6D2" fill-opacity="0.5"/>
+                        <rect x="103.667" y="0.5" width="23.2745" height="23.2745" rx="11.6373" stroke="#15122F" stroke-opacity="0.5"/>
+                        </svg>
+                </section>
+                <section class="container-product__thumbnails">
+                    <img src="/images/producto-1-vitrina-1-color-amarilla.jpg" alt="">
+                    <img src="/images/producto-1-vitrina-1-color-rojo.jpg" alt="producto-1-vitrina-1-color-rojo">
+                    <img src="/images/producto-1-vitrina-1-color-verde.jpg" alt="producto-1-vitrina-1-color-verde">
+                    <img src="/images/producto-1-vitrina-1-color-lila.jpg" alt="producto-1-vitrina-1-color-lila">
+                </section>
+                <h6>Please select your size:</h6>
+                <div class="container-product__size-buttons">
+                    <button class="size-button">XS</button>
+                    <button class="size-button">S</button>
+                    <button class="size-button">M</button>
+                    <button class="size-button">L</button>
+                    <button class="size-button">XL</button>
+                </div>
+                <div class="container-product__shop-buttons">
+                    <button class="shop-button">COMPRAR AHORA</button>
                 </div>
             </div>
-            <button class="product-slider__button" id="nextButton"><img src="/images/arrow-right-solid.svg" alt="next-image"></button>
-        </section>
-        <!-- Banner secundario -->
-        <div class="container-banner__img">
-            <img src="/images/banner-principal-1.jpg" alt="banner-principal-1">
-            <img src="/images/imagen-home-banner-1-mobile.jpg" alt="imagen-home-banner-1-mobile">
-            <button class="container-banner-button">Ofertas</button>
         </div>
+
         <!-- Vitrina numero 2 ofertas -->
         <section class="section-title__container">
             <h2>Ofertas</h2>
@@ -94,7 +94,7 @@
         <div class="slider">
             <div class="slider-wrapper2">
                 <div class="section-product2">
-                    <a href="/detalle-producto">
+                    <a href="#">
                         <img class="section-product__img" src="/images/producto-1-vitrina-2.jpg" alt="">
                     </a>
                     <h3>Campera Universitaria</h3>
@@ -118,6 +118,14 @@
         </div>
         <button class="product-slider__button" id="nextButton2"><img src="/images/arrow-right-solid.svg" alt="next-image"></button>
     </section>
+
+            <!-- Banner secundario -->
+            <div class="container-banner__img">
+                <img src="/images/banner-principal-1.jpg" alt="banner-principal-1">
+                <img src="/images/imagen-home-banner-1-mobile.jpg" alt="imagen-home-banner-1-mobile">
+                <button class="container-banner-button">Ofertas</button>
+            </div>
+
     </main>
 
 

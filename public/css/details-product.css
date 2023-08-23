@@ -1,0 +1,145 @@
+
+/* Details product main styles */
+
+.breadcrumb{
+    color: #15122F;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+    width: 100%;
+    height: 90px;
+    padding: 43px 32px 28px 32px;
+}
+
+.container-product{
+    display: flex;
+    flex-direction: column;
+}
+.container-product__img{
+    padding: 0px 30px 20px 30px;
+}
+.container-product__img img{
+    max-width: 100%; 
+    max-height: 100%; 
+    display: block; 
+    margin: auto; 
+}
+.container-product__info{
+    padding: 8px 30px 33px 30px;
+}
+.container-product__info * {
+    margin: 5px 0;
+}
+.container-product__info h3{
+    color: #000;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+}
+.container-product__info h4{
+    color: #15122F;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+}
+.container-product__info h6{
+    color: #15122F;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+}
+.container-product__info p{
+    color: #D27685;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+}
+.container-product__colors {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container-product__colors div {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    background-color: lightblue;
+}
+.container-product__thumbnails {
+    display: flex;
+    justify-content: space-between; /* Distribuir imágenes equitativamente con espacio entre ellas */
+    align-items: center; /* Centrar verticalmente las imágenes */
+    max-width: 100%; /* Para asegurar que las imágenes no desborden el contenedor */
+    overflow: hidden; /* Ocultar contenido adicional */
+}
+.container-product__thumbnails img{
+    width: 54px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.container-product__size-buttons{
+    display: flex;
+}
+.size-button {
+    width: 62px;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    background: #6B6884;
+    color: white;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+/* Separación entre botones */
+.size-button + .size-button {
+    margin-left: 5px;
+}
+.shop-button{
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    width: 100%;
+    height: 37px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #37306B;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* Responsive design */
+
+/* main responsive */
+
+@media (min-width: 790px){
+    .container-product{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .container-product__info * {
+        margin: 10px 0;
+    }
+    .container-product__img{
+        
+        padding: 0px;
+    }
+    .container-product__info{
+        width: 619px;
+        margin-left: 50px;
+        padding: 0px;
+    }
+    .container-product__thumbnails{
+        justify-content: flex-start;
+        margin-right: 15px;
+    }
+    .container-product__thumbnails img{
+        margin-right: 15px;
+    }
+}

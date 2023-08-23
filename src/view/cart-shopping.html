@@ -16,10 +16,10 @@
     <!-- Header and NavBar -->
     <header class="header-container">
         <div class="header-logo">
-            <a href="#"><img  src="/images/logo-desktop.png" alt="logo-maunganui" srcset=""></a>
+            <a href="/"><img  src="/images/logo-desktop.png" alt="logo-maunganui" srcset=""></a>
         </div>
-        <nav>
-            <ul class="nav-links">
+        <nav class="header-container__navbar">
+            <ul class="header-container__nav-links">
                 <li><a href="#">Mujer</a></li>
                 <li><a href="#">Hombres</a></li>
                 <li><a href="#">Ofertas</a></li>
@@ -27,13 +27,13 @@
             </ul>
             <div class="header-container-user__icons">
                 <div class="header-cart__icon">
-                    <a href="#"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+                    <a href="/cart-shopping"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
                 </div>
                 <div class="header-user__icon">
                     <a href="/login"><span><i class="fa-solid fa-user-astronaut"></i></span></a>
                 </div>
                 <div class="header-menu__icon">
-                    <a href="#"><span><i class="fa-solid fa-bars"></i></span></a>
+                    <a href="/registro"><span><i class="fa-solid fa-bars"></i></span></a>
                 </div>
             </div>
         </nav>
@@ -115,6 +115,7 @@
     <main class="container">
         <!-- Banner principal -->
         <div class="container-banner__img">
+            <img src="/images/banner-principal-1.jpg" alt="banner-principal-1">
             <img src="/images/imagen-home-banner-1-mobile.jpg" alt="imagen-home-banner-1-mobile">
             <button class="container-banner-button">Mujer</button>
             <button class="container-banner-button">Hombre</button>
@@ -127,7 +128,7 @@
             <div class="slider">
                 <div class="slider-wrapper">
                     <div class="section-product">
-                        <a href="#">
+                        <a href="/detalle-producto">
                             <img class="section-product__img" src="/images/producto-1-vitrina-1.jpg" alt="">
                         </a>
                         <h3>Campera Universitaria</h3>
@@ -153,7 +154,8 @@
         </section>
         <!-- Banner secundario -->
         <div class="container-banner__img">
-            <img src="/images/banner-categoria-sale.jpg" alt="imagen-home-banner-1-mobile">
+            <img src="/images/banner-principal-1.jpg" alt="banner-principal-1">
+            <img src="/images/imagen-home-banner-1-mobile.jpg" alt="imagen-home-banner-1-mobile">
             <button class="container-banner-button">Ofertas</button>
         </div>
         <!-- Vitrina numero 2 ofertas -->
