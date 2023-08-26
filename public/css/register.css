@@ -1,24 +1,16 @@
-.container-modal{
-    width: 90%;
-    height: 100vh;
-    top: 0;left: 0;
-    background-color: rgba (144, 148, 150 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
 
-.container-register {
-  background: #37306B;
+img{
+    display: flex;
+    width: 100%;
     margin: auto;
-    margin-top: 180px;
-    box-shadow: 5px 12px 30px #66347F;
-    padding-top: 30px ;
-    padding-left: 15px;
-    color: white;
-    border-radius: 5px;
+    
 }
+.clip{
+    clip-path: inset(150px 0px 150px 0px);
+    margin:-150px 0;
+       }
+
+
 label{
     font-size: 15px;
 }
@@ -34,7 +26,7 @@ label{
     border-radius: 5px;
     font-size: 15px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
     
 }
 .button:hover{
@@ -44,9 +36,66 @@ label{
     background-color: #d2768587; 
     border: 1px #fff solid;
     border-radius: 5px;
+    padding: 8px;
 }
 .df{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/* popup*/
+.overlay {
+    background: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.overlay.active {
+    visibility: visible;
+}
+.popup-register {
+    background: #37306B;
+    margin: auto;
+    max-width: 390px;
+    box-shadow: 5px 12px 30px #66347F;
+    padding-top: 20px ;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+opacity: 0;
+}
+.popup-register .btn-cerrar-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color:#fff;
+    transition: .3s ease all;
+}
+.popup-register .btn-cerrar-popup:hover{
+    color: #D27685;
+}
+form p {display: flex;
+    flex-direction: column;
+
+}
+
+.popup-register.active { opacity: 1;}
+
+/* tablet*/
+@media (min-width:520px){
+.md-fb{ display: flex;
+    flex-direction: row;
+
+    }
+}
+
+

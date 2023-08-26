@@ -1,22 +1,26 @@
 ## Retrospectiva
 
 ## Comenzar hacer:
-- Distribuir las tareas
-- Fijar más reuniones en fechas especificas para el avance de las tareas.
-- Definir las clases en las etiquetas
-- Propuestas de los integrantes sobre diseño en las páginas
+- Estructura actualizada de directorios y archivos de vistas.
+- Ramas por tareas.
+- Fijar reuniones post clase.
+- Implementar carpeta partials
+- Crear páginas de creación y edición de productos .ejs junto a sus estilos e imágenes.
   
 ## Mas de:
-- Especificación de las tareas
-- Etiquetas para css.
-- Diseño de las paginas web.
+- daylies y weeklies.
+- Desarrollo de las nuevas páginas.
   
 ## Seguir haciendo:
-- Uso de los canales de comunicación para actualizar propuestas e ideas.
+- Cada página responsive.
+- Implementación de imágenes y efectos en index y register.
+- arreglos correspondients al login (placeholder: white) 
+- Register, Login y Cart shopping en tipo modal o pop up.
 
 ## Menos de:
-- Fijar las fechas exactas de reuniones grupales
+- No comunicar cambios.
+- No axcederse con tareas complejas y consultar con los demás de ser necesario.
   
 ## Dejar de hacer:
 
-El total de las tareas en conjunto para poder distribuir de forma individual la mayoría de actividades.
+Todas las novedades indicarlas en el discord y en laplataforma que corresponda en la que consideremos que pueda afectar la tarea de otro compañero.
