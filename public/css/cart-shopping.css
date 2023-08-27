@@ -13,20 +13,21 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 500px;
-    min-height: 70vh;
+    width: 90vw;
+    max-width: 400px;
+    height: 100%;
+    max-height: 100vh;
     padding: 0 0 20px 0;
     background-color: var(--white);
     border: 1px solid var(--rose);
     transition: 0.5s;
-    z-index: 1;
+    z-index: 10;
 }
-.cart-container div img{
+img.img-logo{
     width: 37px;
     height: 43px;
     flex-shrink: 0;
 }
-
 .cart-header{
     display: flex;
     flex-direction: row;
@@ -59,11 +60,14 @@
 .cart-color{
     margin-bottom: 12px;
 }
-.cart-shop>span>i{
+.cart-shop>span>i .fa-cart-shopping{
     color: var(--white);
     width: 30px;
     height: 27px;
     flex-shrink: 0;
+}
+.fa-cart-shopping{
+    color:var(--white)
 }
 .cart-box{
     display: flex;
@@ -75,22 +79,13 @@
 div.cart-box{
     margin-top: 20px;
 }
-div.cart-img{
-    flex: 0.7;
-}
 .cart-img{
-    width: 121px;
-    height: 164px;
-    flex-shrink: 0;
-}
-div.cart-img{
-    background-image: url('/images/producto-1-vitrina-1.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 121px;
-    height: 164px;
+    width: 30%;
     border-radius: 5px;
+}
+.cart-img .img-product{
+    width: 100%;
+    object-fit: cover;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 div.detail-product{
@@ -176,6 +171,30 @@ button[type="button"]:hover{
     margin-right: 10px;
     margin-left: 10px;
 }
+.cart-fast{
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+}
+.cart-subtotal-container{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-note{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-total-container{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-subtotal-container span:nth-child(2),
+.cart-note span:nth-child(2){
+    margin-right: 8px;
+}
+span.cart-total{
+    margin-right: 8px;
+}
 .cart-price{
     color: var(--salmon);
     font-size: 20px;
@@ -189,4 +208,25 @@ button[type="button"]:hover{
     font-style: italic;
     font-weight: 500;
     line-height: normal;
+}
+.cart-container{
+    transform: translate(0);
+    visibility: visible;
+}
+.cart-container>.drawer-overlay{
+    visibility: visible;
+    opacity: .3;
+}
+.drawer-overlay{
+    right: 100%;
+}
+.drawer-overlay{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #000000;
+    opacity: 0;
+    visibility: hidden;
+    transition:  .6s ease-in-out,opacity .6s ease-in-out
 }
