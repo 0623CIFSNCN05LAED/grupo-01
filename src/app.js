@@ -10,14 +10,14 @@ app.listen(PORT, () => {
 });
 
 app.get('/' , (req , res) => {
-    res.sendFile (path.join(__dirname , './view/index.html'));
+    res.sendFile (path.join(__dirname , './views/index.html'));
 });
 app.get('/login', (req , res) => {
-    res.sendFile (path.join(__dirname, './view/login.html'))
+    res.sendFile (path.join(__dirname, './views/login.html'))
 });
 app.get('/cart-shopping', (req , res) => {
-    res.sendFile (path.join(__dirname, './view/cart-shopping.html'))
+    res.sendFile (path.join(__dirname, './views/cart-shopping.html'))
 });
 app.get('/detalle-producto', (req , res) => {
-    res.sendFile (path.join(__dirname, './view/details-product.html'))
+    res.sendFile (path.join(__dirname, './views/details-product.html'))
 });
