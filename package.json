@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "grupo-01",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/0623CIFSNCN05LAED/grupo-01/issues"
   },
-  "homepage": "https://github.com/0623CIFSNCN05LAED/grupo-01#readme"
+  "homepage": "https://github.com/0623CIFSNCN05LAED/grupo-01#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }

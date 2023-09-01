@@ -38,4 +38,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     nextButton.addEventListener('click', nextSlide);
 });
-console.log('hola')

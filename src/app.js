@@ -12,9 +12,6 @@ app.listen(PORT, () => {
 app.get('/' , (req , res) => {
     res.sendFile (path.join(__dirname , './view/index.html'));
 });
-app.get('/registro', (req , res) => {
-    res.sendFile (path.join(__dirname, './view/register.html'))
-});
 app.get('/login', (req , res) => {
     res.sendFile (path.join(__dirname, './view/login.html'))
 });
