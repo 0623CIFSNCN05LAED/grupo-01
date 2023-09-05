@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+     
+    <%- include("partials/head") %>
     <link rel="stylesheet" href="/css/cart-shopping.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <title>Maunganui Tienda</title>
+    <title>Carrito de compras</title>
 </head>
 
 <body>
@@ -198,30 +193,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-info">
-            <h3>Contacto</h3>
-            <ul class="footer-bottom-img">
-                <li><span><img src="/images/whatsapp.svg" alt="logo-whatsapp"><a class="footer-contact" href="#">+549 351 246225</a></span></li>
-                <li><span><img src="/images/phone-solid.svg" alt="logo-phone"><a class="footer-contact" href="#">+54 351 4658983</a></span></li>
-                <li><span><img src="/images/envelope-regular.svg" alt="logo-mail"><a class="footer-contact" href="#">grupo1@digitalhouse.com</a></span></li>
-            </ul>
-        </div>
-        <div class="footer-info">
-            <h3>Centro de Ayuda</h3>
-            <ul class="footer-bottom">
-                <li><a class="footer-contact" href="#">Envios</a></li>
-                <li><a class="footer-contact" href="#">Cambios</a></li>
-                <li><a class="footer-contact" href="#">Preguntas Frecuentes</a></li>
-            </ul>
-        </div>
-        <div class="footer-info">
-            <h3>Redes</h3>
-            <ul class="footer-bottom-img">
-                <li><span ><img src="/images/instagram.svg" alt="instagram"><a class="footer-contact" href="#">@grupo01-maunganui</a></span></li>
-                <li><span ><img src="/images/facebook.svg" alt="facebook"><a class="footer-contact" href="#">@grupo01-maunganui</a></span></li>
-                <li><span ><img src="/images/github.svg" alt="github"><a class="footer-contact" href="#">/0623CIFSNCN05LAED/grupo-01</a></span></li>
-            </ul>
-        </div>
+        <%- include("partials/footer") %>
     </footer>
 
     <script src="/js/index.js"></script>

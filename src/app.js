@@ -1,16 +1,19 @@
 const express = require(`express`);
 const path = require(`path`);
 
-const mainRouter = require('./routers/main-routers');
+const mainRouter = require("./routers/main-routers");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname , `../public`)));
+app.use(express.static(path.join(__dirname, `../public`)));
 const PORT = 3002;
 
 app.listen(PORT, () => {
   console.log(`Servidor Funcionando en el puerto ${PORT}`);
 });
+
+app.set("view engine", "ejs");
+app.set("views", "./src/views");
 /*
 app.get('/' , (req , res) => {
     res.sendFile (path.join(__dirname , './views/index.html'));
