@@ -2,23 +2,18 @@
 
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/register.css" />
+     
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/css/cart-shopping.css">
+    <title>Carrito de compras</title>
 
-    <title>Maunganui Tienda</title>
 </head>
 
 <body>
     <!-- Header and NavBar -->
     <header class="header-container">
         <div class="header-logo">
-            <a href="#"><img  src="/images/logo-desktop.png" alt="logo-maunganui" srcset=""></a>
+            <a href="/"><img  src="/images/logo-desktop.png" alt="logo-maunganui" srcset=""></a>
         </div>
         <nav class="header-container__navbar">
             <ul class="header-container__nav-links">
@@ -35,12 +30,86 @@
                     <a href="/login"><span><i class="fa-solid fa-user-astronaut"></i></span></a>
                 </div>
                 <div class="header-menu__icon">
-                    <a class="btn-abrir-popup" id="btn-abrir-popup" ><span><i class="fa-solid fa-bars"></i></span></a>
+                    <a href="/registro"><span><i class="fa-solid fa-bars"></i></span></a>
                 </div>
             </div>
         </nav>
     </header>
-
+    <!-- Cart Shopping -->
+    <div class="cart-container">
+        <span class="drawer-overlay"></span>
+        <div class="cart-header">
+            <div class="img-log">
+                <img src="/images/logo-M.png" class="img-logo" alt="logo-M">
+            </div>
+            <div>
+                <strong class="cart-title">Bolsa de Compras</strong>
+            </div>
+            <div class="cart-shop btn-open">
+                <a href="#"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cart-box">
+                <div class="cart-img">
+                    <img src="/images/producto-1-vitrina-1.jpg " class="img-product" alt="">
+                </div>
+                <div class="detail-product">
+                    <div class="cart-product-title"><strong>Campera Univesitaria</strong></div>
+                    <div class="cart-size">
+                        <label for="sizes-select">Talla :</label>
+                        <select name="tallas" class="sizes-select">
+                            <option value="">Elija</option>
+                            <option value="x-large">XL</option>
+                            <option value="large">L</option>
+                            <option value="medium">M</option>
+                            <option value="small">S</option>
+                            <option value="x-small">XS</option>
+                        </select>
+                    </div>
+                    <div class="cart-color">
+                        <label for="color-select">Color :</label>
+                        <select name="color" class="color-select">
+                        <option value="">Elija</option>
+                        <option value="amarilli">Amarrillo</option>
+                        <option value="rojo">Rojo</option>
+                        <option value="verde">Verde</option>
+                        <option value="azul">Azul</option>
+                        <option value="negro">Negro</option>
+                        </select>
+                    </div>
+                    <div class="cart-product-quantity-group">
+                        <span>Cantidad : </span>
+                        <span class="cart-product-quantity">
+                            <span class="minus">-</span>
+                            <span class="num">1</span>
+                            <span class="plus">+</span>
+                        </span>
+                    </div>
+                    <i class="fa-solid fa-trash cart-remove"></i>
+                </div>
+            </div>   
+        </div>
+        <div class="cart-fast">
+            <form action="/cart" method="post">
+                <div class="cart-subtotal-container">
+                    <span>Subtotal :</span>
+                    <span class="cart-price">$80.000</span>
+                </div>
+                <div class="cart-note">
+                    <span>Envío : </span>
+                    <span>Por calcular</span>
+                </div>
+                <div class="cart-total-container">
+                    <span>Total :</span>
+                    <span class="cart-total">$80.000</span>
+                </div>
+                <button type="submit" class="cart-checkout">COMPRAR AHORA</button>
+                <button type="button" class="cart-follow">SEGUIR COMPRANDO</button>
+            </form>
+        </div>   
+    </div>
+    <!-- End Cart Shopping-->
     <!-- Main Content -->
     <main class="container">
         <!-- Banner principal -->
@@ -97,7 +166,7 @@
         <div class="slider">
             <div class="slider-wrapper2">
                 <div class="section-product2">
-                    <a href="/detalle-producto">
+                    <a href="#">
                         <img class="section-product__img" src="/images/producto-1-vitrina-2.jpg" alt="">
                     </a>
                     <h3>Campera Universitaria</h3>
@@ -123,98 +192,10 @@
     </section>
     </main>
 
-    <!-- Register -->
-    <div class="overlay" id="overlay">
-        <div class="popup-register" id="popup-register">
-    <div>
-        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup">
-            <i class="fas fa-times"></i></a>
-            <h2>REGISTRATE</h2>
-            <br>
-        <img
-          class="clip"
-          src="/images/banner-formulario-registro.jpg"
-          alt="imagen-banner-formulario-registro"/>
-         </div>   
-         
-          <br />
-           
-
-          <form action="index.html" method="POST">
-
-
-            <p>
-              <label for="nombre y apellido"> Nombre y Apellido: </label>
-              <input
-                class="style-box"
-                type="text"
-                name="nombre y apellido"
-                id="nombre y apellido"
-              />
-            </p>
-            <p></p>
-            <p>
-              <label for="telefono"> teléfono: </label>
-              <input class="style-box" type="tel" name="telefono" id="telefono" />
-            </p>
-            <p>
-              <label for="email"> E-mail: </label>
-              <input class="style-box" type="email" name="email" id="email" />
-            </p>
-            <p>
-              <label for="contraseña"> Contraseña: </label>
-              <input
-                class="style-box"
-                type="password"
-                name="contraseña"
-                id="contraseña"
-              />
-            </p>
-            <p>
-              <label for="repcontraseña"> Repetir contraseña: </label>
-              <input
-                class="style-box"
-                type="password"
-                name="repcontraseña"
-                id="repcontraseña"
-              />
-            </p>
-            <div class="df">
-              <button class="button" type="submit" class="button">GUARDAR</button>
-            </div>
-          </form>
-        
-      </div>
-      </div>
-      <script src="/js/popup.js"></script>
-
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-info">
-            <h3>Contacto</h3>
-            <ul class="footer-bottom-img">
-                <li><span><img src="/images/whatsapp.svg" alt="logo-whatsapp"><a class="footer-contact" href="#">+549 351 246225</a></span></li>
-                <li><span><img src="/images/phone-solid.svg" alt="logo-phone"><a class="footer-contact" href="#">+54 351 4658983</a></span></li>
-                <li><span><img src="/images/envelope-regular.svg" alt="logo-mail"><a class="footer-contact" href="#">grupo1@digitalhouse.com</a></span></li>
-            </ul>
-        </div>
-        <div class="footer-info">
-            <h3>Centro de Ayuda</h3>
-            <ul class="footer-bottom">
-                <li><a class="footer-contact" href="#">Envios</a></li>
-                <li><a class="footer-contact" href="#">Cambios</a></li>
-                <li><a class="footer-contact" href="#">Preguntas Frecuentes</a></li>
-            </ul>
-        </div>
-        <div class="footer-info">
-            <h3>Redes</h3>
-            <ul class="footer-bottom-img">
-                <li><span ><img src="/images/instagram.svg" alt="instagram"><a class="footer-contact" href="#">@grupo01-maunganui</a></span></li>
-                <li><span ><img src="/images/facebook.svg" alt="facebook"><a class="footer-contact" href="#">@grupo01-maunganui</a></span></li>
-                <li><span ><img src="/images/github.svg" alt="github"><a class="footer-contact" href="#">/0623CIFSNCN05LAED/grupo-01</a></span></li>
-            </ul>
-        </div>
+        <%- include("partials/footer") %>
     </footer>
 
     <script src="/js/index.js"></script>
