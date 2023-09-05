@@ -4,13 +4,13 @@ const mainController = {
     res.render("index");
   },
   login: (req, res) => {
-    res.render(path.join(__dirname, "../views/login.ejs"));
+    res.render("login");
   },
   cartshopping: (req, res) => {
-    res.render(path.join(__dirname, "../views/cart-shopping.ejs"));
+    res.render("cart-shopping.ejs");
   },
   detailsproduct: (req, res) => {
-    res.render(path.join(__dirname, "../views/details-product.ejs"));
+    res.render("details-product.ejs");
   },
 };
 
