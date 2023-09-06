@@ -243,6 +243,10 @@
     padding: 59px 35px;
     align-content: center;
 }
+.footer-bottom-icon{
+    display: inline-flex;
+}
+
 span.contact img{
     max-width: 18px;
     max-height: 21px;
