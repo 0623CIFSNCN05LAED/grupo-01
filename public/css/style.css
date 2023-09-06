@@ -311,6 +311,9 @@ span.contact img{
     .header-container__nav-links{
         display: block;
     }
+    .header-menu__icon{
+        cursor: pointer;
+    }
     .header-user__icon{
         display: block;
     }
