@@ -11,7 +11,7 @@ const mainController = {
   },
   detailsproduct: (req, res) => {
     res.render("details-product.ejs");
-  },
+  }
 };
 
 module.exports = mainController;
