@@ -1,12 +1,44 @@
 const productService = require("../services/productService");
 
 const controller = {
-    // Root - Show all products
-    index: (req, res) => {
-      // Do the magic
-      const products = productService.getAllProducts();
-      console.log(products)
-    }
+  // Raiz - Muestra todos los productos
+  index: (req, res) => {
+    const products = productService.getAllProducts();
+    res.render("index",{ products });
+  },
+
+  // Detail - Detalle de un producto
+  detail: (req,res) => {
+    const id = req.params.id;
+    const product = productService.getProducts();
+    res.render("detail",{ product });
+  },
+
+  // Create - Vista del Formulario de Producto
+  create: (req,res) =>{
+    res.render("product-create-form");
+  },
+
+  // Crea - Metodo de almacenar
+  store: (req,res) => {
+
+  },
+
+  // Editar - Vista del formulario del producto a editar
+  edit: (req,res) => {
+
+  },
+
+  // Editar - Metodo de editar producto
+  update: (req,res) => {
+
+  },
+
+  // Eliminar - Elimina un producto desde BBDD
+  destroy: (req,res) => {
+
+  }
+
 }
 
 module.exports = controller;
