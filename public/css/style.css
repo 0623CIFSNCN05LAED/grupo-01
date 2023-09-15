@@ -141,17 +141,12 @@
     margin: 40px 0px;
 }
 .section-product__container{
-    position: relative;
-}
-.slider {
     display: flex;
-    overflow: hidden; 
+    justify-content: space-around;
+    gap: 25px;
+    padding: 25px 25px;
 }
-.slider-wrapper, .slider-wrapper2 {
-    display: flex;
-    transition: transform 0.3s ease-in-out; 
-    padding-bottom: 30px;
-}
+
 .section-title__container h2{ 
     color: #37306B;
     font-size: 24px;
@@ -161,14 +156,12 @@
     letter-spacing: 1.2px;
 }
 
-.section-product, .section-product2{
+.section-product{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    flex: 0 0 100%; /* Establece el ancho de cada slide */
 }
 .section-product img{
     max-width: 100%;
@@ -176,30 +169,12 @@
 }
 .section-product h3{
     color: #000;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 500;
-    line-height: normal;
-}
-.section-product p{
-    color: #D27685;
     font-size: 18px;
     font-style: italic;
     font-weight: 500;
     line-height: normal;
 }
-.section-product2 img{
-    max-width: 100%;
-    max-height: auto;
-}
-.section-product2 h3{
-    color: #000;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 500;
-    line-height: normal;
-}
-.section-product2 p{
+.section-product p{
     color: #D27685;
     font-size: 18px;
     font-style: italic;
@@ -326,10 +301,6 @@ span.contact img{
         display: flex;
         justify-content: center;
         flex-direction: row;
-        width: auto;
-    }
-    .section-product, .section-product2{
-        flex: 0 0 42%; /* Establece el ancho de cada slide */
     }
 }
 
@@ -337,6 +308,12 @@ span.contact img{
 @media (max-width: 789px) {
     .container-banner__img > img:nth-child(1) {
         display: none;
+    }
+    .section-product__container{
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 15px;
+        padding: 15px 15px;
     }
 
     .container-banner__img > img:nth-child(2) {
