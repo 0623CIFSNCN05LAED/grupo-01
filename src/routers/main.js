@@ -1,7 +1,10 @@
+// ************ Require's ************
 const { Router } = require("express");
-const mainController = require("../controllers/main-controller");
-
 const router = Router();
+
+
+// ************ Controller Require ************
+const mainController = require("../controllers/main-controller");
 
 router.get("/", mainController.index);
 router.get("/login", mainController.login);

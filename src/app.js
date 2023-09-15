@@ -1,38 +1,47 @@
-const express = require(`express`);
-const path = require(`path`);
+//****************** Require's ******************/
+const express = require("express");
+const path = require("path");
+const createError = require("http-errors");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const methodOverride = require("method-override");
 
-const mainRouter = require("./routers/main-routers");
-
+//****************** Express() ******************/
 const app = express();
 
-app.use(express.static(path.join(__dirname, `../public`)));
-const PORT = 3002;
+//****************** Middlewares ******************/
+app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.urlencoded({ extended:false }));
+app.use(logger("dev"));
+app.use(express.json());
+app.use(cookieParser());
+app.use(methodOverride("_method"));
 
+//****************** Templates Engine ******************/
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname,"/views"));
+
+// ************ Route System require and use() ************
+const mainRouter = require("./routers/main");
+app.use("/",mainRouter);
+
+// ************ catch 404 and forward to error handler ************
+app.use((req, res, next) => next(createError(404)));
+
+// ************ error handler ************
+app.use((err, req, res, next) => {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.path = req.path;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
+});
+
+//****************** Export App ******************/
+const PORT = 3002;
 app.listen(PORT, () => {
   console.log(`Servidor Funcionando en el puerto ${PORT}`);
 });
-
-app.set("view engine", "ejs");
-app.set("views", "./src/views");
-/*
-app.get('/' , (req , res) => {
-    res.sendFile (path.join(__dirname , './views/index.html'));
-
-});
-app.get('/registro', (req , res) => {
-    res.sendFile (path.join(__dirname, './views/register.html'))
-
-});
-app.get('/login', (req , res) => {
-    res.sendFile (path.join(__dirname, './views/login.html'))
-});
-app.get('/cart-shopping', (req , res) => {
-    res.sendFile (path.join(__dirname, './views/cart-shopping.html'))
-});
-app.get('/detalle-producto', (req , res) => {
-    res.sendFile (path.join(__dirname, './views/details-product.html'))
-
-});
-*/
-
-app.use(mainRouter);
