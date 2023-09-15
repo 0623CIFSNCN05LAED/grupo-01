@@ -1,26 +1,25 @@
 ## Retrospectiva
 
 ## Comenzar hacer:
-- Estructura actualizada de directorios y archivos de vistas.
-- Ramas por tareas.
-- Fijar reuniones post clase.
-- Implementar carpeta partials
-- Crear páginas de creación y edición de productos .ejs junto a sus estilos e imágenes.
+- Carpeta Data.
+- Fijar dailies.
+- Páginas creación, edición y productos.
+- Agregar dependencias multer y uuid
   
 ## Mas de:
-- daylies y weeklies.
+- Mantener el trello actualizado con cada cambio que se va realizando en el proyecto.
 - Desarrollo de las nuevas páginas.
   
 ## Seguir haciendo:
-- Cada página responsive.
-- Implementación de imágenes y efectos en index y register.
-- arreglos correspondients al login (placeholder: white) 
+- Ramas por tareas
+- Agregar más imágenes y especificaciones para los productos.
+- Actualización de controllers y routes
 - Register, Login y Cart shopping en tipo modal o pop up.
 
 ## Menos de:
-- No comunicar cambios.
+- No consultar dudas.
 - No axcederse con tareas complejas y consultar con los demás de ser necesario.
-  
-## Dejar de hacer:
+- Register como pop up y adecuarlo a una vista.
 
-Todas las novedades indicarlas en el discord y en laplataforma que corresponda en la que consideremos que pueda afectar la tarea de otro compañero.
+## Dejar de hacer:
+Todas las novedades solo a través de discor, ya que disponemos de herramientas más adecuadas y ordenadas como trello.
