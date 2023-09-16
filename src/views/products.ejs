@@ -20,21 +20,32 @@
                 position: relative;
                 display: flex;
                 flex-direction: column;
+                gap:15px;
+                margin: 30px;
             }
         </style>
     </header>
     <main>
         <div class="product-list">
-            <div class="product-item">
-                <div class="product-item-image">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
+            <% products.forEach(product => { %>
+                <div class="product-item">
+                    <div class="product-item-image">
+                        <a href="products/<%= product.id %>">
+                            <img src="<%= product.image %>" alt="">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <p><%= product.name %></p>
+                        <% if (product.discount) { %>
+                            <s>$<%= product.price %></s>
+                            <p><%= product.discount %>% OFF</p>
+                            <p><%= product.priceWithDiscount %></p>
+                        <%  } else { %>
+                            <%= product.price %>%
+                         <% } %>
+                    </div>
                 </div>
-                <div class="product-info">
-
-                </div>
-            </div>
+            <% }) %>
         </div>
     </main>
     <!-- Footer -->

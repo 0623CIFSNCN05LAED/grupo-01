@@ -19,7 +19,7 @@ const productServices = {
   getAllProducts: () => {
     return db.products.findAll();
   },
-  getProducts: (id) => {
+  getProduct: (id) => {
     return db.products.findById(id);
   },
   getFormattedProduct: (id) => {

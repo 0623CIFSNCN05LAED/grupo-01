@@ -5,7 +5,7 @@ const controller = {
   index: (req, res) => {
     // Do the magic
     const products = productService.getAllProducts();
-    res.render("index",);
+    res.render("products",{ products });
   },
   // Detail - Detail from one product
   detail: (req, res) => {
