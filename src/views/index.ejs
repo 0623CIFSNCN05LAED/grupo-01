@@ -11,127 +11,24 @@
     </header>
     <!-- Main Content -->
     <main class="container">
-        <!-- Banner principal -->
-        <div class="container-banner__img">
-            <img src="/images/banner-principal-1.jpg" alt="banner-principal-1">
-            <img src="/images/imagen-home-banner-1-mobile.jpg" alt="imagen-home-banner-1-mobile">
-            <button class="container-banner-button">Mujer</button>
-            <button class="container-banner-button">Hombre</button>
-        </div>
-        <!-- Vitrina numero 1 -->
-        <section class="section-title__container">
-            <h2>DESTACADOS</h2>
-        </section class="section">
-        <section class="section-product__container">
-            <div class="slider">
-                <div class="slider-wrapper">
-                    <% womenProducts.forEach(product => { %>
-                        <div class="section-product">
-                            <a href="/details-product">
-                                <img class="section-product__img" src="/images/producto-1-vitrina-1.jpg" alt="">
-                            </a>
-                            <h3><%= product.name %></h3>
-                            <p><%= product.price %> </p>
-                            <p><%= product.discount %>%</p>
-                            <p><%= product.priceWithDiscount %></p>
-                        </div>
-                    <% }) %>
-                </div>
-            </div>
-            <button class="product-slider__button" id="nextButton"><img src="/images/arrow-right-solid.svg" alt="next-image"></button>
-        </section>
-        <!-- Banner secundario -->
-        <div class="container-banner__img">
-            <img src="/images/banner-ofertas-1.jpg" alt="banner-ofertas-1">
-            <img src="/images/banner-ofertas-mobile-1.jpg" alt="imagen-home-banner-1-mobile">
-            <button class="container-banner-button">Ofertas</button>
-        </div>
-        <!-- Vitrina numero 2 ofertas -->
-        <section class="section-title__container">
-            <h2>Ofertas</h2>
-        </section class="section">
-    </section class="section">
-    <section class="section-product__container">
-        <div class="slider">
-            <div class="slider-wrapper2">
-                <% menProducts.forEach(product => { %>
-                    <div class="section-product2">
-                        <a href="/detalle-producto">
-                            <img class="section-product__img" src="/images/producto-1-vitrina-2.jpg" alt="">
-                        </a>
-                        <h3><%= product.name %></h3>
-                        <p><%= product.price %> </p>
-                    </div>
-                <% }) %>
-            </div>
-        </div>
-        <button class="product-slider__button" id="nextButton2"><img src="/images/arrow-right-solid.svg" alt="next-image"></button>
-    </section>
+        <!-- Banner uno principal -->
+        <%- include("partials/banner-one") %>
+        <!-- Vitrina numero 1 (Feautured Products) -->
+        <%- include('partials/featured-Products') %>
+        <!-- Banner dos secundario -->
+        <%- include('partials/banner-two') %>
+        <!-- Vitrina numero 2 ofertas Sale Products-->
+        <%- include('partials/sale-products.ejs') %>
     </main>
     <!-- Register -->
-    <div class="overlay" id="overlay">
-        <div class="popup-register" id="popup-register">
-    <div>
-        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup">
-            <i class="fas fa-times"></i></a>
-            <h2>REGISTRATE</h2>
-            <br>
-        <img
-          class="clip"
-          src="/images/banner-formulario-registro.jpg"
-          alt="imagen-banner-formulario-registro"/>
-         </div>   
-          <br />
-          <form action="index.html" method="POST">
-            <p>
-              <label for="nombre y apellido"> Nombre y Apellido: </label>
-              <input
-                class="style-box"
-                type="text"
-                name="nombre y apellido"
-                id="nombre y apellido"
-              />
-            </p>
-            <p></p>
-            <p>
-              <label for="telefono"> teléfono: </label>
-              <input class="style-box" type="tel" name="telefono" id="telefono" />
-            </p>
-            <p>
-              <label for="email"> E-mail: </label>
-              <input class="style-box" type="email" name="email" id="email" />
-            </p>
-            <p>
-              <label for="contraseña"> Contraseña: </label>
-              <input
-                class="style-box"
-                type="password"
-                name="contraseña"
-                id="contraseña"
-              />
-            </p>
-            <p>
-              <label for="repcontraseña"> Repetir contraseña: </label>
-              <input
-                class="style-box"
-                type="password"
-                name="repcontraseña"
-                id="repcontraseña"
-              />
-            </p>
-            <div class="df">
-              <button class="button" type="submit" class="button">GUARDAR</button>
-            </div>
-          </form>
-      </div>
-    </div>
+    <%- include("partials/register") %>
+     
+      <!-- Footer -->
+      <footer class="footer">
+          <%- include("partials/footer") %>
+        </footer>
+        
     <script src="/js/popup.js"></script>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <%- include("partials/footer") %>
-    </footer>
-
-    <script src="/js/index.js"></script>
+    <!-- <script src="/js/index.js"></script> -->
 </body>
 </html>
