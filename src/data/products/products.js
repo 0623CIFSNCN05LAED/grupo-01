@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
-const { products } = require("../db");
 
 module.exports = {
   getProducts: function () {
@@ -20,9 +19,22 @@ module.exports = {
     const product = this.getProducts().find((product)=>product.id === id);
     return product;
   },
+  create: function (product) {
+    console.log(`Creating product ${product.name}`);
+  },
+  update: function (id, product) {
+    console.log(`Updating product ${product.name}`);
+    //cargo todos los productos
 
+    //busco un producto por su id
+
+    //piso todas sus propiedades
+
+    //guardo los productos
     
+  },
+  delete : function (id) {
+    console.log(`Deleting product with id ${id}`);
+  }
 }
-
-console.log(products)
 

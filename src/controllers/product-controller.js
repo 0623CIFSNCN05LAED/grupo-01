@@ -1,17 +1,17 @@
-const productService = require("../services/productService");
+const productService = require("../services/productService")
 
 const controller = {
   // Raiz - Muestra todos los productos
   index: (req, res) => {
     const products = productService.getAllProducts();
-    res.render("index",{ products });
+    res.render("index",);
   },
 
   // Detail - Detalle de un producto
   detail: (req,res) => {
     const id = req.params.id;
     const product = productService.getProducts();
-    res.render("detail",{ product });
+    res.render("detail",);
   },
 
   // Create - Vista del Formulario de Producto
