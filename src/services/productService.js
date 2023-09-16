@@ -1,17 +1,20 @@
 const db = require("../data/db");
 
 const formatProductPrices = function (product) {
-  const priceWithDiscount = product.price * (1 - product.discount);
-  product.priceWithDiscount = `$ ${priceWithDiscount.toLocaleString("es-AR", {
+  const priceWithDiscount = product.price - product.price * (product.discount / 100);
+  product.priceWithDiscount = `$ ${priceWithDiscount.toLocaleString("es", {
     minimumFractionDigits: 2,
   })}`;
-  product.price = `$ ${product.price.toLocaleString("es-AR", {
+  product.price = `$ ${product.price.toLocaleString("es", {
     minimumFractionDigits: 2,
   })}`;
-  product.discount = product.discount.toLocaleString("es-AR");
+  product.discount = product.discount.toLocaleString("es");
   return product;
 };
 
+const formatProductsPrices = function (products) {
+  return products.map((product) => formatProductPrices(product));
+};
 const productServices = {
   getAllProducts: () => {
     return db.products.findAll();
@@ -23,17 +26,21 @@ const productServices = {
     const product = db.products.findById(id);
     return formatProductPrices(product);
   },
-  getFemaleProducts : () => {
-    const products = db.products.findAll().filter((product)=>product.category == "Female");
-    return formatProductPrices(products);
+  getWomenProducts : () => {
+    const products = db.products
+    .findAll()
+    .filter((product)=>product.category == "women");
+    return formatProductsPrices(products);
   },
-  getMaleProducts : () => {
-    const products = db.products.findAll().filter((product)=>product.category == "Male");
-    return formatProductPrices(products);
+  getMenProducts : () => {
+    const products = db.products
+      .findAll()
+      .filter((product)=>product.category == "men");
+    return formatProductsPrices(products);
   },
   searchProducts: (query)=>{
     const products = db.products.findAll().filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
-    return formatProductPrices(products);
+    return formatProductsPrices(products);
   },
   createProduct: (product) => {
 

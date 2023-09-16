@@ -10,9 +10,33 @@
 <body>
     <!-- Header and NavBar -->
     <header class="header-container">
-        <%- include("partials/header") %>
+        <%- include("partials/header") %>+
+        <style>
+            .product-list{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .product-item{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
     </header>
-    
+    <main>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="product-item-image">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+                <div class="product-info">
+
+                </div>
+            </div>
+        </div>
+    </main>
     <!-- Footer -->
     <footer class="footer">
         <%- include("partials/footer") %>

@@ -1,44 +1,50 @@
 const productService = require("../services/productService")
 
 const controller = {
-  // Raiz - Muestra todos los productos
+  // Root - Show all products
   index: (req, res) => {
+    // Do the magic
     const products = productService.getAllProducts();
     res.render("index",);
   },
-
-  // Detail - Detalle de un producto
-  detail: (req,res) => {
+  // Detail - Detail from one product
+  detail: (req, res) => {
     const id = req.params.id;
-    const product = productService.getProducts();
-    res.render("detail",);
+    const product = productService.getProduct(id);
+    res.render();
   },
 
-  // Create - Vista del Formulario de Producto
-  create: (req,res) =>{
+  // Create - Form to create
+  create: (req, res) => {
     res.render("product-create-form");
   },
 
-  // Crea - Metodo de almacenar
-  store: (req,res) => {
-
+  // Create -  Method to store
+  store: (req, res) => {
+    const product = req.body;
+    console.log(product);
+    res.redirect("/products");
   },
 
-  // Editar - Vista del formulario del producto a editar
-  edit: (req,res) => {
-
+  // Update - Form to edit
+  edit: (req, res) => {
+    const id = req.params.id;
+    const product = productService.getProduct(id);
+    res.render("product-edit-form", { product });
+  },
+  // Update - Method to update
+  update: (req, res) => {
+    const product = req.body;
+    console.log(product);
+    res.redirect("/products");
   },
 
-  // Editar - Metodo de editar producto
-  update: (req,res) => {
-
-  },
-
-  // Eliminar - Elimina un producto desde BBDD
-  destroy: (req,res) => {
-
+  // Delete - Delete one product from DDBB
+  destroy: (req, res) => {
+    const id = req.params.id;
+    console.log(`deleting product id: ${id}`);
+    res.redirect("/products");
   }
-
 }
 
 module.exports = controller;
