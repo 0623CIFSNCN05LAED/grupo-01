@@ -7,9 +7,13 @@ const router = Router();
 const mainController = require("../controllers/main-controller");
 
 router.get("/", mainController.index);
+
+
 router.get("/login", mainController.login);
 router.get("/cart-shopping", mainController.cartshopping);
 router.get("/details-product", mainController.detailsproduct);
-// router.get("/create", mainController.create)
+
+const productRouter = require("./products");
+router.use("/products",productRouter);
 
 module.exports = router;
