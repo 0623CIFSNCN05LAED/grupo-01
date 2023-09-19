@@ -11,7 +11,7 @@ const controller = {
   detail: (req, res) => {
     const id = req.params.id;
     const product = productService.getProduct(id);
-    res.render();
+    res.render(product);
   },
 
   // Create - Form to create
