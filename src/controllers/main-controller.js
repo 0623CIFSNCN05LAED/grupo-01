@@ -12,8 +12,8 @@ const mainController = {
   login: (req, res) => {
     res.render("login");
   },
-  cartshopping: (req, res) => {
-    res.render("cart-shopping.ejs");
+  cart: (req, res) => {
+    res.render("cart.ejs");
   },
   detailsproduct: (req, res) => {
     res.render("details-product.ejs");

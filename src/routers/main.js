@@ -10,7 +10,7 @@ router.get("/", mainController.index);
 
 
 router.get("/login", mainController.login);
-router.get("/cart-shopping", mainController.cartshopping);
+router.get("/cart", mainController.cart);
 router.get("/details-product", mainController.detailsproduct);
 
 const productRouter = require("./products");

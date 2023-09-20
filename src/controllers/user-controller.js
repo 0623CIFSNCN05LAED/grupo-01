@@ -1,18 +1,18 @@
 const controller = {
     index: (req,res) =>{
-        res.render("",);
+        res.render();
     },
     register: (req,res) =>{
-        res.render("",);
+        res.render();
     },
     login: (req,res) =>{
-        res.render("",);
+        res.render();
     },
     profileUser: (req,res) =>{
-        res.render("",);
+        res.render();
     },
     deleteUser: (req,res) =>{
-        res.render("",);
+        res.render();
     }
 };
 

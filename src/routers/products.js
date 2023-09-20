@@ -24,7 +24,7 @@ const productsController = require("../controllers/product-controller");
 router.get("/", productsController.index); //Listado de productos
 
 /*** CREATE ONE PRODUCT ***/
-router.get("/create/", productsController.create); //Formulario de creación de productos
+router.get("/create", productsController.create); //Formulario de creación de productos
 router.post("/", upload.single("image"), productsController.store); //Acción de creación (donde se envía el formulario)
 
 /*** GET ONE PRODUCT ***/
