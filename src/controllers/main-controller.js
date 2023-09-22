@@ -1,12 +1,11 @@
-const path = require("path");
 const productService = require("../services/productService");
 const mainController = {
   index: (req, res) => {
-    const womenProducts = productService.getWomenProducts();
-    const menProducts = productService.getMenProducts();
+    const inOffers = productService.getItemByOffer();
+    const inFeatured = productService.getItemByFeatured();
     res.render("index",{
-      womenProducts,
-      menProducts
+      inOffers,
+      inFeatured
     });
   },
   login: (req, res) => {

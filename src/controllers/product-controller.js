@@ -21,8 +21,16 @@ const controller = {
 
   // Create -  Method to store
   store: (req, res) => {
-    const product = req.body;
-    console.log(product);
+    const product = {
+      name: req.body.name,
+      description: req.body.description,
+      category: req.body.category,
+      type: req.body.type,
+      price: Number(req.body.price),
+      discount: Number(req.body.discount),
+      image: req.file?.filename || "default.png",
+    };
+    productService.createProduct(product);
     res.redirect("/products");
   },
 

@@ -38,12 +38,24 @@ const productServices = {
       .filter((product)=>product.category == "men");
     return formatProductsPrices(products);
   },
+  getItemByOffer:() => {
+    const products = db.products
+      .findAll()
+      .filter((item)=> item.type == "oferta");
+    return formatProductsPrices(products);
+  },
+  getItemByFeatured:() => {
+    const products = db.products
+      .findAll()
+      .filter((item)=> item.type == "destacado");
+    return formatProductsPrices(products);
+  },
   searchProducts: (query)=>{
     const products = db.products.findAll().filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
     return formatProductsPrices(products);
   },
   createProduct: (product) => {
-
+    
   },
   updateProduct: (id,product) => {
 

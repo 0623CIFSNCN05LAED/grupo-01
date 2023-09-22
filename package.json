@@ -2,7 +2,7 @@
   "name": "grupo-01",
   "version": "1.0.0",
   "description": "Sitio web tipo ecommerce, ofrecemos moda urbana y moderna para el publico juvenil contemporaneo",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "jest",
     "start": "node src/app.js",

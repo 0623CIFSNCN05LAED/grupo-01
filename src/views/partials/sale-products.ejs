@@ -4,42 +4,14 @@
 </section class="section">
 </section class="section">
 <section class="section-product__container">
-    <% menProducts.forEach(product => { %>
+    <% inOffers.forEach(item => { %>
         <div class="section-product">
-            <a href="/detalle-producto/<%= product.id %>">
-                <img class="section-product__img" src="/images/producto-1-vitrina-2.jpg" alt="">
+            <a href="/detalle-producto/<%= item.id %>">
+                <img class="section-product__img" src="/images/products/<%= item.image %>" alt="<%= item.name %>">
             </a>
-            <h3><%= product.name %></h3>
-            <p><%= product.price %></p>
+            <h3><%= item.name %></h3>
+            <p><%= item.price %></p>
         </div>
     <% }) %>
-<!-- <div class="section-product">
-    <a href="/detalle-producto">
-        <img class="section-product__img" src="/images/producto-1-vitrina-2.jpg" alt="">
-    </a>
-    <h3>Campera Universitaria</h3>
-    <p>$ 80.000 </p>
-</div>
-<div class="section-product">
-    <a href="#">
-        <img class="section-product__img" src="/images/producto-2-vitrina-2.jpg" alt="">
-    </a>
-    <h3>Conjunto Denim</h3>
-    <p>$ 90.000</p>
-</div>
-<div class="section-product">
-    <a href="#">
-        <img class="section-product__img" src="/images/producto-3-vitrina-2.jpg" alt="">
-    </a>
-    <h3>Blusa Animal Print</h3>
-    <p>$ 30.000</p>
-</div>
-<div class="section-product">
-    <a href="#">
-        <img class="section-product__img" src="/images/producto-3-vitrina-2.jpg" alt="">
-    </a>
-    <h3>Blusa Animal Print</h3>
-    <p>$ 30.000</p>
-</div> -->
-<!-- <button class="product-slider__button" id="nextButton2"><img src="/images/arrow-right-solid.svg" alt="next-image"></button> -->
+    <!-- <button class="product-slider__button" id="nextButton2"><img src="/images/arrow-right-solid.svg" alt="next-image"></button> -->
 </section>

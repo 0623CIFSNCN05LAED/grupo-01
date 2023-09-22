@@ -20,7 +20,13 @@ module.exports = {
     return product;
   },
   create: function (product) {
-    console.log(`Creating product ${product.name}`);
+    const products = this.getProducts();
+    const item = {
+      id: uuidv4(),
+      ...product,
+    };
+    products.push(item);
+    this.saveProduct(products);
   },
   update: function (id, product) {
     console.log(`Updating product ${product.name}`);
