@@ -16,8 +16,7 @@ const controller = {
 
   // Create - Form to create
   create: (req, res) => {
-    res.send("formulario");
-    // res.render("product-create-form");
+    res.render("product-create-form");
   },
 
   // Create -  Method to store
@@ -31,8 +30,7 @@ const controller = {
   edit: (req, res) => {
     const id = req.params.id;
     const product = productService.getProduct(id);
-    res.send("editar");
-    // res.render("product-edit-form", { product });
+    res.render("product-edit-form", { product });
   },
   // Update - Method to update
   update: (req, res) => {

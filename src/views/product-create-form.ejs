@@ -13,7 +13,7 @@
     <!-- Product Form -->
     <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
         <fieldset>
-            <strong>Formulario de creación de productos</strong>
+            <legend><strong>Estás editando: PRODUCT NAME </strong></legend>
             <div class="name">
                 <label for="name"><strong>Nombre del Producto:</strong></label>
                 <input type="text" name="name" id="name" placeholder="Ej: Camiseta blanca" required>
@@ -45,16 +45,16 @@
                 <input type="checkbox" id="destacado" value="destacado" required>
                 <label for="destacado">Destacado</label>
             </div>
-<!--             <div class="photo-user">
+            <div class="photo-user">
                 <input type="file" name="photo" id="photBtno">
                 <label class="photo" type="button" id="photoBtn"><i class="fa-solid fa-upload"></i> Subir Foto</label>
-            </div> -->
+            </div>
             <div class="group-category">
                 <label for="description">Descripción del producto...</label>
                 <textarea class="form-input" name="description" id="description" ></textarea>
             </div>
             <div class="buttons">
-                <button type="submit" href="/home.html">Guardar Producto</button>
+                <button type="submit" href="/home.html">Crear Producto</button>
                 <button type="reset">Reset</button>
             </div>
 
