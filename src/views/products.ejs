@@ -10,7 +10,7 @@
 <body>
     <!-- Header and NavBar -->
     <header class="header-container">
-        <%- include("partials/header") %>+
+        <%- include("partials/header") %>
         <style>
             .product-list{
                 display: flex;
@@ -31,7 +31,7 @@
                 <div class="product-item">
                     <div class="product-item-image">
                         <a href="products/<%= product.id %>">
-                            <img src="<%= product.image %>" alt="">
+                            <img src="/images/products/<%= product.image %>" alt="">
                         </a>
                     </div>
                     <div class="product-info">
