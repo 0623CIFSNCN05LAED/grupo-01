@@ -16,7 +16,7 @@ module.exports = {
     return this.getProducts();
   },
   findById: function (id) {
-    const product = this.getProducts().find((product)=>product.id === id);
+    const product = this.getProducts().find((product)=>product.id == id);
     return product;
   },
   create: function (product) {

@@ -28,7 +28,7 @@ router.get("/create", productsController.create); //Formulario de creación de p
 router.post("/", upload.single("image"), productsController.store); //Acción de creación (donde se envía el formulario)
 
 /*** GET ONE PRODUCT ***/
-router.get("/:id/", productsController.detail); //Detalle de un producto
+router.get("/details-product/:id", productsController.detail); //Detalle de un producto
 
 /*** EDIT ONE PRODUCT ***/
 router.get("/edit/:id", productsController.edit); //Formulario de edición de productos

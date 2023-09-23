@@ -17,9 +17,12 @@ const mainController = {
   detailsproduct: (req, res) => {
     const inOffers = productService.getItemByOffer();
     const inFeatured = productService.getItemByFeatured();
-    res.render("details-product.ejs", {
+    const id = req.params.id;
+    const product = productService.getFormattedProduct(id)
+    res.render("details-product", {
       inOffers,
-      inFeatured
+      inFeatured,
+      product
     });
   },
   register: (req, res) => {

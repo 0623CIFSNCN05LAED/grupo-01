@@ -22,7 +22,7 @@
             <% products.forEach(product=> { %>
                 <div class="product-item">
                     <div class="product-item-image">
-                        <a href="products/<%= product.id %>">
+                        <a href="/products/details-product/<%= product.id %>">
                             <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                         </a>
                         <a href="/cart">
@@ -43,9 +43,9 @@
                             <p>
                                 <%= product.priceWithDiscount %>
                             </p>
-                            <% } else { %>
+                        <% } else { %>
                                 <%= product.price %>%
-                                    <% } %>
+                            <% } %>
                     </div>
                 </div>
                 <% }) %>

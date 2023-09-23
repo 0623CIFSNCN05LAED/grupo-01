@@ -9,9 +9,13 @@ const controller = {
   },
   // Detail - Detail from one product
   detail: (req, res) => {
+    const inOffers = productService.getItemByOffer();
     const id = req.params.id;
-    const product = productService.getProduct(id);
-    res.render(product);
+    const product = productService.getFormattedProduct(id);
+    res.render("detail-product",{
+      inOffers,
+      product 
+    });
   },
 
   // Create - Form to create
