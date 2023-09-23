@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 
 <html lang="es">
+
 <head>
     <%- include("partials/head") %>
 
-    <title>Maunganui Tienda</title>
+        <title>Maunganui Tienda</title>
 </head>
 
 <body>
     <!-- Header and NavBar -->
     <header class="header-container">
         <%- include("partials/header") %>
-        <style>
-            .product-list{
-                display: flex;
-                flex-wrap: wrap;
-            }
-            .product-item{
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                gap:15px;
-                margin: 30px;
-            }
-        </style>
     </header>
     <main>
+        <section class="section-title__container">
+
+            <h2>Todos los productos</h2>
+        </section>
         <div class="product-list">
-            <% products.forEach(product => { %>
+            <% products.forEach(product=> { %>
                 <div class="product-item">
                     <div class="product-item-image">
                         <a href="products/<%= product.id %>">
-                            <img src="/images/products/<%= product.image %>" alt="">
+                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                        </a>
+                        <a href="/cart">
+                            <div>
+                                <i class="cart-shopping-products-icon fa-solid fa-cart-shopping"></i>
+                            </div>
                         </a>
                     </div>
                     <div class="product-info">
-                        <p><%= product.name %></p>
+                        <p>
+                            <%= product.name %>
+                        </p>
                         <% if (product.discount) { %>
                             <s>$<%= product.price %></s>
-                            <p><%= product.discount %>% OFF</p>
-                            <p><%= product.priceWithDiscount %></p>
-                        <%  } else { %>
-                            <%= product.price %>%
-                         <% } %>
+                            <p>
+                                <%= product.discount %>% OFF
+                            </p>
+                            <p>
+                                <%= product.priceWithDiscount %>
+                            </p>
+                            <% } else { %>
+                                <%= product.price %>%
+                                    <% } %>
                     </div>
                 </div>
-            <% }) %>
+                <% }) %>
         </div>
     </main>
     <!-- Footer -->
@@ -55,4 +58,5 @@
 
     <script src="/js/index.js"></script>
 </body>
+
 </html>

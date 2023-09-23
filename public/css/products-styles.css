@@ -1,0 +1,39 @@
+/* Products styles */
+
+img{
+    width: 270px;
+}
+
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+.product-item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    margin: 30px;
+    position: relative;
+}
+
+.cart-shopping-products-icon{
+    width: 35px;
+    height: 35px;
+    border: 1px solid #37306B ;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #37306B;
+    text-align: center;
+    padding: 8px;
+}
+.cart-shopping-products-icon:hover{
+    border: 1px solid #9E4784 ;
+    color: #9E4784;
+    scale: 1.1;
+
+}

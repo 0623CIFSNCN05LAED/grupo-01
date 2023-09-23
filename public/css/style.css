@@ -139,6 +139,7 @@
     max-height: 120px;
     overflow: hidden;
     margin: 40px 0px;
+    text-align: center;
 }
 .section-product__container{
     display: flex;
