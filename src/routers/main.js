@@ -4,6 +4,7 @@ const router = Router();
 
 // ************ Controller Require ************
 const mainController = require("../controllers/main-controller");
+const userController = require("../controllers/user-controller");
 
 router.get("/", mainController.index);
 
@@ -11,6 +12,7 @@ router.get("/login", mainController.login);
 router.get("/cart", mainController.cart);
 router.get("/details-product", mainController.detailsproduct);
 router.get("/register", mainController.register);
+router.post("/register" , userController.register)
 
 const productRouter = require("./products");
 router.use("/products", productRouter);
