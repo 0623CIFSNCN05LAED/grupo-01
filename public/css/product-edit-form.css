@@ -1,0 +1,76 @@
+/* Styles product-edit-form  */
+
+.form-container{
+    margin: 25px 45px;
+    background-color: #37306B;
+    color: white;
+    padding: 25px 18px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-container__title{
+    color: #FFF;
+    font-size: 18px;
+}
+.form-inputs__container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-inputs__container input, select, textarea{
+    height: 30px;
+    background-color: #d2768587; 
+    border: 1px #fff solid;
+    color: white;
+    border-radius: 5px;
+    padding: 4px;
+}
+textarea{
+    height: 250px;
+    background-color: #d2768587; 
+    border: 1px #fff solid;
+    color: white;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: white;
+}
+.form-container__type-product{
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+.form-container__type-product p{
+    font-size: 18px;
+}
+button {
+
+    width: 140px;
+    height: 30px;
+    border: 2px #D27685 solid;
+    background: rgba(107, 104, 132, 0.55);
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition:  0.3s ease-in-out;
+
+}
+button:hover{
+    background: linear-gradient(131deg, #D27685 0%, rgba(102, 52, 127, 0.55) 100%);
+}
+
+@media (min-width: 768px){
+    .form-container{
+        padding: 25px 70px;
+    }
+}

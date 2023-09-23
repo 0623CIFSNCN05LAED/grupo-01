@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <%- include("partials/head") %>
-    <title>Formulario del Creación de Producto</title>
+        <title>Formulario del Creación de Producto</title>
 </head>
+
 <body>
     <!-- Header and NavBar -->
     <header class="header-container">
@@ -11,54 +13,47 @@
     </header>
 
     <!-- Product Form -->
-    <form action="/products" method="POST" enctype="multipart/form-data" class="formulario">
-        <fieldset>
-            <strong>Formulario de creación de productos</strong>
-            <div class="name">
-                <label for="name"><strong>Nombre del Producto:</strong></label>
-                <input type="text" name="name" id="name" placeholder="Ej: Camiseta blanca" required>
-                <label for="price"><strong>Precio del Producto:</strong></label>
-                <input type="number" name="price" id="price" placeholder="Ej: $ 45000" required>
-            </div>
-            <div class="name">
-                <label for="discount"><strong>Descuento:</strong></label>
-                <input type="number" name="discount" id="discount" placeholder="Ej: Camiseta blanca" required>
-                <label for="price"><strong>Categoria:</strong></label>
-                <select name="category" id="category">
-                    <option value="female">Memale</option>
-                    <option value="male">Male</option>
-                </select>
-            </div>
-<!--             <div class="perfil-user">
-                <div class="perfil"><strong>Nombre del producto</strong></div>
-                <div class="">
-                    <input type="radio" name="buyer" id="buyer" value="comprador" required>Comprador
-                    <input type="radio" name="saler" id="saler" value="comprador" required>Vendedor
-                </div>
-            </div> -->
-            <div class="category"><strong>Clasificación del producto:</strong></div>
-                <div class="group-category">
-                    <input type="checkbox" name="oferta" id="oferta" value="oferta">
-                    <label for="oferta">Oferta</label>
-                </div>
-            <div class="group-category">
+    <form class="form-container" action="/products" method="POST" enctype="multipart/form-data">
+            <h2 class="form-container__title">Estás editando: PRODUCT NAME</h2>
+        <div class="form-inputs__container">
+            <label for="name">Nombre del Producto:</label>
+            <input type="text" name="name" id="name" placeholder="Ej: Camiseta blanca" required>
+            <label for="price">Precio del Producto:</label>
+            <input type="number" name="price" id="price" placeholder="Ej: $ 45000" required>
+            <label for="discount">Descuento:</label>
+            <input type="number" name="discount" id="discount" placeholder="Ej: Camiseta blanca" required>
+            <label for="price">Categoria:</label>
+            <select name="category" id="category">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+            <!--             <div class="perfil-user">
+                    <div class="perfil"><strong>Nombre del producto</strong></div>
+                    <div class="">
+                        <input type="radio" name="buyer" id="buyer" value="comprador" required>Comprador
+                        <input type="radio" name="saler" id="saler" value="comprador" required>Vendedor
+                    </div>
+                </div> -->
+            
+            <h2 class="form-container__title">Clasificación del producto:</h2>
+            <div class="form-container__type-product">
+                <input type="checkbox" name="oferta" id="oferta" value="oferta">
+                <label for="oferta"><p>Oferta</p></label>
                 <input type="checkbox" id="destacado" value="destacado" required>
-                <label for="destacado">Destacado</label>
+                <label for="destacado"><p>Destacado</p></label>
             </div>
-<!--             <div class="photo-user">
+            <!--             <div class="photo-user">
                 <input type="file" name="photo" id="photBtno">
                 <label class="photo" type="button" id="photoBtn"><i class="fa-solid fa-upload"></i> Subir Foto</label>
             </div> -->
-            <div class="group-category">
-                <label for="description">Descripción del producto...</label>
-                <textarea class="form-input" name="description" id="description" ></textarea>
-            </div>
-            <div class="buttons">
-                <button type="submit" href="/home.html">Guardar Producto</button>
-                <button type="reset">Reset</button>
-            </div>
-
-        </fieldset>
+            
+                <h2 class="form-container__title">Descripción del producto...</h2>
+                <textarea class="form-input" name="description" id="description" placeholder="Características del producto"></textarea>
+        </div>
+        <div class="buttons">
+            <button type="submit" href="/home.html">Guardar Producto</button>
+            <button type="reset">Reset</button>
+        </div>
     </form>
     <!-- /Product Form -->
 
@@ -67,4 +62,5 @@
         <%- include("partials/footer") %>
     </footer>
 </body>
+
 </html>
