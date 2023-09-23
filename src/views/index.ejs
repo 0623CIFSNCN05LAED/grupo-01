@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <%- include("partials/head") %>
     <title>Maunganui Tienda</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header and NavBar -->
-    <header class="header-container">
-        <%- include("partials/header") %>
-    </header>
+    <header class="header-container"><%- include("partials/header") %></header>
     <!-- Main Content -->
     <main class="container">
-        <!-- Banner uno principal -->
-        <%- include("partials/banner-one") %>
-        <!-- Vitrina numero 1 (Feautured Products) -->
-        <%- include('partials/featured-Products') %>
-        <!-- Banner dos secundario -->
-        <%- include('partials/banner-two') %>
-        <!-- Vitrina numero 2 ofertas Sale Products-->
-        <%- include('partials/sale-products.ejs') %>
+      <!-- Banner uno principal -->
+      <%- include("partials/banner-one") %>
+      <!-- Vitrina numero 1 (Feautured Products) -->
+      <%- include('partials/featured-Products') %>
+      <!-- Banner dos secundario -->
+      <%- include('partials/banner-two') %>
+      <!-- Vitrina numero 2 ofertas Sale Products-->
+      <%- include('partials/sale-products.ejs') %>
     </main>
-    <!-- Register -->
-    <%- include("partials/register") %>
-     
+
     <!-- Footer -->
-    <footer class="footer">
-        <%- include("partials/footer") %>
-    </footer>
-        
+    <footer class="footer"><%- include("partials/footer") %></footer>
+
     <script src="/js/popup.js"></script>
     <!-- <script src="/js/index.js"></script> -->
-</body>
+  </body>
 </html>

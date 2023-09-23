@@ -4,9 +4,9 @@ const mainController = {
   index: (req, res) => {
     const womenProducts = productService.getWomenProducts();
     const menProducts = productService.getMenProducts();
-    res.render("index",{
+    res.render("index", {
       womenProducts,
-      menProducts
+      menProducts,
     });
   },
   login: (req, res) => {
@@ -18,7 +18,9 @@ const mainController = {
   detailsproduct: (req, res) => {
     res.render("details-product.ejs");
   },
-
+  register: (req, res) => {
+    res.render("register2.ejs");
+  },
 };
 
 module.exports = mainController;
