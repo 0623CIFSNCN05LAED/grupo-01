@@ -1,11 +1,11 @@
-const productService = require("../services/productService")
+const productService = require("../services/productService");
 
 const controller = {
   // Root - Show all products
   index: (req, res) => {
     // Do the magic
     const products = productService.getAllProducts();
-    res.render("products",{ products });
+    res.render("products", { products });
   },
   // Detail - Detail from one product
   detail: (req, res) => {
@@ -28,7 +28,7 @@ const controller = {
       type: req.body.type,
       price: Number(req.body.price),
       discount: Number(req.body.discount),
-      image: req.file?.filename || "default.png",
+      image: req.file.filename || "default.png",
     };
     productService.createProduct(product);
     res.redirect("/products");
@@ -52,7 +52,7 @@ const controller = {
     const id = req.params.id;
     console.log(`deleting product id: ${id}`);
     res.redirect("/products");
-  }
-}
+  },
+};
 
 module.exports = controller;
