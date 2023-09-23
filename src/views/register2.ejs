@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("partials/head") %>
+    <title>Maunganui Tienda</title>
+  </head>
+  <body>
+    <!-- Header and NavBar -->
+    <header class="header-container"><%- include("partials/header") %></header>
+
+    <div class="sectregis">
+      <img
+        class="sectregis-img-mb"
+        src="/images/Banner-register-mobile.jpg"
+        alt="Banner-register-mobile.jpg"
+      />
+      <img
+        class="sectregis-img-dt"
+        src="/images/Banner-formulario-registro.jpg"
+        alt="Banner-register-mobile.jpg"
+      />
+
+      <section class="form-regis" id="popup-register">
+        <h2 class="form-regis-title">REGISTRATE</h2>
+
+        <br />
+
+        <form class="form-imputs" action="/register" method="POST">
+          <label for="nombre y apellido"> Nombre y Apellido: </label>
+          <input
+            class="style-box"
+            type="text"
+            name="nombre y apellido"
+            id="nombre y apellido"
+          />
+
+          <label for="telefono"> teléfono: </label>
+          <input class="style-box" type="tel" name="telefono" id="telefono" />
+
+          <label for="email"> E-mail: </label>
+          <input class="style-box" type="email" name="email" id="email" />
+
+          <label for="contraseña"> Contraseña: </label>
+          <input
+            class="style-box"
+            type="password"
+            name="contraseña"
+            id="contraseña"
+          />
+
+          <label for="repcontraseña"> Repetir contraseña: </label>
+          <input
+            class="style-box"
+            type="password"
+            name="repcontraseña"
+            id="repcontraseña"
+          />
+
+          <div class="df-align-center">
+            <button class="button" type="submit" class="button">GUARDAR</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <footer class="footer"><%- include("partials/footer") %></footer>
+    <script src="/js/popup.js"></script>
+  </body>
+</html>
