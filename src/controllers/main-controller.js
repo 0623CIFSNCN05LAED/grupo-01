@@ -3,9 +3,9 @@ const mainController = {
   index: (req, res) => {
     const inOffers = productService.getItemByOffer();
     const inFeatured = productService.getItemByFeatured();
-    res.render("index",{
+    res.render("index", {
       inOffers,
-      inFeatured
+      inFeatured,
     });
   },
   login: (req, res) => {
@@ -17,7 +17,9 @@ const mainController = {
   detailsproduct: (req, res) => {
     res.render("details-product.ejs");
   },
-
+  register: (req, res) => {
+    res.render("register2.ejs");
+  },
 };
 
 module.exports = mainController;

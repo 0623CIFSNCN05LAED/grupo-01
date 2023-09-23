@@ -1,23 +1,22 @@
 
-img{
-    display: flex;
-    width: 100%;
-    margin: auto;
-    
+.form-regis-title{
+    font-size: 18px;
 }
-.clip{
-    clip-path: inset(150px 0px 150px 0px);
-    margin:-150px 0;
-       }
-
-
+.sectregis {
+    display: flex;
+    justify-content: center;
+    
+    flex-direction: column;
+    width: 270px;
+    margin: 20px auto
+}
 label{
-    font-size: 15px;
+    font-size: 14px;
 }
 .button {
     
     width: 140px;
-    height: 50px;    
+    height: 30px;    
     border: 2px #D27685 solid;
     background: rgba(107, 104, 132, 0.55);
     color: white;
@@ -33,6 +32,7 @@ label{
     background: linear-gradient(131deg, #D27685 0%, rgba(102, 52, 127, 0.55) 100%);
 }
 .style-box{
+    height: 30px;
     background-color: #d2768587; 
     border: 1px #fff solid;
     border-radius: 5px;
@@ -41,61 +41,57 @@ label{
 .df{
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-/* popup*/
-.overlay {
-    background: rgba(0,0,0,.3);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    flex-direction: column;
+    
+   }
+.df-align-center{
     display: flex;
-    align-items: center;
     justify-content: center;
-    visibility: hidden;
+    flex-direction: column;
+    align-items: center;
 }
-.overlay.active {
-    visibility: visible;
+
+.form-imputs{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+       gap: 8px;
 }
-.popup-register {
-    background: #37306B;
-    margin: auto;
-    max-width: 390px;
-    box-shadow: 5px 12px 30px #66347F;
-    padding-top: 20px ;
-    padding-left: 15px;
-    padding-right: 15px;
+.form-regis {
+    height:500px ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+     background: #37306B;
+    padding: 10px 20px;
+    
     color: white;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
-opacity: 0;
-}
-.popup-register .btn-cerrar-popup{
-    font-size: 16px;
-    line-height: 16px;
-    display: block;
-    text-align: right;
-    color:#fff;
-    transition: .3s ease all;
-}
-.popup-register .btn-cerrar-popup:hover{
-    color: #D27685;
-}
-form p {display: flex;
-    flex-direction: column;
+opacity: 3;
 
 }
+.sectregis-img-dt{
+    display: none;
+}
 
-.popup-register.active { opacity: 1;}
+
 
 /* tablet*/
-@media (min-width:520px){
-.md-fb{ display: flex;
+@media (min-width:768px){
+.sectregis{ 
     flex-direction: row;
+    
+}
+.sectregis-img-mb{
+  display: none;  
+}
+.sectregis-img-dt{
+    display: block;
+    clip-path: inset(0px 0px 145px 0px);
+    width: 430px;
+    border-radius: 5px 5px 5px 5px;
 
-    }
 }
 
-
+}
