@@ -15,7 +15,12 @@ const mainController = {
     res.render("cart.ejs");
   },
   detailsproduct: (req, res) => {
-    res.render("details-product.ejs");
+    const inOffers = productService.getItemByOffer();
+    const inFeatured = productService.getItemByFeatured();
+    res.render("details-product.ejs", {
+      inOffers,
+      inFeatured
+    });
   },
   register: (req, res) => {
     res.render("register2.ejs");
