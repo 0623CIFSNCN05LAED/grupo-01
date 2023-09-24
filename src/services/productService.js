@@ -54,14 +54,14 @@ const productServices = {
     const products = db.products.findAll().filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
     return formatProductsPrices(products);
   },
-  createProduct: (product) => {
-    
+  createItem: (product) => {
+    db.products.create(product);
   },
-  updateProduct: (id,product) => {
-
+  updateItem: (id,product) => {
+    db.products.update(id,product);
   },
-  deleteProduct: (id) => {
-
+  deleteItem: (id) => {
+    db.products.delete(id);
   }
 }
 

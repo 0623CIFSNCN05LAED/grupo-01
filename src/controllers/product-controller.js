@@ -32,9 +32,10 @@ const controller = {
       type: req.body.type,
       price: Number(req.body.price),
       discount: Number(req.body.discount),
-      image: req.file.filename || "default.png",
+      size:req.body.size,
+      image: req.file? req.filename : "default.png"
     };
-    productService.createProduct(product);
+    productService.createItem(product);
     res.redirect("/products");
   },
 
@@ -47,14 +48,17 @@ const controller = {
   // Update - Method to update
   update: (req, res) => {
     const product = req.body;
-    console.log(product);
+    const id = req.params.id;
+    const image = req.file ? req.file.filename : productService.getProduct(id).image;
+    product.image = image;
+    productService.updateItem(id,product);
     res.redirect("/products");
   },
 
   // Delete - Delete one product from DDBB
   destroy: (req, res) => {
     const id = req.params.id;
-    console.log(`deleting product id: ${id}`);
+    productService.deleteItem(id);
     res.redirect("/products");
   },
 };

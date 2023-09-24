@@ -10,7 +10,7 @@ module.exports = {
   },
   saveProduct: function (products) {
     const productsFilePath = path.join(__dirname, "./productsDataBase.json");
-    fs.writeFileSync(productsFilePath,JSON.stringify("",null,2));
+    fs.writeFileSync(productsFilePath,JSON.stringify(products,null,2));
   },
   findAll: function () {
     return this.getProducts();
@@ -29,18 +29,22 @@ module.exports = {
     this.saveProduct(products);
   },
   update: function (id, product) {
-    console.log(`Updating product ${product.name}`);
     //cargo todos los productos
-
+    const products = this.getProducts();
     //busco un producto por su id
-
+    const editProduct =  products.find((product) => product.id == id);
     //piso todas sus propiedades
-
+    //Object.assign() copia todas las propiedades enumerables de uno o más objetos fuente a un objeto destino.
+    Object.assign(editProduct,product);
     //guardo los productos
-    
+    this.saveProduct(products);
   },
   delete : function (id) {
-    console.log(`Deleting product with id ${id}`);
+    //cargo todos los productos
+    const products = this.getProducts();
+    //Devuelde todos los productos menos 1
+    const notEliminated = products.filter(product => product.id !== id);
+    //Guardo los productos que se filtraron 
+    this.saveProduct(notEliminated);
   }
 }
-

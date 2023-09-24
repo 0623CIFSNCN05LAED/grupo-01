@@ -35,18 +35,20 @@
         </section>
         <h6>Please select your size:</h6>
         <div class="container-product__size-buttons">
-            <button class="size-button">XS</button>
-            <button class="size-button">S</button>
-            <button class="size-button">M</button>
-            <button class="size-button">L</button>
-            <button class="size-button">XL</button>
+            <button class="size-button" >XS</button>
+            <button class="size-button" >S</button>
+            <button class="size-button" >M</button>
+            <button class="size-button" >L</button>
+            <button class="size-button" >XL</button>
         </div>
         <div class="container-product__shop-buttons">
             <button class="shop-button">COMPRAR AHORA</button>
         </div>
         <div class="container-product__admin-buttons">
             <button onclick="window.location.href='/products/edit/<%= product.id %>'" class="admin-button-edit">Editar</button>
-            <button class="admin-button-delete">Eliminar</button>
+            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                <button  class="admin-button-delete">Eliminar</button>
+            </form>
         </div>
     </div>
 </div>

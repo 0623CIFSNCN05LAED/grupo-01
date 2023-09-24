@@ -3,7 +3,7 @@
 
 <head>
     <%- include("partials/head") %>
-        <title>Formulario del Creación de Producto</title>
+        <title>Formulario de Edición de Producto</title>
 </head>
 
 <body>
@@ -13,19 +13,20 @@
     </header>
 
     <!-- Product Form -->
-    <form class="form-container" action="/products" method="POST" enctype="multipart/form-data">
-            <h2 class="form-container__title">Estás editando: PRODUCT NAME</h2>
+    <form class="form-container" action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h2 class="form-container__title">Estás editando: <%= product.name %></h2>
         <div class="form-inputs__container">
             <label for="name">Nombre del Producto:</label>
-            <input type="text" name="name" id="name" placeholder="Ej: Camiseta blanca" required>
+            <input type="text" name="name" id="name" placeholder="Ej: Camiseta blanca" value="<%= product.name %>" required>
             <label for="price">Precio del Producto:</label>
-            <input type="number" name="price" id="price" placeholder="Ej: $ 45000" required>
+            <input type="number" name="price" id="price" placeholder="Ej: $ 45000" required value="<%= product.price%>">
             <label for="discount">Descuento:</label>
-            <input type="number" name="discount" id="discount" placeholder="Ej: Camiseta blanca" required>
-            <label for="price">Categoria:</label>
+            <input type="number" name="discount" id="discount" placeholder="Ej:50%" required value="<%= product.discount %>">
+            <label for="category">Categoria:</label>
             <select name="category" id="category">
-                <option value="female">Female</option>
-                <option value="male">Male</option>
+                <option value="default">Elegí</option>
+                <option value="women" <%= (product.category == 'women') ? "selected" : " " %>>MUJER</option>
+                <option value="men" <%= (product.category == 'men') ? "selected" : " " %>>HOMBRE</option>
             </select>
             <!--             <div class="perfil-user">
                     <div class="perfil"><strong>Nombre del producto</strong></div>
@@ -34,12 +35,11 @@
                         <input type="radio" name="saler" id="saler" value="comprador" required>Vendedor
                     </div>
                 </div> -->
-            
             <h2 class="form-container__title">Clasificación del producto:</h2>
             <div class="form-container__type-product">
-                <input type="checkbox" name="oferta" id="oferta" value="oferta">
+                <input type="checkbox" name="type" id="oferta" value="oferta" <%= (product.type == 'oferta') ? "checked" : " " %>>
                 <label for="oferta"><p>Oferta</p></label>
-                <input type="checkbox" id="destacado" value="destacado" required>
+                <input type="checkbox" name="type" id="destacado" value="destacado" <%= (product.type  == 'destacado') ? "checked" : " " %>>
                 <label for="destacado"><p>Destacado</p></label>
             </div>
             <!--             <div class="photo-user">
@@ -48,10 +48,10 @@
             </div> -->
             
                 <h2 class="form-container__title">Descripción del producto...</h2>
-                <textarea class="form-input" name="description" id="description" placeholder="Características del producto"></textarea>
+                <textarea class="form-input" name="description" id="description" placeholder="Características del producto"><%= product.description %></textarea>
         </div>
         <div class="buttons">
-            <button type="submit" href="/home.html">Guardar Producto</button>
+            <button>Guardar Producto</button>
             <button type="reset">Reset</button>
         </div>
     </form>
