@@ -14,7 +14,7 @@
 
     <!-- Product Form -->
     <form class="form-container" action="/products" method="POST" enctype="multipart/form-data">
-            <h2 class="form-container__title">Formulario de CREACIÓN de producto</h2>
+        <h2 class="form-container__title">Formulario de CREACIÓN de producto</h2>
         <div class="form-inputs__container">
             <label for="name">Nombre del Producto:</label>
             <input type="text" name="name" id="name" placeholder="Ej: Camiseta blanca" required>
@@ -24,8 +24,9 @@
             <input type="number" name="discount" id="discount" placeholder="Ej: Camiseta blanca" required>
             <label for="category">Categoria:</label>
             <select name="category" id="category">
-                <option value="women">Female</option>
-                <option value="men">Male</option>
+                <option value="default">-----</option>
+                <option value="women">MUJER</option>
+                <option value="men">HOMBRE</option>
             </select>
             <!--             <div class="perfil-user">
                     <div class="perfil"><strong>Nombre del producto</strong></div>
@@ -37,21 +38,21 @@
             
             <h2 class="form-container__title">Clasificación del producto:</h2>
             <div class="form-container__type-product">
-                <input type="checkbox" name="oferta" id="oferta" value="oferta">
+                <input type="checkbox" name="type" id="oferta" value="oferta">
                 <label for="oferta"><p>Oferta</p></label>
-                <input type="checkbox" name="destado" id="destacado" value="destacado" required>
+                <input type="checkbox" name="type" id="destacado" value="destacado">
                 <label for="destacado"><p>Destacado</p></label>
             </div>
-                        <div class="photo-user">
-                <input type="file" name="image" id="photBtno">
-                <label class="photo" type="button" for="image" id="photoBtn"><i class="fa-solid fa-upload"></i> Subir Foto</label>
+                    <div class="photo-user">
+                    <input type="file" name="image" id="image">
+                    <label class="photo" for="image" id="photoBtn"><i class="fa-solid fa-upload"></i> Subir Foto</label>
             </div>
             
                 <h2 class="form-container__title">Descripción del producto...</h2>
                 <textarea class="form-input" name="description" id="description" placeholder="Características del producto"></textarea>
         </div>
         <div class="buttons">
-            <button type="submit" href="/home.html">Guardar Producto</button>
+            <button>Guardar Producto</button>
             <button type="reset">Reset</button>
         </div>
     </form>

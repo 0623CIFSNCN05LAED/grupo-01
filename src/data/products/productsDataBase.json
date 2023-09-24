@@ -40,10 +40,8 @@
     "image": "producto-4-vitrina-1.jpg",
     "name": "Bermuda Elwin",
     "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
-    "category": "man",
-    "type": [
-      "oferta"
-    ],
+    "category": "men",
+    "type": "oferta",
     "price": "8142",
     "discount": "42",
     "color": "Puce",
@@ -102,10 +100,8 @@
     "image": "producto-4-vitrina-2.jpg",
     "name": "Remera Findlay",
     "description": "Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
-    "category": "man",
-    "type": [
-      "destacado"
-    ],
+    "category": "women",
+    "type": "destacado",
     "price": "6336",
     "discount": "42",
     "color": "Red",
@@ -116,10 +112,8 @@
     "image": "producto-5-vitrina-2.jpg",
     "name": "Campera Parry",
     "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-    "category": "man",
-    "type": [
-      "destacado"
-    ],
+    "category": "women",
+    "type": "destacado",
     "price": "3543",
     "discount": "22",
     "color": "Blue",

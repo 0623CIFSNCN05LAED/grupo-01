@@ -14,7 +14,7 @@ const controller = {
     const product = productService.getFormattedProduct(id);
     res.render("detail-product",{
       inOffers,
-      product 
+      product
     });
   },
 
@@ -32,8 +32,8 @@ const controller = {
       type: req.body.type,
       price: Number(req.body.price),
       discount: Number(req.body.discount),
-      size:req.body.size,
-      image: req.file? req.filename : "default.png"
+      image: req.file ? req.file.filename : "default.png",
+      //size:req.body.size,
     };
     productService.createItem(product);
     res.redirect("/products");

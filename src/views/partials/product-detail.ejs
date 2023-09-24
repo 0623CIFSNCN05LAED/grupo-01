@@ -5,12 +5,12 @@
 </div>
 <div class="container-product">
     <div class="container-product__img">
-        <img src="/images/products/<%= product.image %>  " alt="producto-1-vitrina-1.jpg">
+        <img src="/images/products/<%= product.image %>  " alt="<%= product.name %>">
     </div>
     <div class="container-product__info">
         <h3><%= product.name %></h3>
         <p><%= product.price %></p>
-        <h4>Color: Yellow</h4>
+        <h4>Color : <%= product.color %></h4>
         <section class='container-product__colors'>
             <svg xmlns="http://www.w3.org/2000/svg" width="128" height="25" viewBox="0 0 128 25" fill="none">
                 <rect width="24.2745" height="24.2745" rx="12.1373" fill="#FDBC41" fill-opacity="0.5" />
