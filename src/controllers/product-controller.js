@@ -12,7 +12,7 @@ const controller = {
     const inOffers = productService.getItemByOffer();
     const id = req.params.id;
     const product = productService.getFormattedProduct(id);
-    res.render("detail-product",{
+    res.render("details-product",{
       inOffers,
       product
     });

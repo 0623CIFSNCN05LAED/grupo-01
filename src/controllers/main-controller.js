@@ -14,17 +14,6 @@ const mainController = {
   cart: (req, res) => {
     res.render("cart.ejs");
   },
-  detailsproduct: (req, res) => {
-    const inOffers = productService.getItemByOffer();
-    const inFeatured = productService.getItemByFeatured();
-    const id = req.params.id;
-    const product = productService.getFormattedProduct(id)
-    res.render("details-product", {
-      inOffers,
-      inFeatured,
-      product
-    });
-  },
   register: (req, res) => {
     res.render("register2.ejs");
   },
