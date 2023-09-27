@@ -1,16 +1,18 @@
 <div class="header-logo">
   <a href="/"
-    ><img src="/images/logo-desktop.png" alt="logo-maunganui" srcset=""
+    ><img class="header-logo__desktop" src="/images/logo-desktop.png" alt="logo-maunganui" srcset=""
+    ><img class="header-logo__mobile" src="/images/logo-M.png" alt="logo-maunganui" srcset=""
   /></a>
 </div>
 <nav class="header-container__navbar">
-  <form action="/search" method="GET">
+  <form class="header-form__container" action="/search" method="GET">
     <input
       type="text"
       name="keywords"
       placeholder="Buscá productos por nombre, marcas o palabras clave"
+      class="style-box"
     />
-    <button type="submit" class="bg-white b-none">
+    <button type="submit" class="header-search__button">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </form>
