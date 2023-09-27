@@ -1,8 +1,16 @@
-
-{
-  "id": "8897c012-14e8-404a-8eb9-2938e6e27e38",
-  "name": "adadsa",
-  "email": "dupuyalejandro04@gmail.com",
-  "password": "1234",
-  "phone": "1223456"
-}
+[
+  {
+    "id": "f377b2cf-82a2-4830-a1ec-17cb437ecff9",
+    "name": "josesito",
+    "email": "dupuyalejandro04@gmail.com",
+    "password": "1234",
+    "phone": "1234"
+  },
+  {
+    "id": "797d87ab-af6b-469e-aca5-1b9c24098919",
+    "name": "josesito",
+    "email": "lala@lala.com",
+    "password": "asd",
+    "phone": "1234"
+  }
+]
