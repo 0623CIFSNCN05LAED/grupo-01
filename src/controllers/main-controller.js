@@ -8,6 +8,11 @@ const mainController = {
       inFeatured,
     });
   },
+  search: (req, res) => {
+    const keywords = req.query.keywords;
+    const foundProducts = productService.searchProducts(keywords);
+    res.render("results", { foundProducts });
+  },
   login: (req, res) => {
     res.render("login");
   },

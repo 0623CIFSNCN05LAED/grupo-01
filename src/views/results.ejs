@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("partials/head") %>
+    <title>Search Result</title>
+  </head>
+  <body>
+    <header class="header-container"><%- include("partials/header") %></header>
+    <div>
+      <div>
+        <h2 class="section-title__container">Resultados de la búsqueda:</h2>
+      </div>
+
+      <div class="section-product__container">
+        <% if(foundProducts.length == 0) {%>
+        <div>
+          <h2 style="color: tomato">
+            No hay productos que coincidan con esa búsqueda
+          </h2>
+        </div>
+        <% } else {%> <% foundProducts.forEach(product => { %> <%-
+        include("partials/product-card", {product}) %> <% }) %> <% } %>
+      </div>
+    </div>
+    <footer class="footer"><%- include("partials/footer") %></footer>
+  </body>
+</html>

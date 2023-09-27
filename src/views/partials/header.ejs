@@ -4,6 +4,17 @@
   /></a>
 </div>
 <nav class="header-container__navbar">
+  <form action="/search" method="GET">
+    <input
+      type="text"
+      name="keywords"
+      placeholder="Buscá productos por nombre, marcas o palabras clave"
+    />
+    <button type="submit" class="bg-white b-none">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
+
   <ul class="header-container__nav-links">
     <li><a href="#">Mujer</a></li>
     <li><a href="#">Hombres</a></li>

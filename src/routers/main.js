@@ -7,7 +7,7 @@ const mainController = require("../controllers/main-controller");
 const userController = require("../controllers/user-controller");
 
 router.get("/", mainController.index);
-
+router.get("/search", mainController.search);
 router.get("/login", mainController.login);
 router.post("/login", userController.login);
 router.get("/cart", mainController.cart);

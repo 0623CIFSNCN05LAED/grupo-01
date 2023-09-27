@@ -83,6 +83,7 @@
 
 
 
+
 /* Main styles */
 
 
@@ -155,6 +156,13 @@
     font-weight: 600;
     line-height: normal;
     letter-spacing: 1.2px;
+}
+
+.row-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
 }
 
 .section-product{
