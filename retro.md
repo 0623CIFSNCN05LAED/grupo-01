@@ -1,25 +1,24 @@
 ## Retrospectiva
 
 ## Comenzar hacer:
-- Carpeta Data.
-- Fijar dailies.
-- Páginas creación, edición y productos.
-- Agregar dependencias multer y uuid
+- Estructura de archivos y directorios de udsuarios.
+- Completar en la funcionalidad la carga de archivos para register.
+- Crear formulario login funcional con sus validaciones.
+- Implementación de cookies para el login.
+- Rutas de acceso con o sin login(Userguard)
+
   
 ## Mas de:
-- Mantener el trello actualizado con cada cambio que se va realizando en el proyecto.
-- Desarrollo de las nuevas páginas.
-  
-## Seguir haciendo:
-- Ramas por tareas
-- Agregar más imágenes y especificaciones para los productos.
-- Actualización de controllers y routes
-- Register, Login y Cart shopping en tipo modal o pop up.
+- Agregar comentario al trello para entender el avance ( como un daily).
+- Review general antes del cierre de sprint
+
+  ## Seguir haciendo:
+- Seguir con los campos pendientes  del json del form en register (archivos png,jpg).
+
 
 ## Menos de:
-- No consultar dudas.
-- No axcederse con tareas complejas y consultar con los demás de ser necesario.
-- Register como pop up y adecuarlo a una vista.
+- No comunicarse dejando pasar mucho tiempo
+- Descuidar el avance de tareas en trello.
 
 ## Dejar de hacer:
-Todas las novedades solo a través de discor, ya que disponemos de herramientas más adecuadas y ordenadas como trello.
+Tareas complejas de forma individual.

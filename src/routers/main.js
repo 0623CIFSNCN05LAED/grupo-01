@@ -11,7 +11,6 @@ router.get("/", mainController.index);
 router.get("/login", mainController.login);
 router.post("/login", userController.login);
 router.get("/cart", mainController.cart);
-router.get("/details-product/:id", mainController.detailsproduct);
 router.get("/register", mainController.register);
 router.post("/register", userController.register);
 
