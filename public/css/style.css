@@ -54,9 +54,48 @@
 .header-form__container input{
     width: 90px;
 }
+.style-input-navbar{
+    height: 32px;
+    background-color: #fff; 
+border-top: 6px solid white;
+border-bottom: 4px solid white;
+border-left: 5px solid white;
+border-right: 5px solid white;
+    border-radius: 15px 0px 0px 15px;
+ 
+    
+    
+    color: #000;
+
+}
+.style-input-navbar::placeholder{
+    color: #000;
+    padding-left: 5px;
+    
+}
+
+button:hover{
+    background: linear-gradient(131deg, #D27685 0%, rgba(102, 52, 127, 0.55) 100%);
+}
 .header-search__button{
     width: 40px;
-    height: 32px;
+    height: 32px; 
+    border: 2px white solid;
+    margin-left: -5px;
+    
+    
+    border-radius: 0px 15px 15px 0px;
+    background-color:rgba(255, 255, 255, 0.305);
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 16px;
+     font-size: 15px;
+    cursor: pointer;
+    transition:  0.3s ease-in-out;
+}
+
+.header-search__button:hover{
+    background: linear-gradient(131deg, #D27685 0%, rgba(102, 52, 127, 0.55) 100%);
 }
 .header-container__nav-links{
     display: none;
