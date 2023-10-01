@@ -2,7 +2,7 @@ const { json } = require("express");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
-const { type } = require("os");
+const { type, userInfo } = require("os");
 
 const controller = {
   index: (req, res) => {
@@ -55,7 +55,7 @@ const controller = {
     }
   },
   profileUser: (req, res) => {
-    res.render();
+    res.render("../views/user-profile.ejs");
   },
   deleteUser: (req, res) => {
     res.render();
