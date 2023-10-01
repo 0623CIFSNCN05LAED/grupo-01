@@ -1,1 +1,68 @@
-<h1>hola</h1>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("partials/head") %>
+        <title>Search Result</title>
+</head>
+
+<body>
+    <header class="header-container"><%- include("partials/header") %></header>
+    <main class="main-container">
+        <div class="breadcrumb">
+            <a href="/">Perfil del usuario: </a> /
+            <span>Nombre<%= /* user.name */ %></span>
+        </div>
+        <div class="user-info__container">
+            <section class="user-info__leftColumn">
+                <h2>Perfil de usuario</h2>
+                <ul>
+                    <li><a href="#">Mis compras</a></li>
+                    <li><a href="#">Carrito</a></li>
+                    <li><a href="#">Medios de pago</a></li>
+                    <li><a href="#">Editar mi perfil</a></li>
+                </ul>
+                <hr>
+                <button><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #ffffff;"></i>
+                    Salir</button>
+            </section>
+            <section class="user-info__rightColumn">
+                <div class="user-info__edition-1">
+                    <h2>Perfil de usuario</h2>
+                    <p class="breadcrumb">Edita tu información personal:</p>
+                </div>
+                <div class="user-info__edition-2">
+                        <div class="photo-user">
+                            <img src="/images/products/default.png" alt="">
+                            <input class="input-profile__img" type="file" name="image" id="image">
+                        </div>
+                    <section class="info-user__profile">
+                            <form action="">
+                                <label for="name">Nombre</label>
+                                <input type="text" name="name">
+                                <label for="secondName">Apellido</label>
+                                <input type="text" name="secondName">
+                                <button>Actualizar</button>
+                            </form>
+                    </section>
+                </div>
+                <div class="user-info__edition-3">
+                    <form action="">
+                        <label for="email">Email</label>
+                        <input type="email" name="email">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password">
+                        <label for="phone">Telefono</label>
+                        <input type="tel" name="phone">
+                        <button>Actualizar</button>
+                        <button>Actualizar telefono</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        </div>
+    </main>
+    <footer class="footer"><%- include("partials/footer") %></footer>
+</body>
+
+</html>
