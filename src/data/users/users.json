@@ -1,16 +1,12 @@
 [
   {
-    "id": "f377b2cf-82a2-4830-a1ec-17cb437ecff9",
-    "name": "josesito",
+    "id": "3cb0ab82-8b84-4c70-94c2-b7b5b4af6170",
+    "first_name": "Alejandro",
+    "last_name": "Dupuy",
+    "phone": "11522968475",
     "email": "dupuyalejandro04@gmail.com",
-    "password": "1234",
-    "phone": "1234"
-  },
-  {
-    "id": "797d87ab-af6b-469e-aca5-1b9c24098919",
-    "name": "josesito",
-    "email": "lala@lala.com",
-    "password": "asd",
-    "phone": "1234"
+    "password": "123456",
+    "repassword": "123456",
+    "avatar": "default.png"
   }
 ]
