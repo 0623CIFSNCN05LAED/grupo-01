@@ -4,12 +4,10 @@ const router = Router();
 
 // ************ Controller Require ************
 const mainController = require("../controllers/main-controller");
-const userController = require("../controllers/user-controller");
-
+// ************ Routes of Index ************
 router.get("/", mainController.index);
 router.get("/search", mainController.search);
 router.get("/cart", mainController.cart);
-router.get("/user-profile", userController.profileUser);
 
 const productRouter = require("./products");
 router.use("/products", productRouter);

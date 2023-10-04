@@ -35,4 +35,5 @@ router.put("/:id", upload.single("image"), productsController.update);//Acción 
 
 /*** DELETE ONE PRODUCT***/
 router.delete("/:id", productsController.destroy);
+
 module.exports = router;

@@ -52,4 +52,4 @@ module.exports = {
     //Guardo los usuarios que se filtraron 
     this.saveUser(notEliminated);
   }
-}
+};

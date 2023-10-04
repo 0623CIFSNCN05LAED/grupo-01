@@ -32,7 +32,7 @@ router.get("/login", userController.login); //Formulario de LOGIN
 
 
 // ************** User Profile Form ****************
-router.get("/profile/:id", userController.profileUser); //Perfil de Usuario
+router.get("/user-profile", userController.profileUser); //Perfil de Usuario
 
 // ************** Password Reset Form ****************
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña

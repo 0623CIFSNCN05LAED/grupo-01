@@ -6,10 +6,11 @@ const controller = {
     res.render();
   },
   show: (req,res)=>{
+    //Vista del formulario de registro
     res.render("register");
   },
   register: (req, res) => {
-    // Extract user information from the form
+    //Capturo la información del newUser del formulario
     console.log(req.body);
     const user = {
       first_name : req.body.first_name,
@@ -20,7 +21,12 @@ const controller = {
       repassword : req.body.password_re,
       avatar: req.file ? req.file.filename : "default.png"
     };
-    // Save user information in a JSON file
+    //Verifico si este email se encuetra en DDBB
+    let checkUser = userService.findByEmail('email',req.body.email);
+    if (checkUser) {
+      return res.send('Este email ya esta registrado');
+      // return res.render("/users/register");
+    }
     if (user.password !== user.repassword) {
       return res.redirect("/users/register");
     } else {
@@ -32,7 +38,7 @@ const controller = {
     res.render("login")
   },
   profileUser: (req, res) => {
-    res.render("../views/user-profile.ejs");
+    res.render("user-profile");
   },
   deleteUser: (req, res) => {
     res.render();
