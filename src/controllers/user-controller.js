@@ -45,16 +45,17 @@ const controller = {
    },
   accessLogin: (req, res) => {
     //Verifico si este email se encuetra en DDBB
-    const checkUser = userService.findByEmail('email',req.body.email);
-    const checkPwd = bcrypt.compareSync(req.body.password,checkUser.password);
-    if (!checkUser) {
+    const findUser = userService.findByEmail('email',req.body.email);
+    if (!findUser) {
       return res.send('Este email no se encuentra registrado');
-    } else if (!checkPwd) {
-      return res.send('Los datos son incorrectos. Verifique y vuelva a intentar')
     }
-    if (checkUser && checkPwd) {
-      return res.redirect('user-profile')
+    // Verifico que la password (DDBB) corresponda con la que viene por request
+    const checkPwd = bcrypt.compareSync(req.body.password,findUser.password);
+    if (!checkPwd) {
+      return res.send('Los datos son incorrectos. Verifique y vuelva a intentar');
     }
+    return res.redirect('user-profile');
+    // return res.send(findUser);
   },
   profileUser: (req, res) => {
     // Vista de formulario del usuario perfil
