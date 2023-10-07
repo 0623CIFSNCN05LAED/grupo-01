@@ -1,17 +1,15 @@
 .main-container{
-    border: 1px solid red;
     width: auto;
-    height: 1000px;
     padding: 20px;
 }
 .user-info__container{
-    border: 1px solid blue;
     padding: 15px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 25px;
 }
 .user-info__leftColumn{
-    border: 1px solid green;
     padding: 15px;
     background-color: var(--violet);
     color: white;
@@ -19,39 +17,126 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    border-radius: 8px;
+    align-items: center;
 }
 .user-info__edition-2{
-    padding: 10px;
+    padding: 10px 0px;
     border-radius: 15px;
     gap: 15px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
 }
-.info-user__profile{
 
+
+.user-info__edition-3{
+    color: white;
     background-color: var(--violet);
+    border-radius: 8px;
+    padding: 25px 15px;
 }
-.photo-user{
-    background-color: var(--violet);
+.user-info__edition-3 section{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+}
+.user-info__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+.user-info_{
+    display: flex;
+    flex-direction: column;
+}
+.info-user__profile{
+    border-radius: 8px;
+    padding: 25px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--violet);
+    gap: 10px;
+}
+.info-user__profile div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 200px;
+}
+.info-user__profile div button{
+margin-top: 27px;
+}
+.photo-user{
+    padding: 20px 30px;
+    border-radius: 8px;
+    background-color: var(--violet);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     gap: 5px;
+    text-align: center;
+}
+
+.photo-user::before{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.photo-user div{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-image: url('/images/products/default.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+}
+.photo-user input[type="file"]{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
 }
 .user-info__leftColumn ul{
     display: flex;
     flex-direction: column;
     gap: 25px;
-    padding-left: 25px ;
 }
 .user-info__leftColumn ul li a{
     cursor: pointer;
     color: white;
 }
+.user-info__leftColumn hr{
+    width: 100%;
+}
 .user-info__rightColumn{
-    border: 1px solid violet;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
 }
 .photo-user img{
-    width: 100px;
-    height: 100px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
+}
+/* Responsive */
+@media (min-width: 1024px){
+    .user-info__container, .user-info__edition-2, .user-info__form{
+        flex-direction: row;
+    }
+    .user-info__edition-3 section{
+        flex-direction: row;
+    }
 }

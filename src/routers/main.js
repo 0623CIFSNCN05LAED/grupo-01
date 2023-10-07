@@ -14,6 +14,7 @@ router.get("/cart", mainController.cart);
 router.get("/register", mainController.register);
 router.post("/register", userController.register);
 router.get("/user-profile", userController.profileUser);
+router.get("/admin-profile", userController.profileAdmin);
 
 const productRouter = require("./products");
 router.use("/products", productRouter);
