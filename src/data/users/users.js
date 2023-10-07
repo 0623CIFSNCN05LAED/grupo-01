@@ -12,18 +12,22 @@ module.exports = {
     const usersFilePath = path.join(__dirname, "./users.json");
     fs.writeFileSync(usersFilePath,JSON.stringify(users,null,2));
   },
+  /* Me trae todos los usurios */
   findAll: function () {
     return this.getUsers();
   },
+  /* Busca usuario por id */
   findById: function (id) {
     const user = this.getUsers().find((user) => user.id == id);
     return user;
   },
+  /* Busca por campo */
   findByField: function (field,text) {
     let allUsers = this.findAll();
     let userObtain = allUsers.find(user => user[field] === text);
     return userObtain;
   },
+  /* Crea un nuevo usuario (newUser) */
   create: function (user) {
     const users = this.getUsers();
     const newUser = {
@@ -33,6 +37,7 @@ module.exports = {
     users.push(newUser);
     this.saveUser(users);
   },
+  /* Actualiza los datos del usuario, buscando el usuario por su id */
   update: function (id, user) {
     //cargo todos los usuarios
     const users = this.getUsers();
@@ -44,6 +49,7 @@ module.exports = {
     //guardo los usuarios
     this.saveUser(users);
   },
+  /* Elimina un usuario */
   delete : function (id) {
     //cargo todos los usuarios
     const users = this.getUsers();

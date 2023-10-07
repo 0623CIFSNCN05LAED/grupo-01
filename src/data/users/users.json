@@ -1,12 +1,11 @@
 [
   {
-    "id": "3cb0ab82-8b84-4c70-94c2-b7b5b4af6170",
+    "id": "17bf210b-6ae6-4923-a6ec-981a9259f273",
     "first_name": "Alejandro",
     "last_name": "Dupuy",
-    "phone": "11522968475",
+    "phone": "1234567890",
     "email": "dupuyalejandro04@gmail.com",
-    "password": "123456",
-    "repassword": "123456",
+    "password": "$2a$10$oPuNO4MvfOGdcbJAnt8OAeFpLPucL0mAVRICQDojGDkRZkrpj5o52",
     "avatar": "default.png"
   }
 ]

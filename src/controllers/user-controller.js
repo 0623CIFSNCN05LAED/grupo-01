@@ -1,4 +1,5 @@
 const userService = require("../services/userService");
+const bcrypt = require("bcryptjs");
 const { type, userInfo } = require("os");
 
 const controller = {
@@ -17,28 +18,50 @@ const controller = {
       last_name : req.body.last_name,
       phone : req.body.phone,
       email : req.body.email,
-      password : req.body.password,
-      repassword : req.body.password_re,
+      password : bcrypt.hashSync(req.body.password, 10),
       avatar: req.file ? req.file.filename : "default.png"
     };
     //Verifico si este email se encuetra en DDBB
     let checkUser = userService.findByEmail('email',req.body.email);
     if (checkUser) {
-      return res.send('Este email ya esta registrado');
-      // return res.render("/users/register");
-    }
-    if (user.password !== user.repassword) {
+      console.log(checkUser)
+      return res.send(
+        "Este email ya esta registrado"
+      );
+    } else if (req.body.password != req.body.password_re) {
+      return res.send(
+        "Las contraseñas no coinciden"
+      );
+    } else if (!bcrypt.compareSync(req.body.password, user.password)) {
       return res.redirect("/users/register");
     } else {
       userService.createUser(user);
       return res.redirect("/users/login");
     }
   },
-  login: (req, res) => {
-    res.render("login")
+   login: (req,res)=>{
+    //Vista del formulario del login
+    res.render("login"); 
+   },
+  accessLogin: (req, res) => {
+    //Verifico si este email se encuetra en DDBB
+    const checkUser = userService.findByEmail('email',req.body.email);
+    const checkPwd = bcrypt.compareSync(req.body.password,checkUser.password);
+    if (!checkUser) {
+      return res.send('Este email no se encuentra registrado');
+    } else if (!checkPwd) {
+      return res.send('Los datos son incorrectos. Verifique y vuelva a intentar')
+    }
+    if (checkUser && checkPwd) {
+      return res.redirect('user-profile')
+    }
   },
   profileUser: (req, res) => {
+    // Vista de formulario del usuario perfil
     res.render("user-profile");
+  },
+  updateUserData:(req,res) => {
+
   },
   deleteUser: (req, res) => {
     res.render();

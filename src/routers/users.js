@@ -29,13 +29,15 @@ router.post("/register",userController.register); //Acción de creación (donde 
 
 // **************** User Login Form ****************
 router.get("/login", userController.login); //Formulario de LOGIN
-
-
+router.post("/login",userController.accessLogin); // Acción para acceder a la cuenta 
 // ************** User Profile Form ****************
 router.get("/user-profile", userController.profileUser); //Perfil de Usuario
 
-// ************** Password Reset Form ****************
+// ************** Password Change Form ****************
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
+
+// ************** Password Reset Form ****************
+router.get("/forgot-password", userController.profileUser); // Formulario de reset de contraseña
 
 // ************** Delete one user ******************
 router.delete("/:id", userController.deleteUser); //Ación de borrado
