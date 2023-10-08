@@ -7,5 +7,14 @@
     "email": "dupuyalejandro04@gmail.com",
     "password": "$2a$10$oPuNO4MvfOGdcbJAnt8OAeFpLPucL0mAVRICQDojGDkRZkrpj5o52",
     "avatar": "default.png"
+  },
+  {
+    "id": "014a9a27-b40f-4d83-9862-3367de362704",
+    "first_name": "gomez ",
+    "last_name": "perez",
+    "phone": "123456",
+    "email": "pepe@gmail.com",
+    "password": "$2a$10$e88qzKoHa28B1d9Aitmqr.1oNh3IdQ8SHFp0BFV65nia0yVbTQ2zC",
+    "avatar": "default.png"
   }
 ]
