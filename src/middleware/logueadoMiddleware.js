@@ -13,7 +13,6 @@ function logueadoMiddleware(req, res, next) {
     res.locals.logueado = true;
     res.locals.logueado = req.session.usuario;
   }
-
   next();
 }
 

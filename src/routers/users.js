@@ -1,23 +1,13 @@
 // ************ Require's ************
 const { Router } = require("express");
-const path = require("path");
-const multer = require("multer");
 const router = Router();
+const upload = require("../middleware/multerUserMiddleware");
+const validateRegister = require("../middleware/validate-register");
+const validationsRegister = require("../validations/register");
+const validateLogin = require("../middleware/validate-login");
+const validationsLogin = require("../validations/login");
 const guestMiddleware = require("../middleware/guestMiddleware");
 const authMiddleware = require("../middleware/authMiddleware");
-
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../public/images/users"),
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
-const upload = multer({
-  storage: storage,
-});
 
 // ************ Controller Require ************
 const userController = require("../controllers/user-controller");
@@ -27,11 +17,11 @@ router.get("/", userController.index);
 
 // ************ User Registration Form ************
 router.get("/register", guestMiddleware, userController.show); //Formulario de registro
-router.post("/register", userController.register); //Acción de creación (donde se envía el formulario)
+router.post("/register",validationsRegister,validateRegister, userController.register); //Acción de creación (donde se envía el formulario)
 
 // **************** User Login Form ****************
 router.get("/login", guestMiddleware, userController.login); //Formulario de LOGIN
-router.post("/login", userController.accessLogin); // Acción para acceder a la cuenta
+router.post("/login",validationsLogin,validateLogin, userController.accessLogin); // Acción para acceder a la cuenta
 router.get("/check", function (req, res) {
   if (req.session.usuario == undefined) {
     res.send("no esta logueado");
@@ -44,7 +34,13 @@ router.get("/logout/", userController.logout);
 // ************** User Profile Form ****************
 router.get("/user-profile", authMiddleware, userController.profileUser); //Perfil de Usuario
 
-// ************** Password Change Form ****************
+// ************** User Password Change Form ****************
+router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
+
+// ************** User Profile Form ****************
+router.get("/admin-profile", userController.profileUser); //Perfil de Admin
+
+// ************** Admin Password Change Form ****************
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
 
 // ************** Password Reset Form ****************
