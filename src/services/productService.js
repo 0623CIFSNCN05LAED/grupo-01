@@ -61,6 +61,8 @@ const productServices = {
     db.products.update(id,product);
   },
   deleteItem: (id) => {
+    const { image } = db.products.findById(id);
+    db.products.deleteImage(image); 
     db.products.delete(id);
   }
 }
