@@ -57,6 +57,9 @@ const controller = {
   profileUser: (req, res) => {
     res.render("../views/user-profile.ejs");
   },
+  profileAdmin: (req, res) => {
+    res.render("../views/admin-profile.ejs");
+  },
   deleteUser: (req, res) => {
     res.render();
   },

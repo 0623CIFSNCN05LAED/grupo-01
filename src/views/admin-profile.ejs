@@ -2,35 +2,6 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
-    <link rel="stylesheet" href="/css/profile.css">
-</head>
-<body>
-    <div class="sidebar">
-        <h2>Perfil de Usuario</h2>
-        <button>Mis Compras</button>
-        <button>Carrito</button>
-        <button>Medios de Pago</button>
-        <button>Editar Mi Perfil</button>
-        <button class="logout-button">Salir</button>
-       <!--<div class="profile-picture">
-            <label for="file-input">
-                <img src="https://via.placeholder.com/150" alt="Foto de perfil" id="profile-pic">
-                <div>Cambiar Foto de Perfil</div>
-            </label>
-            <input type="file" id="file-input" accept="image/*" onchange="loadImage(event)">
-        </div>--> 
-    </div>
-    <div class="content">
-        <!-- Contenido principal aquí -->
-    </div>
-    <script src="script.js"></script>
-</body>
-=======
-
-<head>
     <%- include("partials/head") %>
         <title>Search Result</title>
 </head>
@@ -39,16 +10,16 @@
     <header class="header-container"><%- include("partials/header") %></header>
     <main class="main-container">
         <div class="breadcrumb">
-            <a href="/">Perfil del usuario: </a> /
+            <a href="/">Perfil del Vendedor: </a> /
             <span>Nombre<%= /* user.name */ %></span>
         </div>
         <div class="user-info__container">
             <section class="user-info__leftColumn">
-                <h2>Perfil de usuario</h2>
+                <h2>Perfil Vendedor</h2>
                 <ul>
-                    <li><a href="#">Mis compras (10 <%= /* user.name */ %>)</a></li>
-                    <li><a href="#">Carrito</a></li>
-                    <li><a href="#">Medios de pago</a></li>
+                    <li><a href="#">Mis ventas (10 <%= /* user.name */ %>)</a></li>
+                    <li><a href="#">Mis productos (10 <%= /* user.name */ %>)</a></li>
+                    <li><a href="#">Crear productos</a></li>
                 </ul>
                 <hr>
                 <button><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #ffffff;"></i>
@@ -56,7 +27,7 @@
             </section>
             <section class="user-info__rightColumn">
                 <div class="user-info__edition-1">
-                    <h2>Editar perfil</h2>
+                    <h2>Editar perfil Vendedor</h2>
                     <p class="breadcrumb">Edita tu información personal:</p>
                 </div>
                 <div class="user-info__edition-2">
@@ -110,6 +81,5 @@
     </main>
     <footer class="footer"><%- include("partials/footer") %></footer>
 </body>
-
 
 </html>
