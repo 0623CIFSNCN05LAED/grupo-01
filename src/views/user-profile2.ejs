@@ -1,34 +1,36 @@
-
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 
-    <!-- <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>profile</title>
-        <link rel="stylesheet" href="/css/profile.css">
-    </head>
-    <body>
-        <div class="sidebar">
-            <h2>Perfil de Usuario</h2>
-            <button>Mis Compras</button>
-            <button>Carrito</button>
-            <button>Medios de Pago</button>
-            <button>Editar Mi Perfil</button>
-            <button class="logout-button">Salir</button>
-        <!--<div class="profile-picture">
-                <label for="file-input">
-                    <img src="https://via.placeholder.com/150" alt="Foto de perfil" id="profile-pic">
-                    <div>Cambiar Foto de Perfil</div>
-                </label>
-                <input type="file" id="file-input" accept="image/*" onchange="loadImage(event)">
-            </div>--> 
-        <!-- </div>
-        <div class="content"> -->
-            <!-- Contenido principal aquí -->
-        <!-- </div>
-        <script src="script.js"></script>
-    </body> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Perfil de Usuario</h2>
+        <button>Mis Compras</button>
+        <button>Carrito</button>
+        <button>Medios de Pago</button>
+        <button>Editar Mi Perfil</button>
+        <button class="logout-button">Salir</button>
+       <!--<div class="profile-picture">
+            <label for="file-input">
+                <img src="https://via.placeholder.com/150" alt="Foto de perfil" id="profile-pic">
+                <div>Cambiar Foto de Perfil</div>
+            </label>
+            <input type="file" id="file-input" accept="image/*" onchange="loadImage(event)">
+        </div>--> 
+    </div>
+    <div class="content">
+        <!-- Contenido principal aquí -->
+    </div>
+    <script src="script.js"></script>
+</body>
+=======
+
 <head>
     <%- include("partials/head") %>
         <title>Search Result</title>
@@ -39,25 +41,24 @@
     <main class="main-container">
         <div class="breadcrumb">
             <a href="/">Perfil del usuario: </a> /
-            <span><%= locals.logueado.first_name %></span>
+            <span>Nombre<%= /* user.name */ %></span>
         </div>
         <div class="user-info__container">
             <section class="user-info__leftColumn">
                 <h2>Perfil de usuario</h2>
                 <ul>
-                    <li><a href="#">Mis compras (10)</a></li>
+                    <li><a href="#">Mis compras (10 <%= /* user.name */ %>)</a></li>
                     <li><a href="#">Carrito</a></li>
                     <li><a href="#">Medios de pago</a></li>
                 </ul>
                 <hr>
-                <button  onclick="location.href='/users/logout/'"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #ffffff;"></i>
-                    <a href="/">Salir</a>
-                </button>
+                <button><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #ffffff;"></i>
+                    <a href="/">Salir</a></button>
             </section>
             <section class="user-info__rightColumn">
                 <div class="user-info__edition-1">
                     <h2>Editar perfil</h2>
-                    <p class="breadcrumb">Edita tu información personal : <%= locals.logueado.first_name %></p>
+                    <p class="breadcrumb">Edita tu información personal:</p>
                 </div>
                 <div class="user-info__edition-2">
                         <div class="photo-user">
@@ -110,4 +111,10 @@
     </main>
     <footer class="footer"><%- include("partials/footer") %></footer>
 </body>
+
+
 </html>
+=======
+<h1>hola <%= locals.logueado.first_name %></h1>
+<button onclick="location.href='/users/logout/'">Logout</button>
+>>>>>>> test

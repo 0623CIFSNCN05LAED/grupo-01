@@ -34,6 +34,6 @@ router.get("/edit/:id", productsController.edit); //Formulario de edición de pr
 router.put("/:id", upload.single("image"), productsController.update);//Acción de edición (donde se envia el formulario)
 
 /*** DELETE ONE PRODUCT***/
-router.delete("/:id", productsController.destroy);//Ación de borrado
+router.delete("/:id", productsController.destroy);
 
 module.exports = router;

@@ -13,15 +13,9 @@ const mainController = {
     const foundProducts = productService.searchProducts(keywords);
     res.render("results", { foundProducts });
   },
-  login: (req, res) => {
-    res.render("login");
-  },
   cart: (req, res) => {
-    res.render("cart.ejs");
-  },
-  register: (req, res) => {
-    res.render("register2.ejs");
-  },
+    res.render("cart");
+  }
 };
 
 module.exports = mainController;

@@ -46,5 +46,9 @@ module.exports = {
     const notEliminated = products.filter(product => product.id !== id);
     //Guardo los productos que se filtraron 
     this.saveProduct(notEliminated);
+  },
+  deleteImage: function(image) {
+    const pathImage = "/../../../public/images/products/";
+    fs.unlinkSync(path.join(__dirname,pathImage + image));
   }
 }
