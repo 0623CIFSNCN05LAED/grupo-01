@@ -6,6 +6,7 @@
 - Henao Orozco Simon
 - Paca Luis Miguel
 - Rodriguez Sanchez Daniela
+- Facundo Leonel Auer
 
 ## Temática del sitio:
 Tienda de ropa juvenil

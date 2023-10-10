@@ -1,0 +1,87 @@
+/* Estilos generales de la barra lateral */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 20px; 
+    bottom: auto; 
+    height: auto;
+    width: 200px;
+    background-color: #37306B;
+    color: white;
+    padding: 20px 10px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #5F579E #37306B;
+    margin-left: 20px;
+}
+
+/* Estilos del título "Perfil de Usuario" */
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos de los botones */
+.sidebar button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+/* Estilos del botón "Salir" */
+.sidebar .logout-button {
+    background-color: #9E4784;
+    margin-top: 90px;
+}
+
+/* Estilos al pasar el ratón por encima de los botones */
+.sidebar button:hover {
+    background-color: #5F579E;
+}
+
+
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #5F579E;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background-color: #37306B;
+}
+
+/* Estilos para el contenido principal */
+.content {
+    margin-left: 0; 
+    padding: 20px;
+    overflow: hidden;
+}
+/*imagen*/
+/* Estilos para la foto de perfil */
+.profile-picture {
+    margin-top: 20px;
+    text-align: center;
+    float: right;
+}
+
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Estilos para el texto "Cambiar Foto de Perfil" */
+.profile-picture div {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #9E4784;
+}
