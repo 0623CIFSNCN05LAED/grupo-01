@@ -40,7 +40,7 @@
 
           <label for="phone"> Teléfono: </label>
           <input class="style-box" type="tel" name="phone" id="phone" value="<%= oldData ? oldData.phone : "" %>"/>
-          <% if (errors && errors.first_name) { %>
+          <% if (errors && errors.phone) { %>
             <p><%= errors.phone.msg %></p>
           <% } %>
           <label for="email"> E-mail: </label>
