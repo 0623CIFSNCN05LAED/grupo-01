@@ -97,7 +97,7 @@ margin-top: 27px;
     width: 100px;
     height: 100px;
     display: inline-block;
-    background-image: url('/images/products/default.png');
+    /* background-image: url('/images/products/default.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
