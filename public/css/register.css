@@ -5,13 +5,19 @@
 .sectregis {
     display: flex;
     justify-content: center;
-    
+    align-items: center;
     flex-direction: column;
-    width: 270px;
+    width: auto;
+  
     margin: 20px auto
 }
 label{
     font-size: 14px;
+}
+.errorstyle{
+    font-size: 10px;
+    color: rgb(182, 177, 177);
+    font-style: italic;
 }
 .button {
     
@@ -37,6 +43,7 @@ label{
     border: 1px #fff solid;
     border-radius: 5px;
     padding: 8px;
+    width: 250px
 }
 .df{
     display: flex;
@@ -58,23 +65,31 @@ label{
        gap: 8px;
 }
 .form-regis {
-    height:500px ;
+   
     display: flex;
     justify-content: center;
     flex-direction: column;
      background: #37306B;
     padding: 10px 20px;
-    
+    width: 310px;
+    height: 600px;
     color: white;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
 opacity: 3;
 
 }
+.sectregis-img-mb{
+    width: 310px;
+}
 .sectregis-img-dt{
     display: none;
 }
-
+.sectregisimgcontain{
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
 
 
 /* tablet*/
@@ -88,10 +103,16 @@ opacity: 3;
 }
 .sectregis-img-dt{
     display: block;
-    clip-path: inset(0px 0px 145px 0px);
-    width: 430px;
-    border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      width: 400px;
+      
+}
+.form-regis{
+    width: 400px;
+}
+
+
 
 }
 
-}
+

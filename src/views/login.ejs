@@ -17,12 +17,12 @@
         <div class="input-login">
             <input class="style-box" type="text" name="email" value=""  placeholder="Tu Email" value="<%= oldData ? oldData.email : "" %>">
             <% if (errors && errors.email) { %>
-                <p><%= errors.email.msg %></p>
+                <p class="errorstyle"><%= errors.email.msg %></p>
             <% } %>
 
             <input class="style-box" type="password" name="password" value="" placeholder="Tu contraseña">
             <% if (errors && errors.password) { %>
-                <p><%= errors.password.msg %></p>
+                <p class="errorstyle"><%= errors.password.msg %></p>
             <% } %>
         </div>
         <!-- <input class="boton" type="submit" name="" value="Ingresar"> -->

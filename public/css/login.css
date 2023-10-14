@@ -48,7 +48,7 @@ body {
 }
 .input-login{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap:5px;
     padding:10px 5px
 }
