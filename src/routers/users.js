@@ -17,11 +17,21 @@ router.get("/", userController.index);
 
 // ************ User Registration Form ************
 router.get("/register", guestMiddleware, userController.show); //Formulario de registro
-router.post("/register",validationsRegister,validateRegister, userController.register); //Acción de creación (donde se envía el formulario)
+router.post(
+  "/register",
+  validationsRegister,
+  validateRegister,
+  userController.register
+); //Acción de creación (donde se envía el formulario)
 
 // **************** User Login Form ****************
 router.get("/login", guestMiddleware, userController.login); //Formulario de LOGIN
-router.post("/login",validationsLogin,validateLogin, userController.accessLogin); // Acción para acceder a la cuenta
+router.post(
+  "/login",
+  validationsLogin,
+  validateLogin,
+  userController.accessLogin
+); // Acción para acceder a la cuenta
 router.get("/check", function (req, res) {
   if (req.session.usuario == undefined) {
     res.send("no esta logueado");
@@ -42,7 +52,7 @@ router.get("/admin-profile", userController.profileAdmin); //Perfil de Admin
 
 // ************** Admin Password Change Form ****************
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
-
+router.post("/upload", upload.single("avatar"), userController.upload);
 // ************** Password Reset Form ****************
 router.get("/forgot-password", userController.profileUser); // Formulario de reset de contraseña
 
