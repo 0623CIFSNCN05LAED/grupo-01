@@ -2,6 +2,8 @@ const userService = require("../services/userService");
 const userID = require("../data/users/users");
 const bcrypt = require("bcryptjs");
 // const { type, userInfo } = require("os");
+const fs = require("fs");
+const upload = require("../middleware/multerUserMiddleware");
 
 const controller = {
   index: (req, res) => {
@@ -117,9 +119,9 @@ const controller = {
     res.render();
   },
   upload: (req, res) => {
-    const user = req.session.usuario;
-    const image = req.file ? req.file.filename : user.avatar;
-    user.avatar = image;
+    const image = req.file;
+    req.session.usuario.avatar = image.filename;
+    res.redirect("user-profile");
   },
 };
 

@@ -34,12 +34,13 @@
                 </div>
                 <div class="user-info__edition-2">
                         <div class="photo-user">
-                            <form class="avatar" method="POST" enctype="multipart/form-data">
+                            <form action="upload" method="POST" enctype="multipart/form-data">
+                            
                             <img src="/images/users/<%= locals.logueado.avatar %>" alt="default.png">
                             <div>
-                                <input action="submit" type="file" name="avatar">
+                                <input type="file" name="avatar" accept="image/*">
                             </div>
-                            <label for="avatar">Selecciona tu imagen de perfil</label>
+                            <button type="submit">Selecciona tu imagen de perfil</button>
                         </div>
                     </form>
 

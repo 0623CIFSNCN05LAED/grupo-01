@@ -43,7 +43,7 @@ router.get("/check", function (req, res) {
 router.get("/logout/", userController.logout);
 // ************** User Profile Form ****************
 router.get("/user-profile", authMiddleware, userController.profileUser); //Perfil de Usuario
-
+router.post("/upload", upload.single("avatar"), userController.upload);
 // ************** User Password Change Form ****************
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
 
@@ -52,7 +52,7 @@ router.get("/admin-profile", userController.profileAdmin); //Perfil de Admin
 
 // ************** Admin Password Change Form ****************
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
-router.post("/upload", upload.single("avatar"), userController.upload);
+
 // ************** Password Reset Form ****************
 router.get("/forgot-password", userController.profileUser); // Formulario de reset de contraseña
 
