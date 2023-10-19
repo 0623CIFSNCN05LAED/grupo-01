@@ -42,8 +42,10 @@ router.get("/check", function (req, res) {
 });
 router.get("/logout/", userController.logout);
 // ************** User Profile Form ****************
-router.get("/user-profile", authMiddleware, userController.profileUser); //Perfil de Usuario
-router.post("/upload", upload.single("avatar"), userController.upload);
+router.get("/user-profile/:id", authMiddleware, userController.profileUser); //Perfil de Usuario
+router.put("/user-profile/:id", upload.single("avatar"),authMiddleware, userController.upload);
+router.put("/user-profile/:id",authMiddleware,userController.updateUserData);
+
 // ************** User Password Change Form ****************
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,47 +11,51 @@
     <main class="main-container">
         <div class="breadcrumb">
             <a href="/">Perfil del usuario: </a> /
-            <span><%= locals.logueado.first_name %></span>
+            <span><%= logueado.first_name %></span>
         </div>
         <div class="user-info__container">
             <section class="user-info__leftColumn">
-                <h2>Perfil de : <span><%= locals.logueado.first_name %></span></h2>
+                <h2>Perfil de : <span><%= logueado.first_name %></span></h2>
                 <ul>
                     <li><a href="#">Mis compras (10)</a></li>
                     <li><a href="#">Carrito</a></li>
                     <li><a href="#">Medios de pago</a></li>
                 </ul>
                 <hr>
-                <button  onclick="location.href='/users/logout/'"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #ffffff;"></i>
-                    <a >Salir</a>
-                </button>
+                <a href="/users/logout">
+                    <button><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #ffffff;"></i>
+                        Salir
+                    </button>
+                </a>
+
             </section>
             <section class="user-info__rightColumn">
                 <div class="user-info__edition-1">
                     <h2>Editar perfil</h2>
-                    <p class="breadcrumb">Edita tu información personal : <%= locals.logueado.first_name %></p>
+                    <p class="breadcrumb">Edita tu información personal : <%= logueado.first_name %></p>
                 </div>
                 <div class="user-info__edition-2">
                         <div class="photo-user">
-                            <form action="upload" method="POST" enctype="multipart/form-data">
-                            
-                            <img src="/images/users/<%= locals.logueado.avatar %>" alt="default.png">
-                            <div>
-                                <input type="file" name="avatar" accept="image/*">
-                            </div>
-                            <button type="submit">Selecciona tu imagen de perfil</button>
-                        </div>
-                    </form>
-
-                    <section>
-                            <form class="info-user__profile" action="">
+                            <img src="/images/users/<%= logueado.avatar %>" alt="default.png">
+                            <form action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                                 <div>
-                                    <label for="name">Nombre</label>
-                                    <input placeholder="Tu Nombre" type="text" name="name" class="style-box">
+                                    <input type="file" name="avatar" accept="image/*">
+                                </div>
+                                <button type="submit">Actualizar Foto</button>
+                            </form>
+                        </div>
+                        
+                    
+                    
+                    <section>
+                            <form class="info-user__profile" action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST">
+                                <div>
+                                    <label for="first_name">Nombre</label>
+                                    <input placeholder="Tu Nombre" type="text" name="first_name" class="style-box" value="<%= user.first_name %>">
                                 </div>
                                 <div>
-                                    <label for="secondName">Apellido</label>
-                                    <input placeholder="Tu Apellido" type="text" name="secondName" class="style-box">
+                                    <label for="last_name">Apellido</label>
+                                    <input placeholder="Tu Apellido" type="text" name="last_name" class="style-box" value="<%= user.last_name %>">
                                 </div>
                                 <div>
                                     <button>Actualizar</button>
@@ -64,7 +67,7 @@
                         <div class="user-info__form">
                             <div class="user-info_">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" class="style-box" placeholder="Tu Email">
+                                <input type="email" name="email" class="style-box" placeholder="Tu Email" value="<%= user.email %>">
                             </div>
                             <div class="user-info_">
                                 <label for="password">Contraseña</label>
@@ -72,7 +75,7 @@
                             </div>
                             <div class="user-info_">
                                 <label for="phone">Teléfono</label>
-                                <input type="tel" name="phone" class="style-box" placeholder="Tu Teléfono">
+                                <input type="tel" name="phone" class="style-box" placeholder="Tu Teléfono" value="<%= user.phone %>">
                             </div>
                         </div>
                         <section>

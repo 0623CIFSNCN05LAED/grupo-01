@@ -15,12 +15,12 @@
         <form  action = "/users/login" method="POST">
         <h5><a href="#"><img src="/images/logo-desktop.png" alt="Maunganui"></a></h5>
         <div class="input-login">
-            <input class="style-box" type="text" name="email" value=""  placeholder="Tu Email" value="<%= oldData ? oldData.email : "" %>">
+            <input class="style-box" type="text" name="email" placeholder="Tu Email" value="<%= oldData ? oldData.email : "" %>">
             <% if (errors && errors.email) { %>
                 <p class="errorstyle"><%= errors.email.msg %></p>
             <% } %>
 
-            <input class="style-box" type="password" name="password" value="" placeholder="Tu contraseña">
+            <input class="style-box" type="password" name="password" placeholder="Tu contraseña">
             <% if (errors && errors.password) { %>
                 <p class="errorstyle"><%= errors.password.msg %></p>
             <% } %>
