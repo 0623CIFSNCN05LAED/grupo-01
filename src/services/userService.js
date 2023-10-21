@@ -17,6 +17,8 @@ const userServices = {
     db.users.update(id,user);
   },
   deleteUser: (id) => {
+    const { avatar } = db.users.findById(id);
+    db.users.deleteImage(avatar);
     db.users.delete(id);
   }
 }

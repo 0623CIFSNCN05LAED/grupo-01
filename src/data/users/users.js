@@ -57,5 +57,9 @@ module.exports = {
     const notEliminated = users.filter(user => user.id !== id);
     //Guardo los usuarios que se filtraron 
     this.saveUser(notEliminated);
+  },
+  deleteImage: function(image) {
+    const pathImage = "/../../../public/images/users/";
+    fs.unlinkSync(path.join(__dirname,pathImage + image));
   }
 };

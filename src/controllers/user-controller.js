@@ -84,7 +84,7 @@ const controller = {
       });
     }
     if (req.body.recordame != undefined) {
-      res.cookie("recordame", req.body.email, { maxAge: 150000 });
+      res.cookie("recordame", req.body.email, { maxAge: (1000 * 60) * 60 });
     }
     // Verifico que la password (DDBB) corresponda con la que viene por request
     const checkPwd = bcrypt.compareSync(req.body.password, findUser.password);
@@ -121,7 +121,7 @@ const controller = {
     const updateFullName = req.body;
     const id = req.params.id;
     userService.updateUser(id,updateFullName);
-    res.redirect("/users/user-profile");
+    res.redirect("/users/user-profile/"+ id);
   },
   deleteUser: (req, res) => {
     res.render();
