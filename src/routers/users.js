@@ -42,9 +42,6 @@ router.get("/profile/:id", userController.profileUser); //Formulario de Cambio d
 // ************** User Profile Form ****************
 router.get("/admin-profile", userController.profileAdmin); //Perfil de Admin
 
-// ************** Admin Password Change Form ****************
-router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
-
 // ************** Password Reset Form ****************
 router.get("/forgot-password", userController.profileUser); // Formulario de reset de contraseña
 
