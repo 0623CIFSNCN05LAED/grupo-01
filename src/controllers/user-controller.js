@@ -34,7 +34,7 @@ const controller = {
     //Verifico si este email se encuetra en DDBB
     let checkUser = userService.findByEmail("email", req.body.email);
     if (checkUser) {
-      return res.render("register", {
+      return res.redirect("register", {
         errors: {
           email: {
             msg: "Este email se encuentra registrado",
@@ -43,7 +43,7 @@ const controller = {
         oldData: req.body,
       });
     } else if (req.body.password != req.body.password_re) {
-      return res.render("register", {
+      return res.redirect("register", {
         errors: {
           password_re: {
             msg: "Las contraseñas no coinciden",
@@ -74,7 +74,7 @@ const controller = {
     //Verifico si este email se encuetra en DDBB
     const findUser = userService.findByEmail("email", req.body.email);
     if (!findUser) {
-      return res.render("login", {
+      return res.redirect("login", {
         errors: {
           email: {
             msg: "Este email no se encuentra registrado",
@@ -89,7 +89,7 @@ const controller = {
     // Verifico que la password (DDBB) corresponda con la que viene por request
     const checkPwd = bcrypt.compareSync(req.body.password, findUser.password);
     if (!checkPwd) {
-      return res.render("login", {
+      return res.redirect("login", {
         errors: {
           email: {
             msg: "Los datos son incorrectos. Verifique y vuelva a intentar",
