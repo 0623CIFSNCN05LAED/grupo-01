@@ -32,14 +32,6 @@ router.post(
   validateLogin,
   userController.accessLogin
 ); // Acción para acceder a la cuenta
-router.get("/check", function (req, res) {
-  if (req.session.usuario == undefined) {
-    res.send("no esta logueado");
-  } else {
-    res.send("usuario logueado " + req.session.usuario);
-    console.log(req.session.usuario);
-  }
-});
 router.get("/logout/", userController.logout);
 // ************** User Profile Form ****************
 router.get("/user-profile", authMiddleware, userController.profileUser); //Perfil de Usuario
