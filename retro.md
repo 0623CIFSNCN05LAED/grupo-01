@@ -1,24 +1,22 @@
 ## Retrospectiva
 
 ## Comenzar hacer:
-- Estructura de archivos y directorios de udsuarios.
-- Completar en la funcionalidad la carga de archivos para register.
-- Crear formulario login funcional con sus validaciones.
-- Implementación de cookies para el login.
-- Rutas de acceso con o sin login(Userguard)
-
+- Crear DER
+- Hacer Script de la estructura de base de datos completa
+- Crear carpeta sequilize (carpeta modelos y config)
+- CRUD productos
+- CRUD usuarios
+- Incluir permisos para cada tipo de usuario
   
 ## Mas de:
-- Agregar comentario al trello para entender el avance ( como un daily).
-- Review general antes del cierre de sprint
-
+- Implementación del sequelize, actualizando controllers y services.
+- Atomizar las tareas así disminuimos el margen de errores.
+  
   ## Seguir haciendo:
-- Seguir con los campos pendientes  del json del form en register (archivos png,jpg).
-
+- Continuar con el multer correspondiente a la imagen de perfil.
 
 ## Menos de:
-- No comunicarse dejando pasar mucho tiempo
-- Descuidar el avance de tareas en trello.
+- Unificar tareas grupales para poder avanzar en otras partes de los sprints y a su vez tener otros puntos de vista.
 
 ## Dejar de hacer:
-Tareas complejas de forma individual.
+- No comunicar aquello que no entendemos con el fin de ser más participativos y equitativos.

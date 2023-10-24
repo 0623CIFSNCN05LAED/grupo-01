@@ -50,3 +50,6 @@ En el siguiente link de pueden visualizar los wireframes mencionados.
 ## Tablero de trabajo
 
 [Trello](https://trello.com/b/A0cTn2dP/integrating-project/)
+
+## DER
+[DER maunganui](https://drive.google.com/file/d/1wkIgHEu4cgxwNvQrZKETgrtOH6ZGM-R_/view?usp=sharing/)
