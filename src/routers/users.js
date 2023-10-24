@@ -32,14 +32,6 @@ router.post(
   validateLogin,
   userController.accessLogin
 ); // Acción para acceder a la cuenta
-router.get("/check", function (req, res) {
-  if (req.session.usuario == undefined) {
-    res.send("no esta logueado");
-  } else {
-    res.send("usuario logueado " + req.session.usuario);
-    console.log(req.session.usuario);
-  }
-});
 router.get("/logout/", userController.logout);
 // ************** User Profile Form ****************
 router.get("/user-profile/:id", authMiddleware, userController.profileUser); //Perfil de Usuario
@@ -51,9 +43,6 @@ router.get("/profile/:id", userController.profileUser); //Formulario de Cambio d
 
 // ************** User Profile Form ****************
 router.get("/admin-profile", userController.profileAdmin); //Perfil de Admin
-
-// ************** Admin Password Change Form ****************
-router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
 
 // ************** Password Reset Form ****************
 router.get("/forgot-password", userController.profileUser); // Formulario de reset de contraseña
