@@ -1,8 +1,10 @@
 const productService = require("../services/productService");
+const inOffers = productService.getItemByOffer();
+const inFeatured = productService.getItemByFeatured();
 const mainController = {
   index: (req, res) => {
-    const inOffers = productService.getItemByOffer();
-    const inFeatured = productService.getItemByFeatured();
+/*     const inOffers = productService.getItemByOffer();
+    const inFeatured = productService.getItemByFeatured(); */
     res.render("index", {
       inOffers,
       inFeatured,
@@ -14,7 +16,12 @@ const mainController = {
     res.render("results", { foundProducts });
   },
   cart: (req, res) => {
-    res.render("cart");
+/*     const inOffers = productService.getItemByOffer();
+    const inFeatured = productService.getItemByFeatured(); */
+    res.render("cart", {
+      inOffers,
+      inFeatured,
+    });
   }
 };
 
