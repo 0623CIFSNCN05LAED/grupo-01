@@ -84,12 +84,12 @@ const controller = {
       });
     }
     if (req.body.recordame != undefined) {
-      res.cookie("recordame", req.body.email, { maxAge: (1000 * 60) * 60 });
+      res.cookie("recordame", req.body.email, { maxAge: 1000 * 60 * 60 });
     }
     // Verifico que la password (DDBB) corresponda con la que viene por request
     const checkPwd = bcrypt.compareSync(req.body.password, findUser.password);
     if (!checkPwd) {
-      return res.redirect("login", {
+      return res.render("login", {
         errors: {
           email: {
             msg: "Los datos son incorrectos. Verifique y vuelva a intentar",
@@ -99,7 +99,7 @@ const controller = {
       });
     } else {
       req.session.usuario = findUser;
-      return res.redirect("user-profile/"+ findUser.id);
+      return res.redirect("user-profile/" + findUser.id);
     }
   },
   logout: (req, res) => {
@@ -114,26 +114,27 @@ const controller = {
     const id = req.params.id;
     const user = userService.getUser(id);
     // Vista de formulario del usuario perfil
-    res.render("user-profile",{ user});
-
+    res.render("user-profile", { user });
   },
   updateUserData: (req, res) => {
     const updateFullName = req.body;
     const id = req.params.id;
-    userService.updateUser(id,updateFullName);
-    res.redirect("/users/user-profile/"+ id);
+    userService.updateUser(id, updateFullName);
+    res.redirect("/users/user-profile/" + id);
   },
   deleteUser: (req, res) => {
     res.render();
   },
   upload: (req, res) => {
-    const avatar  = req.body;
+    const avatar = req.body;
     const id = req.params.id;
-    const uploadImage = req.file ? req.file.filename : userService.getUser(id).avatar
+    const uploadImage = req.file
+      ? req.file.filename
+      : userService.getUser(id).avatar;
     // req.session.usuario.avatar = image.filename;
-    avatar.avatar = uploadImage
-    userService.updateUser(id,avatar);
-    res.redirect("/users/user-profile/"+ id);
+    avatar.avatar = uploadImage;
+    userService.updateUser(id, avatar);
+    res.redirect("/users/user-profile/" + id);
   },
 };
 

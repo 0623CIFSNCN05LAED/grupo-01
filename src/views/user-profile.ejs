@@ -36,12 +36,13 @@
                 </div>
                 <div class="user-info__edition-2">
                         <div class="photo-user">
-                            <img src="/images/users/<%= logueado.avatar %>" alt="<%= logueado.avatar %>">
+                            
                             <form action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                                <div>
+                                <div >
+                                    <img src="/images/users/<%= logueado.avatar %>" alt="<%= logueado.avatar %>">
                                     <input type="file" name="avatar" accept="image/*">
                                 </div>
-                                <button type="submit">Actualizar Foto</button>
+                            <button type="submit">Actualizar Foto</button> 
                             </form>
                         </div>
                         
