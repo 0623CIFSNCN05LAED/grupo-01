@@ -5,12 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       image: DataTypes.STRING,
       name: DataTypes.STRING,
       description: DataTypes.STRING,
-      category_products_id: DataTypes.INTEGER,
-      type_id: DataTypes.INTEGER,
       price: DataTypes.DECIMAL,
       discount: DataTypes.INTEGER,
       color: DataTypes.STRING,
-      size: DataTypes.STRING,
+      size_id: DataTypes.STRING,
     },
     {
       tableName: "products",
@@ -18,10 +16,34 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: "updated_at",
     }
   );
-  Products.associate = function (models) {
-    Products.belongsTo(models.Category, {
+  Model.associate = (db) => {
+    Model.belongsToMany(db.Category, {
       as: "category",
-      foreignkey: "category_products_id",
+      through: "products_category",
+      foreignkey: "product_id",
+      otherkey: "category_id",
+    });
+  };
+  Model.associate = (db) => {
+    Model.belongsToMany(db.Type, {
+      as: "type",
+      through: "type_product",
+      foreignkey: "product_id",
+      otherkey: "type_id",
+    });
+  };
+  Model.associate = (db) => {
+    Model.belongsToMany(db.Orders, {
+      as: "orders",
+      through: "Cart_shopping",
+      foreignkey: "product_id",
+      otherkey: "order_id",
+    });
+  };
+  Model.associate = (db) => {
+    Model.hasMany(db.Size, {
+      as: "size",
+      foreignkey: "size_id",
     });
   };
   return Model;

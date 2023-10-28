@@ -2,8 +2,8 @@ module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
     "Type",
     {
-      oferta: DataTypes.STRING,
-      destacado: DataTypes.STRING,
+      sale: DataTypes.STRING,
+      feature: DataTypes.STRING,
     },
     {
       tableName: "type",
@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: "updated_at",
     }
   );
-
+  Model.associate = (db) => {
+    Model.belongsToMany(db.Products, {
+      as: "products",
+      through: "type_product",
+      foreignkey: "type_id",
+      otherkey: "product_id",
+    });
+  };
   return Model;
 };

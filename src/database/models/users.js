@@ -15,6 +15,18 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: "updated_at",
     }
   );
+  Model.associate = (db) => {
+    Model.belongsTo(db.User_type, {
+      as: "user_type",
+      foreignkey: "user_type_id",
+    });
+  };
+  Model.associate = (db) => {
+    Model.belongsTo(db.Login, {
+      as: "login",
+      foreignkey: "login_id",
+    });
+  };
 
   return Model;
 };

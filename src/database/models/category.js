@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: "updated_at",
     }
   );
+  Model.belongsToMany(db.Products, {
+    as: "products",
+    through: "aproducts_category",
+    foreignKey: "category_id",
+    otherKey: "product_id",
+    timestamps: false,
+  });
 
   return Model;
 };
