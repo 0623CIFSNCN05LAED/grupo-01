@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 
 <html lang="es">
-
-<head>
+  <head>
     <%- include("partials/head") %>
 
-        <title>Maunganui Tienda</title>
-</head>
+    <title>Maunganui Tienda</title>
+  </head>
 
-<body>
+  <body>
     <!-- Header and NavBar -->
-    <header class="header-container">
-        <%- include("partials/header") %>
-    </header>
+    <header class="header-container"><%- include("partials/header") %></header>
     <main>
-        <section class="section-title__container">
+      <section class="section-title__container">
+        <h2>Todos los productos</h2>
+      </section>
+      <div class="product-list">
+        <% products.forEach(product=> { %>
+        <div class="product-item">
+          <div class="product-item-image">
+            <a href="/products/details-product/<%= product.id %>">
+              <img
+                src="/images/products/<%= product.image %>"
+                alt="<%= product.name %>"
+              />
+            </a>
+            <a href="/cart">
+              <div>
+                <i
+                  class="cart-shopping-products-icon fa-solid fa-cart-shopping"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div class="product-info">
+            <p><%= product.name %></p>
 
-            <h2>Todos los productos</h2>
-        </section>
-        <div class="product-list">
-            <% products.forEach(product=> { %>
-                <div class="product-item">
-                    <div class="product-item-image">
-                        <a href="/products/details-product/<%= product.id %>">
-                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
-                        </a>
-                        <a href="/cart">
-                            <div>
-                                <i class="cart-shopping-products-icon fa-solid fa-cart-shopping"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <p>
-                            <%= product.name %>
-                        </p>
-                        <% if (product.discount) { %>
-                            <s>$<%= product.price %></s>
-                            <p>
-                                <%= product.discount %>% OFF
-                            </p>
-                            <p>
-                                <%= product.priceWithDiscount %>
-                            </p>
-                        <% } else { %>
-                                <%= product.price %>%
-                            <% } %>
-                    </div>
-                </div>
-                <% }) %>
+            <s>$<%= product.price %></s>
+            <p><%= product.discount %>% OFF</p>
+          </div>
         </div>
+        <% }) %>
+      </div>
     </main>
     <!-- Footer -->
-    <footer class="footer">
-        <%- include("partials/footer") %>
-    </footer>
+    <footer class="footer"><%- include("partials/footer") %></footer>
 
     <script src="/js/index.js"></script>
-</body>
-
+  </body>
 </html>

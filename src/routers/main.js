@@ -12,6 +12,9 @@ router.get("/cart", mainController.cart);
 const productRouter = require("./products");
 router.use("/products", productRouter);
 const userRouter = require("./users");
-router.use("/users" , userRouter);
+router.use("/users", userRouter);
+
+const productRouter2 = require("./products2");
+router.use("/products", productRouter2);
 
 module.exports = router;

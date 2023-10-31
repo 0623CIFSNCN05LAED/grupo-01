@@ -23,8 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignkey: "order_id",
       otherkey: "product_id",
     });
-  };
-  Model.associate = (db) => {
+
     Model.belongsTo(db.User_type, {
       as: "user_type",
       foreignkey: "user_type_id",

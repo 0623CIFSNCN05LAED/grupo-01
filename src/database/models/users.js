@@ -21,12 +21,6 @@ module.exports = (sequelize, DataTypes) => {
       foreignkey: "user_type_id",
     });
   };
-  Model.associate = (db) => {
-    Model.belongsTo(db.Login, {
-      as: "login",
-      foreignkey: "login_id",
-    });
-  };
 
   return Model;
 };
