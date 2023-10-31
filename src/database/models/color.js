@@ -1,22 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
-    "Login",
+    "Color",
     {
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
+      name_size: DataTypes.STRING,
     },
     {
-      tableName: "login",
+      tableName: "color",
       createdAt: "created_at",
       updatedAt: "updated_at",
     }
   );
   Model.associate = (db) => {
-    Model.hasMany(db.Users, {
-      as: "users",
-      foreignkey: "login_id",
+    Model.belongsTo(db.Products, {
+      as: "product",
+      foreignkey: "color_id",
     });
   };
-
   return Model;
 };

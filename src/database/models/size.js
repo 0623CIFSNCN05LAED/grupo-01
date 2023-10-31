@@ -2,11 +2,7 @@ module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
     "size",
     {
-      S: DataTypes.STRING,
-      M: DataTypes.STRING,
-      L: DataTypes.STRING,
-      XL: DataTypes.STRING,
-      XXL: DataTypes.STRING,
+      name_size: DataTypes.STRING,
     },
     {
       tableName: "size",
