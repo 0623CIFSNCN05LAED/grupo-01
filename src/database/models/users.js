@@ -8,11 +8,14 @@ module.exports = (sequelize, DataTypes) => {
       login_id: DataTypes.INTEGER,
       avatar: DataTypes.STRING,
       user_type_id: DataTypes.INTEGER,
+      email: DataTypes.STRING,
+      password: DataTypes.STRING,
     },
     {
       tableName: "users",
       createdAt: "created_at",
       updatedAt: "updated_at",
+      //timestamps: false,
     }
   );
   Model.associate = (db) => {
