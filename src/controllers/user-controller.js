@@ -27,9 +27,10 @@ const controller = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       phone: req.body.phone,
+      avatar: req.file ? req.file.filename : "default.png",
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      avatar: req.file ? req.file.filename : "default.png",
+      password_re: req.body.password,
     };
     //Verifico si este email se encuetra en DDBB
     let checkUser = userService.findByEmail("email", req.body.email);

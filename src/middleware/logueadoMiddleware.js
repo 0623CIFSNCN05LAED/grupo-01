@@ -1,4 +1,5 @@
 const User = require("../services/userService");
+const Model = require("../database/models");
 function logueadoMiddleware(req, res, next) {
   res.locals.logueado = false;
 
