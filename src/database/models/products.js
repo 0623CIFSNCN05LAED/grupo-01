@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.STRING,
       price: DataTypes.DECIMAL,
       discount: DataTypes.INTEGER,
+      SKU: DataTypes.INTEGER,
     },
     {
       tableName: "products",
@@ -19,32 +20,39 @@ module.exports = (sequelize, DataTypes) => {
     Model.belongsToMany(db.Category, {
       as: "category",
       through: "products_category",
-      foreignkey: "product_id",
-      otherkey: "category_id",
+      foreignKey: "product_id",
+      otherKey: "category_id",
     });
 
     Model.belongsToMany(db.Type, {
       as: "type",
       through: "type_product",
-      foreignkey: "product_id",
-      otherkey: "type_id",
+      foreignKey: "product_id",
+      otherKey: "type_id",
     });
 
     Model.belongsToMany(db.Orders, {
       as: "orders",
       through: "Cart_shopping",
-      foreignkey: "product_id",
-      otherkey: "order_id",
+      foreignKey: "product_id",
+      otherKey: "order_id",
     });
 
-    Model.hasMany(db.Size, {
+    Model.belongsToMany(db.Size, {
       as: "size",
-      foreignkey: "size_id",
+      through: "size_product",
+      foreignKey: "size_id",
+      otherKey: "product_id",
     });
 
-    Model.hasMany(db.Color, {
+    Model.belongsTo(db.Color, {
       as: "color",
-      foreignkey: "color_id",
+      foreignKey: "color_id",
+    });
+
+    Model.belongsTo(db.Genres, {
+      as: "genres",
+      foreignKey: "genre_id",
     });
   };
   return Model;

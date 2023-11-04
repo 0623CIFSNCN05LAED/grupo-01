@@ -45,13 +45,13 @@ module.exports = {
                         
           };
         }), */
-        genreName: movie.genre?.name ?? "No tiene género",
+        /* genreName: movie.genre?.name ?? "No tiene género",
         genre_id: movie.genre_id,
-        length: movie.length,
+        length: movie.length, */
       };
     });
   },
-  search: async (query) => {
+  /*  search: async (query) => {
     const movie = await Movies.findOne({
       where: {
         title: {
@@ -61,18 +61,21 @@ module.exports = {
       include: ["genre", "actors"],
     });
     return movie;
-  },
-  createMovie: (body) => {
-    return Movies.create({
-      title: body.title,
-      rating: body.rating,
-      awards: body.awards,
-      release_date: body.release_date,
-      length: body.length,
+  }, */
+  createProduct: (body) => {
+    return Products.create({
+      image: body.image,
+      name: body.name,
+      description: body.description,
+      price: body.price,
+      discount: body.discount,
+      color_id: body.color_id,
+      size_id: body.size_id,
       genre_id: body.genre_id,
+      SKU: body.SKU_id,
     });
   },
-  updateMovie: (id, body) => {
+  /*  updateMovie: (id, body) => {
     return Movies.update(
       {
         title: body.title,
@@ -112,5 +115,5 @@ module.exports = {
         where: { id: id },
       });
     });
-  },
+  }, */
 };

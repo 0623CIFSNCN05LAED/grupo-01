@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   Model.associate = (db) => {
     Model.belongsTo(db.User_type, {
       as: "user_type",
-      foreignkey: "user_type_id",
+      foreignKey: "user_type_id",
     });
   };
 

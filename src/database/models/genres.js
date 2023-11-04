@@ -1,18 +1,18 @@
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
-    "Color",
+    "Genres",
     {
-      name_color: DataTypes.STRING,
+      name: DataTypes.STRING,
     },
     {
-      tableName: "color",
+      tableName: "genres",
       timestamps: false,
     }
   );
   Model.associate = (db) => {
     Model.hasMany(db.Products, {
       as: "product",
-      foreignKey: "color_id",
+      foreignKey: "genre_id",
     });
   };
   return Model;

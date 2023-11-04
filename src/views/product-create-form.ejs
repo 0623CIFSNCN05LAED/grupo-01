@@ -1,67 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <%- include("partials/head") %>
-        <title>Formulario del Creación de Producto</title>
-</head>
+    <title>Formulario del Creación de Producto</title>
+  </head>
 
-<body>
+  <body>
     <!-- Header and NavBar -->
-    <header class="header-container">
-        <%- include("partials/header") %>
-    </header>
+    <header class="header-container"><%- include("partials/header") %></header>
 
     <!-- Product Form -->
-    <form class="form-container" action="/products" method="POST" enctype="multipart/form-data">
-        <h2 class="form-container__title">Formulario de CREACIÓN de producto</h2>
-        <div class="form-inputs__container">
-            <label for="name">Nombre del Producto:</label>
-            <input type="text" name="name" id="name" placeholder="Ej: Camiseta blanca" required>
-            <label for="price">Precio del Producto:</label>
-            <input type="number" name="price" id="price" placeholder="Ej: $ 45000" required>
-            <label for="discount">Descuento:</label>
-            <input type="number" name="discount" id="discount" placeholder="Ej: Camiseta blanca" required>
-            <label for="category">Categoria:</label>
-            <select name="category" id="category">
-                <option value="default">-----</option>
-                <option value="women">MUJER</option>
-                <option value="men">HOMBRE</option>
-            </select>
-            <!--             <div class="perfil-user">
+    <form
+      class="form-container"
+      action="/products"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <h2 class="form-container__title">Formulario de CREACIÓN de producto</h2>
+      <div class="form-inputs__container">
+        <label for="name">Nombre del Producto:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Ej: Camiseta blanca"
+          required
+        />
+        <label for="price">Precio del Producto:</label>
+        <input
+          type="number"
+          name="price"
+          id="price"
+          placeholder="Ej: $ 45000"
+          required
+        />
+        <label for="SKU">SKU:</label>
+        <input type="text" name="SKU" id="SKU" />
+        <label for="discount">Descuento:</label>
+        <input
+          type="number"
+          name="discount"
+          id="discount"
+          placeholder="Ej: Camiseta blanca"
+          required
+        />
+        <label for="name">Genero:</label>
+        <select name="name" id="name">
+          <option value="default">-----</option>
+          <% genresList.forEach(genre => { %>
+          <option value="<%= genre.id  %>"><%= genre.name %></option>
+          <% }) %>
+        </select>
+        <label for="name_size">Talle:</label>
+        <select name="name_size" id="name_size">
+          <option value="default">-----</option>
+          <% sizeList.forEach(size => { %>
+          <option value="<%= size.id  %>"><%= size.name_size %></option>
+          <% }) %>
+        </select>
+        <label for="name_color">Color:</label>
+        <select name="name_color" id="name_color">
+          <option value="default">-----</option>
+          <% colorList.forEach(color => { %>
+          <option value="<%= color.id  %>"><%= color.name_color %></option>
+          <% }) %>
+        </select>
+        <!--             <div class="perfil-user">
                     <div class="perfil"><strong>Nombre del producto</strong></div>
                     <div class="">
                         <input type="radio" name="buyer" id="buyer" value="comprador" required>Comprador
                         <input type="radio" name="saler" id="saler" value="comprador" required>Vendedor
                     </div>
                 </div> -->
-            
-            <h2 class="form-container__title">Clasificación del producto:</h2>
-            <div class="form-container__type-product">
-                <input type="checkbox" name="type" id="oferta" value="oferta">
-                <label for="oferta"><p>Oferta</p></label>
-                <input type="checkbox" name="type" id="destacado" value="destacado">
-                <label for="destacado"><p>Destacado</p></label>
-            </div>
-                    <div class="photo-user">
-                        <input type="file" name="image" id="image">
-                        <label class="photo" for="image" id="photoBtn"><i class="fa-solid fa-upload"></i> Subir Foto</label>
-                    </div>
-            
-                <h2 class="form-container__title">Descripción del producto...</h2>
-                <textarea class="form-input" name="description" id="description" placeholder="Características del producto"></textarea>
+
+        <h2 class="form-container__title">Clasificación del producto:</h2>
+        <div class="form-container__type-product">
+          <input type="checkbox" name="type" id="oferta" value="oferta" />
+          <label for="oferta"><p>Oferta</p></label>
+          <input type="checkbox" name="type" id="destacado" value="destacado" />
+          <label for="destacado"><p>Destacado</p></label>
         </div>
-        <div class="buttons">
-            <button>Guardar Producto</button>
-            <button type="reset">Reset</button>
+        <div class="photo-user">
+          <input type="file" name="image" id="image" />
+          <label class="photo" for="image" id="photoBtn"
+            ><i class="fa-solid fa-upload"></i> Subir Foto</label
+          >
         </div>
+
+        <h2 class="form-container__title">Descripción del producto...</h2>
+        <textarea
+          class="form-input"
+          name="description"
+          id="description"
+          placeholder="Características del producto"
+        ></textarea>
+      </div>
+      <div class="buttons">
+        <button>Guardar Producto</button>
+        <button type="reset">Reset</button>
+      </div>
     </form>
     <!-- /Product Form -->
 
     <!-- Footer -->
-    <footer class="footer">
-        <%- include("partials/footer") %>
-    </footer>
-</body>
-
+    <footer class="footer"><%- include("partials/footer") %></footer>
+  </body>
 </html>

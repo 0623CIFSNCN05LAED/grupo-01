@@ -8,4 +8,8 @@ const productsController = require("../controllers/product-controller2");
 
 // /*** GET ALL PRODUCTS ***/
 router.get("/", productsController.index); //Listado de productos
+
+router.get("/create", productsController.create); //Formulario de creación de productos
+router.post("/", upload.single("image"), productsController.store); //Acción de creación (donde se envía el formulario)
+
 module.exports = router;

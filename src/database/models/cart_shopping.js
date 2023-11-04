@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
       order_id: DataTypes.INTEGER,
       product_id: DataTypes.INTEGER,
       price: DataTypes.DECIMAL,
-      SKU: DataTypes.INTEGER,
       quantity: DataTypes.INTEGER,
     },
     {
@@ -15,14 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Model.associate = (db) => {
-    Model.belongsTo(db.Products, {
+    Model.hasMany(db.Products, {
       as: "product",
-      foreignkey: "product_id",
+      foreignKey: "product_id",
     });
 
     Model.belongsTo(db.Orders, {
       as: "orders",
-      foreignkey: "order_id",
+      foreignKey: "order_id",
     });
   };
 

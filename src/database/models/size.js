@@ -6,14 +6,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       tableName: "size",
-      createdAt: "created_at",
-      updatedAt: "updated_at",
+      timestamps: false,
     }
   );
   Model.associate = (db) => {
-    Model.belongsTo(db.Products, {
-      as: "product",
-      foreignkey: "size_id",
+    Model.belongsToMany(db.Products, {
+      as: "products",
+      through: "size_product",
+      foreignKey: "size_id",
+      otherKey: "product_id",
     });
   };
   return Model;

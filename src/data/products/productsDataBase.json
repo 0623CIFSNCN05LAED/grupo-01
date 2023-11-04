@@ -118,5 +118,17 @@
     "discount": "22",
     "color": "Blue",
     "size": "L"
+  },
+  {
+    "id": "b0faa9b1-936b-4f5c-9642-5c342949bf54",
+    "name": [
+      "Remera rosa",
+      "0"
+    ],
+    "description": "Remera rosa....",
+    "type": "oferta",
+    "price": 50000,
+    "discount": 10,
+    "image": "image-1699069039663.jpg"
   }
 ]
