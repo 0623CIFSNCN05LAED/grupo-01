@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 // const { type, userInfo } = require("os");
 const fs = require("fs");
 const upload = require("../middleware/multerUserMiddleware");
+const { Users } = require("../database/models/users");
 
 const controller = {
   index: (req, res) => {
@@ -52,7 +53,7 @@ const controller = {
         },
         oldData: req.body,
       });
-    } else if (!bcrypt.compareSync(req.body.password, user.password)) {
+    } else if (!bcrypt.compareSync(req.body.password, req.body.password_re)) {
       return res.redirect("/users/register");
     } else {
       userService.createUser(user);
