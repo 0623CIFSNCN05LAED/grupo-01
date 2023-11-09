@@ -20,7 +20,7 @@ module.exports = {
   }, */
   getProductDetail: (id) => {
     return Products.findByPk(id, {
-      include: ["color", "size"],
+      include: ["color", "size", "genre"],
     }).then((product) => {
       // return product.toJSON()
 
@@ -31,23 +31,19 @@ module.exports = {
         description: product.description,
         price: product.price,
         discount: product.discount,
-        /*  color: product.color.map((color) => {
-          return {
-            id: color.id,
-            name_color: color.name_color,
-                        
-          };
-        }), */
-        /*  size: product.size.map((size) => {
+        colorName: product.color?.name ?? "No tiene color",
+
+        size: product.size.map((size) => {
           return {
             id: size.id,
             name_size: size.name_size,
-                        
           };
-        }), */
-        /* genreName: movie.genre?.name ?? "No tiene género",
-        genre_id: movie.genre_id,
-        length: movie.length, */
+        }),
+        genreName: product.genre?.name ?? "No tiene género",
+        color_id: product.color_id,
+        size_id: product.genre_id,
+        genre_id: product.genre_id,
+        sku: body.sku,
       };
     });
   },
@@ -72,18 +68,21 @@ module.exports = {
       color_id: body.color_id,
       size_id: body.size_id,
       genre_id: body.genre_id,
-      SKU: body.SKU_id,
+      sku: body.sku,
     });
   },
-  /*  updateMovie: (id, body) => {
-    return Movies.update(
+  /*  updateProduct: (id, body) => {
+    return Products.update(
       {
-        title: body.title,
-        rating: body.rating,
-        awards: body.awards,
-        release_date: body.release_date,
-        length: body.length,
-        genre_id: body.genre_id,
+      image: body.image,
+      name: body.name,
+      description: body.description,
+      price: body.price,
+      discount: body.discount,
+      color_id: body.color_id,
+      size_id: body.size_id,
+      genre_id: body.genre_id,
+      sku: body.sku,
       },
       {
         where: { id: id },

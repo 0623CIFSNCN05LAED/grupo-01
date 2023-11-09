@@ -31,6 +31,11 @@ const controller = {
     await productService.createProduct(req.body);
     res.redirect("/products");
   },
+  detail: (req, res) => {
+    productService.getProductDetail(req.params.id).then((product) => {
+      res.render("productsDetail", { product });
+    });
+  },
 };
 
 module.exports = controller;
