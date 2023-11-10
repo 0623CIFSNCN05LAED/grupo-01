@@ -32,34 +32,27 @@
           name="price"
           id="price"
           placeholder="Ej: $ 45000"
-          required
         />
         <label for="SKU">SKU:</label>
         <input type="text" name="SKU" id="SKU" />
         <label for="discount">Descuento:</label>
-        <input
-          type="number"
-          name="discount"
-          id="discount"
-          placeholder="Ej: Camiseta blanca"
-          required
-        />
-        <label for="name">Genero:</label>
-        <select name="name" id="name">
+        <input type="number" name="discount" id="discount" />
+        <label for="genre_id">Genero:</label>
+        <select name="genre_id" id="genre_id">
           <option value="default">-----</option>
           <% genresList.forEach(genre => { %>
           <option value="<%= genre.id  %>"><%= genre.name %></option>
           <% }) %>
         </select>
-        <label for="name_size">Talle:</label>
-        <select name="name_size" id="name_size">
+        <label for="size_id">Talle:</label>
+        <select name="size_id" id="size_id">
           <option value="default">-----</option>
           <% sizeList.forEach(size => { %>
           <option value="<%= size.id  %>"><%= size.name_size %></option>
           <% }) %>
         </select>
-        <label for="name_color">Color:</label>
-        <select name="name_color" id="name_color">
+        <label for="color_id">Color:</label>
+        <select name="color_id" id="color_id">
           <option value="default">-----</option>
           <% colorList.forEach(color => { %>
           <option value="<%= color.id  %>"><%= color.name_color %></option>
@@ -73,13 +66,13 @@
                     </div>
                 </div> -->
 
-        <h2 class="form-container__title">Clasificación del producto:</h2>
+        <!--  <h2 class="form-container__title">Clasificación del producto:</h2>
         <div class="form-container__type-product">
           <input type="checkbox" name="type" id="oferta" value="oferta" />
           <label for="oferta"><p>Oferta</p></label>
           <input type="checkbox" name="type" id="destacado" value="destacado" />
           <label for="destacado"><p>Destacado</p></label>
-        </div>
+        </div> -->
         <div class="photo-user">
           <input type="file" name="image" id="image" />
           <label class="photo" for="image" id="photoBtn"

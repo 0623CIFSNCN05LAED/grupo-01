@@ -58,18 +58,8 @@ module.exports = {
     });
     return movie;
   }, */
-  createProduct: (body) => {
-    return Products.create({
-      image: body.image,
-      name: body.name,
-      description: body.description,
-      price: body.price,
-      discount: body.discount,
-      color_id: body.color_id,
-      size_id: body.size_id,
-      genre_id: body.genre_id,
-      sku: body.sku,
-    });
+  createProduct: (product) => {
+    return Products.create(product);
   },
   /*  updateProduct: (id, body) => {
     return Products.update(
