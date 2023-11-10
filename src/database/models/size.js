@@ -10,11 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Model.associate = (db) => {
-    Model.belongsToMany(db.Products, {
+    Model.hasMany(db.Products, {
       as: "products",
-      through: "size_product",
       foreignKey: "size_id",
-      otherKey: "product_id",
     });
   };
   return Model;

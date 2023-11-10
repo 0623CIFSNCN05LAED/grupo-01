@@ -28,8 +28,24 @@ const controller = {
     });
   },
   store: async (req, res) => {
-    await productService.createProduct(req.body);
+    const product = {
+      name: req.body.name,
+      price: Number(req.body.price),
+      sku: req.body.sku,
+      discount: Number(req.body.discount),
+      genre_id: req.body.genre_id,
+      size_id: req.body.size_id,
+      color_id: req.body.color_id,
+      image: req.file ? req.file.filename : "default.png",
+      description: req.body.description,
+    };
+    await productService.createProduct(product);
     res.redirect("/products");
+  },
+  detail: (req, res) => {
+    productService.getProductDetail(req.params.id).then((product) => {
+      res.render("productsDetail", { product });
+    });
   },
 };
 

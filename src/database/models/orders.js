@@ -17,16 +17,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Model.associate = (db) => {
-    Model.belongsToMany(db.Products, {
-      as: "products",
-      through: "Cart_shopping",
+    Model.hasMany(db.Cart_shopping, {
+      as: "cart_shopping",
       foreignKey: "order_id",
-      otherKey: "product_id",
     });
 
-    Model.belongsTo(db.User_type, {
-      as: "user_type",
-      foreignKey: "user_type_id",
+    Model.belongsTo(db.Users, {
+      as: "users",
+      foreignKey: "user_id",
     });
   };
 

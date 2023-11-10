@@ -8,13 +8,12 @@ module.exports = (sequelize, DataTypes) => {
       quantity: DataTypes.INTEGER,
     },
     {
-      tableName: "cart_shoping",
-      createdAt: "created_at",
-      updatedAt: "updated_at",
+      tableName: "cart_shopping",
+      timestamps: false,
     }
   );
   Model.associate = (db) => {
-    Model.hasMany(db.Products, {
+    Model.belongsTo(db.Products, {
       as: "product",
       foreignKey: "product_id",
     });

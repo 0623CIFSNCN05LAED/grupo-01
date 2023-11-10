@@ -81,7 +81,7 @@ INSERT INTO `genres` (`id`, `name`) VALUES
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `user_type_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `quantity` int(11) DEFAULT NULL,
   `shipping_adress` varchar(100) NOT NULL,
   `order_adress` varchar(100) NOT NULL,
@@ -104,10 +104,20 @@ CREATE TABLE `products` (
   `price` decimal(10,0) NOT NULL,
   `discount` int(11) DEFAULT NULL,
   `color_id` int(11) NOT NULL,
-  `size_id` int(4) NOT NULL,
   `genre_id` int(11) NOT NULL,
-  `SKU` varchar(150) DEFAULT NULL
+  `SKU` varchar(150) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `size_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id`, `image`, `name`, `description`, `price`, `discount`, `color_id`, `genre_id`, `SKU`, `created_at`, `updated_at`, `size_id`) VALUES
+(1, 'image-1699584700848.jpg', 'chaq', 'chaq', 800000, 0, 5, 1, NULL, '2023-11-10 02:51:40', '2023-11-10 02:51:40', 2),
+(2, 'image-1699584759933.jpg', 'Remera rosa', 'remera rosass', 50000, 0, 3, 0, NULL, '2023-11-10 02:52:39', '2023-11-10 02:52:39', 1);
 
 -- --------------------------------------------------------
 
@@ -142,42 +152,6 @@ INSERT INTO `size` (`id`, `name_size`) VALUES
 (3, 'L'),
 (4, 'XL'),
 (5, 'XL');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `size_product`
---
-
-CREATE TABLE `size_product` (
-  `id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `size_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `type`
---
-
-CREATE TABLE `type` (
-  `id` int(11) NOT NULL,
-  `sale` varchar(100) DEFAULT NULL,
-  `feature` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `type_products`
---
-
-CREATE TABLE `type_products` (
-  `id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -244,16 +218,16 @@ ALTER TABLE `genres`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_type_id` (`user_type_id`);
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indices de la tabla `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `size_id` (`size_id`),
   ADD KEY `color_id` (`color_id`),
-  ADD KEY `genres_id` (`genre_id`);
+  ADD KEY `genres_id` (`genre_id`),
+  ADD KEY `size_id` (`size_id`);
 
 --
 -- Indices de la tabla `products_category`
@@ -267,27 +241,6 @@ ALTER TABLE `products_category`
 --
 ALTER TABLE `size`
   ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `size_product`
---
-ALTER TABLE `size_product`
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `size_id` (`size_id`);
-
---
--- Indices de la tabla `type`
---
-ALTER TABLE `type`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `type_products`
---
-ALTER TABLE `type_products`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `type_id` (`type_id`);
 
 --
 -- Indices de la tabla `users`
@@ -311,13 +264,19 @@ ALTER TABLE `user_type`
 -- AUTO_INCREMENT de la tabla `color`
 --
 ALTER TABLE `color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
@@ -334,14 +293,15 @@ ALTER TABLE `cart_shopping`
 -- Filtros para la tabla `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_type_id`) REFERENCES `user_type` (`id`);
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Filtros para la tabla `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`color_id`) REFERENCES `color` (`id`),
-  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`genre_id`) REFERENCES `genres` (`id`);
+  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`genre_id`) REFERENCES `genres` (`id`),
+  ADD CONSTRAINT `products_ibfk_4` FOREIGN KEY (`size_id`) REFERENCES `size` (`id`);
 
 --
 -- Filtros para la tabla `products_category`
@@ -349,20 +309,6 @@ ALTER TABLE `products`
 ALTER TABLE `products_category`
   ADD CONSTRAINT `products_category_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
   ADD CONSTRAINT `products_category_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
-
---
--- Filtros para la tabla `size_product`
---
-ALTER TABLE `size_product`
-  ADD CONSTRAINT `size_product_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `size_product_ibfk_2` FOREIGN KEY (`size_id`) REFERENCES `size` (`id`);
-
---
--- Filtros para la tabla `type_products`
---
-ALTER TABLE `type_products`
-  ADD CONSTRAINT `type_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `type_products_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`);
 
 --
 -- Filtros para la tabla `users`

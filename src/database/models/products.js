@@ -7,13 +7,12 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.STRING,
       price: DataTypes.DECIMAL,
       discount: DataTypes.INTEGER,
-      SKU: DataTypes.INTEGER,
+      sku: DataTypes.INTEGER,
     },
     {
       tableName: "products",
-      /*  createdAt: "created_at",
-      updatedAt: "updated_at", */
-      timestamps: false,
+      createdAt: "created_at",
+      updatedAt: "updated_at",
     }
   );
   Model.associate = (db) => {
@@ -24,25 +23,14 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: "category_id",
     });
 
-    Model.belongsToMany(db.Type, {
-      as: "type",
-      through: "type_product",
+    Model.hasMany(db.Cart_shopping, {
+      as: "cart_shopping",
       foreignKey: "product_id",
-      otherKey: "type_id",
     });
 
-    Model.belongsToMany(db.Orders, {
-      as: "orders",
-      through: "Cart_shopping",
-      foreignKey: "product_id",
-      otherKey: "order_id",
-    });
-
-    Model.belongsToMany(db.Size, {
+    Model.belongsTo(db.Size, {
       as: "size",
-      through: "size_product",
       foreignKey: "size_id",
-      otherKey: "product_id",
     });
 
     Model.belongsTo(db.Color, {
