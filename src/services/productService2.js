@@ -20,7 +20,7 @@ module.exports = {
   }, */
   getProductDetail: (id) => {
     return Products.findByPk(id, {
-      include: ["color", "size", "genre"],
+      include: ["color", "size", "genres"],
     }).then((product) => {
       // return product.toJSON()
 
@@ -31,19 +31,13 @@ module.exports = {
         description: product.description,
         price: product.price,
         discount: product.discount,
-        colorName: product.color?.name ?? "No tiene color",
-
-        size: product.size.map((size) => {
-          return {
-            id: size.id,
-            name_size: size.name_size,
-          };
-        }),
-        genreName: product.genre?.name ?? "No tiene género",
+        colorName: product.color?.name_color ?? "No tiene color",
         color_id: product.color_id,
-        size_id: product.genre_id,
+        genreName: product.genre?.name ?? "No tiene género",
         genre_id: product.genre_id,
-        sku: body.sku,
+        sizeName: product.size?.name_size ?? "No tiene género",
+        size_id: product.size_id,
+        sku: product.sku,
       };
     });
   },
@@ -61,24 +55,25 @@ module.exports = {
   createProduct: (product) => {
     return Products.create(product);
   },
-  /*  updateProduct: (id, body) => {
+  updateProduct: (id, body) => {
     return Products.update(
       {
-      image: body.image,
-      name: body.name,
-      description: body.description,
-      price: body.price,
-      discount: body.discount,
-      color_id: body.color_id,
-      size_id: body.size_id,
-      genre_id: body.genre_id,
-      sku: body.sku,
+        image: body.image,
+        name: body.name,
+        description: body.description,
+        price: body.price,
+        discount: body.discount,
+        color_id: body.color_id,
+        size_id: body.size_id,
+        genre_id: body.genre_id,
+        sku: body.sku,
       },
       {
         where: { id: id },
       }
     );
   },
+  /*
   deleteMovie: (id) => {
     // Busco todos los actores que tengan como pelicula favorita la que quiero borrar
     const actorsWithFavoriteMovie = Actors.findAll({

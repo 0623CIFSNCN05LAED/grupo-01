@@ -105,7 +105,7 @@ CREATE TABLE `products` (
   `discount` int(11) DEFAULT NULL,
   `color_id` int(11) NOT NULL,
   `genre_id` int(11) NOT NULL,
-  `SKU` varchar(150) DEFAULT NULL,
+  `sku` varchar(150) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `size_id` int(11) NOT NULL
@@ -115,7 +115,7 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `image`, `name`, `description`, `price`, `discount`, `color_id`, `genre_id`, `SKU`, `created_at`, `updated_at`, `size_id`) VALUES
+INSERT INTO `products` (`id`, `image`, `name`, `description`, `price`, `discount`, `color_id`, `genre_id`, `sku`, `created_at`, `updated_at`, `size_id`) VALUES
 (1, 'image-1699584700848.jpg', 'chaq', 'chaq', 800000, 0, 5, 1, NULL, '2023-11-10 02:51:40', '2023-11-10 02:51:40', 2),
 (2, 'image-1699584759933.jpg', 'Remera rosa', 'remera rosass', 50000, 0, 3, 0, NULL, '2023-11-10 02:52:39', '2023-11-10 02:52:39', 1);
 

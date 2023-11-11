@@ -17,8 +17,8 @@ const productsController = require("../controllers/product-controller");
 /* router.get("/details-product/:id", productsController.detail); //Detalle de un producto */
 
 /*** EDIT ONE PRODUCT ***/
-router.get("/edit/:id", productsController.edit); //Formulario de edición de productos
-router.put("/:id", upload.single("image"), productsController.update); //Acción de edición (donde se envia el formulario)
+/* router.get("/edit/:id", productsController.edit); //Formulario de edición de productos
+router.put("/:id", upload.single("image"), productsController.update); //Acción de edición (donde se envia el formulario) */
 
 /*** DELETE ONE PRODUCT***/
 router.delete("/:id", productsController.destroy);

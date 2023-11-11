@@ -22,12 +22,34 @@
             <input type="number" name="price" id="price" placeholder="Ej: $ 45000" required value="<%= product.price%>">
             <label for="discount">Descuento:</label>
             <input type="number" name="discount" id="discount" placeholder="Ej:50%" required value="<%= product.discount %>">
-            <label for="category">Categoria:</label>
-            <select name="category" id="category">
-                <option value="default">Elegí</option>
-                <option value="women" <%= (product.category == 'women') ? "selected" : " " %>>MUJER</option>
-                <option value="men" <%= (product.category == 'men') ? "selected" : " " %>>HOMBRE</option>
-            </select>
+            <label for="genre_id">Genero </label>
+            <p>
+                <select name="genre_id" id="genre_id">
+                    <% genres.forEach(function(genre){ %>
+                    <option value="<%= genre.id %>" <%= genre.id == product.genre_id ? 'selected' : '' %>>
+                        <%= genre.name %></option>
+                    <% }) %>
+                </select>
+            </p>
+            <label for="size_id">Talle </label>
+            <p>
+                <select name="size_id" id="size_id">
+                    <% size.forEach(function(size){ %>
+                    <option value="<%= size.id %>" <%= size.id == product.size_id ? 'selected' : '' %>>
+                        <%= size.name_size %></option>
+                    <% }) %>
+                </select>
+            </p>
+            <label for="color_id">Color </label>
+            <p>
+                <select name="color_id" id="color_id">
+                    <% color.forEach(function(color){ %>
+                    <option value="<%= color.id %>" <%= color.id == product.color_id ? 'selected' : '' %>>
+                        <%= size.name_color %></option>
+                    <% }) %>
+                </select>
+            </p>
+
             <!--             <div class="perfil-user">
                     <div class="perfil"><strong>Nombre del producto</strong></div>
                     <div class="">

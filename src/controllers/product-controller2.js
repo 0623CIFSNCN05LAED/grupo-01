@@ -42,9 +42,26 @@ const controller = {
     await productService.createProduct(product);
     res.redirect("/products");
   },
-  detail: (req, res) => {
-    productService.getProductDetail(req.params.id).then((product) => {
-      res.render("productsDetail", { product });
+  detail: async (req, res) => {
+    const product = await productService.getProductDetail(req.params.id);
+    res.render("details-product", { product });
+  },
+  edit: (req, res) => {
+    const product = productService.getProductDetail(req.params.id);
+    const color = colorService.getAllColors();
+    const size = sizesService.getAllSizes();
+    const genres = genresService.getAllGenres();
+
+    Promise.all([product, color, size, genres]).then(
+      ([product, color, size, genres]) => {
+        console.log("product", product);
+        res.render("product-edit-form", { product, color, size, genres });
+      }
+    );
+  },
+  update: (req, res) => {
+    movieService.updateMovie(req.params.id, req.body).then((movie) => {
+      res.redirect("/movies/detail/" + req.params.id);
     });
   },
 };
