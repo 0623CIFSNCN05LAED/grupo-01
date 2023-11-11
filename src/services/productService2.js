@@ -1,4 +1,4 @@
-const { Products, Color, Size } = require("../database/models");
+const { Products, Color, Size, Genres } = require("../database/models");
 const Sequelize = require("sequelize");
 
 module.exports = {
@@ -22,8 +22,6 @@ module.exports = {
     return Products.findByPk(id, {
       include: ["color", "size", "genres"],
     }).then((product) => {
-      // return product.toJSON()
-
       return {
         id: product.id,
         image: product.image,
@@ -32,25 +30,25 @@ module.exports = {
         price: product.price,
         discount: product.discount,
         colorName: product.color?.name_color ?? "No tiene color",
-        color_id: product.color_id,
+        // color_id: product.color_id,
         genreName: product.genres?.name ?? "No tiene género",
-        genre_id: product.genres_id,
+        // genre_id: product.genres_id,
         sizeName: product.size?.name_size ?? "No tiene género",
-        size_id: product.size_id,
+        // size_id: product.size_id,
         sku: product.sku,
       };
     });
   },
   /*  search: async (query) => {
-    const movie = await Movies.findOne({
+    const product = await Products.findOne({
       where: {
-        title: {
+        name: {
           [Sequelize.Op.like]: "%" + query + "%",
         },
       },
-      include: ["genre", "actors"],
+      include: ["color", "size", "genres"],
     });
-    return movie;
+    return product;
   }, */
   createProduct: (product) => {
     return Products.create(product);
