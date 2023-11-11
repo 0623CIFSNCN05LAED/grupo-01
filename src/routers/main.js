@@ -10,8 +10,9 @@ router.get("/", mainController.index);
 router.get("/search", mainController2.search);
 router.get("/cart", mainController.cart);
 // ************ Routes of Product ************
-const productRouter = require("./products");
-router.use("/products", productRouter);
+/* const productRouter = require("./products");
+router.use("/products", productRouter); */
+// ************ Routes of Users ************
 const userRouter = require("./users");
 router.use("/users", userRouter);
 // ************ Routes of Product2 ************
