@@ -40,12 +40,13 @@
                     <% }) %>
                 </select>
             </p>
+
             <label for="color_id">Color </label>
             <p>
                 <select name="color_id" id="color_id">
                     <% color.forEach(function(color){ %>
                     <option value="<%= color.id %>" <%= color.id == product.color_id ? 'selected' : '' %>>
-                        <%= size.name_color %></option>
+                        <%= color.name_color %></option>
                     <% }) %>
                 </select>
             </p>

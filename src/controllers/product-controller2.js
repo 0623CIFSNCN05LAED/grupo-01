@@ -44,7 +44,7 @@ const controller = {
   // Detail - Detail from one product
   detail: async (req, res) => {
     const product = await productService.getProductDetail(req.params.id);
-    console.log('product: ', product);
+    console.log("product: ", product);
     res.render("details-product", { product });
   },
   // Update - Form to edit
@@ -62,10 +62,14 @@ const controller = {
     );
   },
   // Update - Method to update
-  update: (req, res) => {
-    movieService.updateMovie(req.params.id, req.body).then((movie) => {
-      res.redirect("/movies/detail/" + req.params.id);
-    });
+  update: async (req, res) => {
+    await productService.updateProduct(req.params.id, req.body);
+
+    res.redirect("/products");
+  },
+  destroy: async (req, res) => {
+    await productService.deleteProduct(req.params.id);
+    res.redirect("/products");
   },
 };
 

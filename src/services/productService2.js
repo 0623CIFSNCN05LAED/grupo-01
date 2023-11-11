@@ -30,16 +30,16 @@ module.exports = {
         price: product.price,
         discount: product.discount,
         colorName: product.color?.name_color ?? "No tiene color",
-        // color_id: product.color_id,
+        color_id: product.color_id,
         genreName: product.genres?.name ?? "No tiene género",
-        // genre_id: product.genres_id,
+        genre_id: product.genre_id,
         sizeName: product.size?.name_size ?? "No tiene género",
-        // size_id: product.size_id,
+        size_id: product.size_id,
         sku: product.sku,
       };
     });
   },
-  /*  search: async (query) => {
+  search: async (query) => {
     const product = await Products.findOne({
       where: {
         name: {
@@ -49,7 +49,7 @@ module.exports = {
       include: ["color", "size", "genres"],
     });
     return product;
-  }, */
+  },
   createProduct: (product) => {
     return Products.create(product);
   },
@@ -71,31 +71,10 @@ module.exports = {
       }
     );
   },
-  /*
-  deleteMovie: (id) => {
-    // Busco todos los actores que tengan como pelicula favorita la que quiero borrar
-    const actorsWithFavoriteMovie = Actors.findAll({
-      where: { favorite_movie_id: id },
-    }).then((actors) => {
-      return actors.map((actor) => {
-        return actor.update({ favorite_movie_id: null });
-      });
-    });
 
-    // Busco la pelicula que quiero borrar y elimino la relacion con los actores
-    const actorMovies = Movies.findByPk(id, {
-      include: ["actors"],
-    }).then((movie) => {
-      return movie.actors.map((actor) => {
-        return actor.removeMovie(movie);
-      });
+  deleteProduct: (id) => {
+    return Products.destroy({
+      where: { id: id },
     });
-
-    // Espero a que se eliminen las relaciones y luego elimino la pelicula
-    return Promise.all([actorsWithFavoriteMovie, actorMovies]).then(() => {
-      return Movies.destroy({
-        where: { id: id },
-      });
-    });
-  }, */
+  },
 };

@@ -18,5 +18,6 @@ router.put("/:id", upload.single("image"), productsController.update); //Acción
 /*** CREATE ONE PRODUCT ***/
 router.get("/create", productsController.create); //Formulario de creación de productos
 router.post("/", upload.single("image"), productsController.store); //Acción de creación (donde se envía el formulario)
-
+/*** DELETE ONE PRODUCT***/
+router.delete("/:id", productsController.destroy);
 module.exports = router;
