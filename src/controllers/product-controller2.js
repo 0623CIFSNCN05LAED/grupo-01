@@ -3,12 +3,12 @@ const genresService = require("../services/genresServices");
 const sizesService = require("../services/sizeServices");
 const colorService = require("../services/colorServices");
 const controller = {
+  // Root - Show all products
   index: async (req, res) => {
-    // Do the magic
     const products = await productService.getAllProducts();
     res.render("products", { products });
   },
-
+  // Create - Form to create
   create: async (req, res) => {
     const allSizesdb = sizesService.getAllSizes();
     const allColorsdb = colorService.getAllColors();
@@ -19,14 +19,13 @@ const controller = {
       allColorsdb,
       allGenresdb,
     ]);
-
     res.render("product-create-form", {
       colorList: allColors,
       sizeList: allSizes,
       genresList: allGenres,
-      //userData: req.session.userData ? req.session.userData : null,
     });
   },
+  // Create -  Method to store
   store: async (req, res) => {
     const product = {
       name: req.body.name,
@@ -42,11 +41,13 @@ const controller = {
     await productService.createProduct(product);
     res.redirect("/products");
   },
+  // Detail - Detail from one product
   detail: async (req, res) => {
     const product = await productService.getProductDetail(req.params.id);
-    console.log('product: ',product);
+    console.log('product: ', product);
     res.render("details-product", { product });
   },
+  // Update - Form to edit
   edit: (req, res) => {
     const product = productService.getProductDetail(req.params.id);
     const color = colorService.getAllColors();
@@ -60,6 +61,7 @@ const controller = {
       }
     );
   },
+  // Update - Method to update
   update: (req, res) => {
     movieService.updateMovie(req.params.id, req.body).then((movie) => {
       res.redirect("/movies/detail/" + req.params.id);
