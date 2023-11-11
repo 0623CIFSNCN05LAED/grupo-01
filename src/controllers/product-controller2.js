@@ -44,6 +44,7 @@ const controller = {
   },
   detail: async (req, res) => {
     const product = await productService.getProductDetail(req.params.id);
+    console.log('product: ',product);
     res.render("details-product", { product });
   },
   edit: (req, res) => {
