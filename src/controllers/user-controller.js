@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 // const { type, userInfo } = require("os");
 const fs = require("fs");
 const upload = require("../middleware/multerUserMiddleware");
-const { Users } = require("../database/models/users");
+const { Users } = require("../database/models");
 
 const controller = {
   index: (req, res) => {
@@ -22,19 +22,21 @@ const controller = {
       oldData: oldData ? oldData : null,
     });
   },
-  register: (req, res) => {
+  register: async (req, res) => {
     //Capturo la información del newUser del formulario
     const user = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       phone: req.body.phone,
       avatar: req.file ? req.file.filename : "default.png",
+      user_type_id: 1,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       password_re: req.body.password,
     };
     //Verifico si este email se encuetra en DDBB
-    let checkUser = userService.findByEmail("email", req.body.email);
+    console.log("Email antes de findByEmail:", req.body.email);
+    const checkUser = await userService.findByEmail(req.body.email);
     if (checkUser) {
       return res.redirect("register", {
         errors: {
@@ -44,7 +46,7 @@ const controller = {
         },
         oldData: req.body,
       });
-    } else if (req.body.password != req.body.password_re) {
+    } else if (req.body.password !== req.body.password_re) {
       return res.redirect("register", {
         errors: {
           password_re: {
@@ -53,10 +55,8 @@ const controller = {
         },
         oldData: req.body,
       });
-    } else if (!bcrypt.compareSync(req.body.password, req.body.password_re)) {
-      return res.redirect("/users/register");
     } else {
-      userService.createUser(user);
+      await userService.createUser(user);
       return res.redirect("/users/login");
     }
   },
@@ -72,9 +72,10 @@ const controller = {
       oldData: oldData ? oldData : null,
     });
   },
-  accessLogin: (req, res) => {
+  accessLogin: async (req, res) => {
     //Verifico si este email se encuetra en DDBB
-    const findUser = userService.findByEmail("email", req.body.email);
+    const findUser = await userService.findByEmail(req.body.email);
+    console.log(findUser);
     if (!findUser) {
       return res.redirect("login", {
         errors: {
@@ -101,7 +102,7 @@ const controller = {
       });
     } else {
       req.session.usuario = findUser;
-      return res.redirect("user-profile/" + findUser.id);
+      return res.redirect("/users/user-profile/" + findUser.id);
     }
   },
   logout: (req, res) => {
@@ -112,16 +113,16 @@ const controller = {
   profileAdmin: (req, res) => {
     res.render("admin-profile");
   },
-  profileUser: (req, res) => {
+  profileUser: async (req, res) => {
     const id = req.params.id;
-    const user = userService.getUser(id);
+    const user = await userService.getUser(id);
     // Vista de formulario del usuario perfil
     res.render("user-profile", { user });
   },
-  updateUserData: (req, res) => {
+  updateUserData: async (req, res) => {
     const updateFullName = req.body;
     const id = req.params.id;
-    userService.updateUser(id, updateFullName);
+    await userService.updateUser(id, updateFullName);
     res.redirect("/users/user-profile/" + id);
   },
   deleteUser: (req, res) => {

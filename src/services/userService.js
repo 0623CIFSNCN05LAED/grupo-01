@@ -1,21 +1,23 @@
 const db = require("../data/db");
-const { Users } = require("../database/models/users");
+const { Users } = require("../database/models");
 
 const userServices = {
   getAllUsers: () => {
-    return db.users.findAll();
+    return Users.findAll();
   },
-  getUser: (id) => {
-    return db.users.findById(id);
+  getUser: async (id) => {
+    return Users.findByPk(id, { include: ["user_type"] });
   },
-  findByEmail: async (email, text) => {
-    const usuario = await Users.findAll({
-      where: { email: email },
-      //include: [{ model: User }],
-    });
-    if (usuario == null) {
-      userServices.createUser(user);
+  findByEmail: async (email) => {
+    if (!email) {
+      console.error("Email no proporcionado");
+      return null;
     }
+    const usuario = await Users.findOne({
+      where: { email },
+      //include: [{ model: User_type, as: "user_type" }], // Asegúrate de incluir el modelo User_type
+    });
+    return usuario;
   },
   createUser: async (user) => {
     return await Users.create({
@@ -28,13 +30,24 @@ const userServices = {
       password: user.password,
     });
   },
-  updateUser: (id, user) => {
-    db.users.update(id, user);
+
+  updateUser: async (id, user) => {
+    return Users.update(
+      {
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        phone: user.phone,
+        avatar: user.avatar,
+        email: user.email,
+      },
+      { where: { id: id } }
+    );
   },
-  deleteUser: (id) => {
-    const { avatar } = db.users.findById(id);
-    db.users.deleteImage(avatar);
-    db.users.delete(id);
+  deleteUser: async (id) => {
+    const { avatar } = Users.findById(id);
+    await Users.deleteImage(avatar);
+    await Users.delete(id);
   },
 };
 

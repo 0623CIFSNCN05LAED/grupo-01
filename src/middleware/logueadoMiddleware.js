@@ -1,10 +1,10 @@
 const User = require("../services/userService");
-const Model = require("../database/models/users");
+const { Model } = require("../database/models/users");
 function logueadoMiddleware(req, res, next) {
   res.locals.logueado = false;
 
   const emailCookie = req.cookies.recordame;
-  const userCookie = User.findByEmail("email", emailCookie);
+  const userCookie = User.findByEmail(emailCookie);
 
   if (userCookie != undefined) {
     res.locals.logueado = userCookie;
