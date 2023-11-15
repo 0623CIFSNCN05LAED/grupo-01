@@ -43,7 +43,7 @@ label{
     border: 1px #fff solid;
     border-radius: 5px;
     padding: 8px;
-    width: 250px
+    width: 160px
 }
 .df{
     display: flex;
@@ -65,18 +65,18 @@ label{
        gap: 8px;
 }
 .form-regis {
-   
     display: flex;
     justify-content: center;
     flex-direction: column;
-     background: #37306B;
+    background: #37306B;
     padding: 10px 20px;
     width: 310px;
     height: 600px;
     color: white;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
-opacity: 3;
+    opacity: 3;
+    align-items: center;
 
 }
 .sectregis-img-mb{
@@ -110,9 +110,12 @@ opacity: 3;
 .form-regis{
     width: 400px;
 }
-
-
-
+}
+/* desktop*/
+@media (min-width:1024px){
+    .style-box{
+        width: 250px
+    }
 }
 
 
