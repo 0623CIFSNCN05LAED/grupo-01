@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 
 <html lang="es">
-
-<head>
-
-
+  <head>
     <%- include("partials/head") %>
-        <link rel="stylesheet" href="/css/details-product.css">
+    <link rel="stylesheet" href="/css/details-product.css" />
 
-        <title>Maunganui Tienda</title>
-</head>
+    <title>Maunganui Tienda</title>
+  </head>
 
-<body>
+  <body>
     <!-- Header and NavBar -->
-    <header class="header-container">
-        <%- include("partials/header") %>
-    </header>
+    <header class="header-container"><%- include("partials/header") %></header>
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Product-detail -->
-        <%- include("partials/product-detail") %>
+      <!-- Product-detail -->
+      <%- include("partials/product-detail") %>
 
-            <!-- Vitrina numero 2 ofertas -->
-            <%- include("partials/sale-products") %>
+      <!-- Vitrina numero 2 ofertas -->
+      <!-- include("partials/sale-products")  -->
 
-                <!-- Banner dos secundario -->
-                <%- include('partials/banner-two') %>
-
+      <!-- Banner dos secundario -->
+      <%- include('partials/banner-two') %>
     </main>
 
-
     <!-- Footer -->
-    <footer class="footer">
-        <%- include("partials/footer") %>
-    </footer>
+    <footer class="footer"><%- include("partials/footer") %></footer>
 
     <script src="/js/index.js"></script>
-</body>
-
+  </body>
 </html>

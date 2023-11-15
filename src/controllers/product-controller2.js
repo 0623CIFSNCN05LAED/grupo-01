@@ -3,12 +3,12 @@ const genresService = require("../services/genresServices");
 const sizesService = require("../services/sizeServices");
 const colorService = require("../services/colorServices");
 const controller = {
+  // Root - Show all products
   index: async (req, res) => {
-    // Do the magic
     const products = await productService.getAllProducts();
     res.render("products", { products });
   },
-
+  // Create - Form to create
   create: async (req, res) => {
     const allSizesdb = sizesService.getAllSizes();
     const allColorsdb = colorService.getAllColors();
@@ -19,14 +19,13 @@ const controller = {
       allColorsdb,
       allGenresdb,
     ]);
-
     res.render("product-create-form", {
       colorList: allColors,
       sizeList: allSizes,
       genresList: allGenres,
-      //userData: req.session.userData ? req.session.userData : null,
     });
   },
+  // Create -  Method to store
   store: async (req, res) => {
     const product = {
       name: req.body.name,
@@ -42,10 +41,35 @@ const controller = {
     await productService.createProduct(product);
     res.redirect("/products");
   },
-  detail: (req, res) => {
-    productService.getProductDetail(req.params.id).then((product) => {
-      res.render("productsDetail", { product });
-    });
+  // Detail - Detail from one product
+  detail: async (req, res) => {
+    const product = await productService.getProductDetail(req.params.id);
+    console.log("product: ", product);
+    res.render("details-product", { product });
+  },
+  // Update - Form to edit
+  edit: (req, res) => {
+    const product = productService.getProductDetail(req.params.id);
+    const color = colorService.getAllColors();
+    const size = sizesService.getAllSizes();
+    const genres = genresService.getAllGenres();
+
+    Promise.all([product, color, size, genres]).then(
+      ([product, color, size, genres]) => {
+        console.log("product", product);
+        res.render("product-edit-form", { product, color, size, genres });
+      }
+    );
+  },
+  // Update - Method to update
+  update: async (req, res) => {
+    await productService.updateProduct(req.params.id, req.body);
+
+    res.redirect("/products");
+  },
+  destroy: async (req, res) => {
+    await productService.deleteProduct(req.params.id);
+    res.redirect("/products");
   },
 };
 
