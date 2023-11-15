@@ -105,7 +105,7 @@ CREATE TABLE `products` (
   `discount` int(11) DEFAULT NULL,
   `color_id` int(11) NOT NULL,
   `genre_id` int(11) NOT NULL,
-  `SKU` varchar(150) DEFAULT NULL,
+  `sku` varchar(150) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `size_id` int(11) NOT NULL
@@ -115,9 +115,10 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `image`, `name`, `description`, `price`, `discount`, `color_id`, `genre_id`, `SKU`, `created_at`, `updated_at`, `size_id`) VALUES
-(1, 'image-1699584700848.jpg', 'chaq', 'chaq', 800000, 0, 5, 1, NULL, '2023-11-10 02:51:40', '2023-11-10 02:51:40', 2),
-(2, 'image-1699584759933.jpg', 'Remera rosa', 'remera rosass', 50000, 0, 3, 0, NULL, '2023-11-10 02:52:39', '2023-11-10 02:52:39', 1);
+INSERT INTO `products` (`id`, `image`, `name`, `description`, `price`, `discount`, `color_id`, `genre_id`, `sku`, `created_at`, `updated_at`, `size_id`) VALUES
+(1, 'image-1699584700848.jpg', 'chaq', 'chaq', 800000, 0, 5, 1, NULL, '2023-11-10 02:51:40', '2023-11-11 17:46:49', 2),
+(3, 'image-1699662509192.jpg', 'joggin', 'pant  brown.', 70000, 15, 5, 1, 'asd123', '2023-11-11 00:28:29', '2023-11-11 17:20:32', 3),
+(4, 'image-1699723343337.jpg', 'camisa beige', 'camisa de botones manga corta', 35000, 5, 2, 1, 'lkj159', '2023-11-11 17:22:23', '2023-11-11 17:22:23', 2);
 
 -- --------------------------------------------------------
 
@@ -178,10 +179,17 @@ CREATE TABLE `users` (
 
 CREATE TABLE `user_type` (
   `id` int(11) NOT NULL,
-  `admin` int(11) NOT NULL,
-  `buyer` int(11) NOT NULL,
-  `employee` int(11) NOT NULL
+  `name_user_type` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `user_type`
+--
+
+INSERT INTO `user_type` (`id`, `name_user_type`) VALUES
+(1, 'admin'),
+(2, 'employee'),
+(3, 'saler');
 
 --
 -- Índices para tablas volcadas
@@ -276,7 +284,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

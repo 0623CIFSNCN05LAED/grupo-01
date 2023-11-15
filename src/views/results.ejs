@@ -12,14 +12,13 @@
       </div>
 
       <div class="section-product__container">
-        <% if(foundProducts.length == 0) {%>
+        <% if(product.length == 0) {%>
         <div>
           <h2 style="color: tomato">
             No hay productos que coincidan con esa búsqueda
           </h2>
         </div>
-        <% } else {%> <% foundProducts.forEach(product => { %> <%-
-        include("partials/product-card", {product}) %> <% }) %> <% } %>
+        <% } else {%> <%- include("partials/product-card", {product}) %> <% } %>
       </div>
     </div>
     <footer class="footer"><%- include("partials/footer") %></footer>
