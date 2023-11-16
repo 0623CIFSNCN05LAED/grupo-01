@@ -1,22 +1,22 @@
 ## Retrospectiva
 
 ## Comenzar hacer:
-- Crear DER
-- Hacer Script de la estructura de base de datos completa
-- Crear carpeta sequilize (carpeta modelos y config)
-- CRUD productos
-- CRUD usuarios
-- Incluir permisos para cada tipo de usuario
+- Implementar las validaciones del back-end correspondientes al sprint n° 7 para campos de User.
+- Implementar las validaciones del back-end correspondientes al sprint n° 7 para Products.
+- Creación de validator.js, Validaciones de front-end 
   
 ## Mas de:
-- Implementación del sequelize, actualizando controllers y services.
-- Atomizar las tareas así disminuimos el margen de errores.
+- Implementar los Services faltantes para sequelize (discount, delete-image)
   
-  ## Seguir haciendo:
-- Continuar con el multer correspondiente a la imagen de perfil.
+## Seguir haciendo:
+- Filtros para listado de products, a través de talle, categoría, género.
+- Stock completo de products.
+- Revisiones detalladas de las vistas (corrección de errores ortográficos, diseño, etc).
 
 ## Menos de:
-- Unificar tareas grupales para poder avanzar en otras partes de los sprints y a su vez tener otros puntos de vista.
+- No revisar tablero de tareas, ni chats
 
 ## Dejar de hacer:
-- No comunicar aquello que no entendemos con el fin de ser más participativos y equitativos.
+- No comunicarnos o asistir a las reuniones.
+
+
