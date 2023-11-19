@@ -23,7 +23,7 @@
                 </ul>
                 <hr>
                 <a href="/users/logout">
-                    <button><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #ffffff;"></i>
+                    <button class="exit-button"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #ffffff;"></i>
                         Salir
                     </button>
                 </a>
@@ -48,18 +48,18 @@
                         
                     
                     
-                    <section>
+                    <section class="user-info__section-container">
                             <form class="info-user__profile" action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST">
                                 <div>
                                     <label for="first_name">Nombre</label>
                                     <input placeholder="Tu Nombre" type="text" name="first_name" class="style-box" value="<%= user.first_name %>">
-                                </div>
-                                <div>
                                     <label for="last_name">Apellido</label>
                                     <input placeholder="Tu Apellido" type="text" name="last_name" class="style-box" value="<%= user.last_name %>">
-                                </div>
-                                <div>
-                                    <button>Actualizar</button>
+                                    <label for="phone">Teléfono</label>
+                                    <input type="tel" name="phone" class="style-box" placeholder="Tu Teléfono" value="<%= user.phone %>">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="style-box" placeholder="Tu Email" value="<%= user.email %>">
+                                    <button type="submit">Actualizar</button>
                                 </div>
                             </form>
                     </section>
@@ -67,21 +67,16 @@
                     <form  class="user-info__edition-3" action="">
                         <div class="user-info__form">
                             <div class="user-info_">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" class="style-box" placeholder="Tu Email" value="<%= user.email %>">
-                            </div>
-                            <div class="user-info_">
                                 <label for="password">Contraseña</label>
                                 <input type="password" name="password" class="style-box" placeholder="Tu Contraseña">
                             </div>
                             <div class="user-info_">
-                                <label for="phone">Teléfono</label>
-                                <input type="tel" name="phone" class="style-box" placeholder="Tu Teléfono" value="<%= user.phone %>">
+                            <label for="password">Confirma Contraseña</label>
+                                <input type="password" name="password" class="style-box" placeholder="Confirma Tu Contraseña">
                             </div>
                         </div>
-                        <section>
-                            <button>Actualizar</button>
-                            <button>Actualizar telefono</button>
+                        <section class="user-info__form">
+                            <button type="submit">Actualizar</button>
                         </section>
                     </form>
             </section>

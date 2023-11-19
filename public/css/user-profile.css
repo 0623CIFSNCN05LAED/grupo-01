@@ -16,7 +16,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
     border-radius: 8px;
     align-items: center;
 }
@@ -25,11 +25,13 @@
     border-radius: 15px;
     gap: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     color: white;
 }
-
+.user-info__section-container{ 
+    width: -webkit-fill-available;
+}
 
 .user-info__edition-3{
     color: white;
@@ -47,10 +49,12 @@
     flex-direction: column;
     justify-content: space-around;
     gap: 10px;
+    align-items: center;
 }
 .user-info_{
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 .info-user__profile{
     border-radius: 8px;
@@ -65,6 +69,7 @@
     flex-direction: column;
     gap: 10px;
     flex: 1 1 200px;
+    align-items: center;
 }
 
 .info-user__profile div button{
@@ -142,17 +147,38 @@ margin-top: 27px;
     width: 100%;
 }
 .user-info__rightColumn{
-    padding: 10px 25px;
     display: flex;
     flex-direction: column;
 }
 
 /* Responsive */
-@media (min-width: 1024px){
-    .user-info__container, .user-info__edition-2, .user-info__form{
+@media (min-width: 768px){
+    .user-info_{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .user-info__form{
+        flex-direction: row;
+    }
+    .user-info__container, .user-info__edition-2{
         flex-direction: row;
     }
     .user-info__edition-3 section{
         flex-direction: row;
+    }
+}
+@media (min-width: 425px) and (max-width: 500px){
+    .style-box{
+        width: 280px;
+    }
+}
+@media (min-width: 501px) and (max-width: 767px){
+    .style-box{
+        width: 360px;
+    }
+}
+@media (min-width: 1024px){
+    .user-info__rightColumn{
+        width: 700px;
     }
 }
