@@ -13,7 +13,7 @@
     </section>
     <section class="right-form">
         <form  action = "/users/login" method="POST">
-        <h5><a href="#"><img src="/images/logo-desktop.png" alt="Maunganui"></a></h5>
+        <h5><a href="/"><img src="/images/logo-desktop.png" alt="Maunganui"></a></h5>
         <div class="input-login">
             <input class="style-box" type="text" name="email" placeholder="Tu Email" value="<%= oldData ? oldData.email : "" %>">
             <% if (errors && errors.email) { %>
@@ -31,7 +31,7 @@
         <label for="recordame"><input type="checkbox" name="recordame"> Recordame </label>
         <p>
             <a href="/users/forgot-password">Olvidaste tu Password?</a>
-            </br><a href="/users/register">Registrase</a>
+            </br><a href="/users/register">Registrarse</a>
         </p>
     </form>
     </section>
