@@ -8,6 +8,11 @@ const controller = {
     const products = await productService.getAllProducts();
     res.render("products", { products });
   },
+  // Root - Show all products To Admin
+  listProduct: async (req, res) => {
+    const products = await productService.getAllProducts();
+    res.render("list-products", { products });
+  },
   // Create - Form to create
   create: async (req, res) => {
     const allSizesdb = sizesService.getAllSizes();

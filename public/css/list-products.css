@@ -1,0 +1,15 @@
+.grid-container {
+    display: grid;
+    column-gap: 50px;
+    border: 1px solid red;
+    background-color: rgba(107, 104, 132, 0.50);
+}
+.grid-item {
+    border: 1px solid blue;
+}
+
+.product-item-image{
+    width: 50px;
+    border: 1px solid yellow;
+    border-radius: 50%;
+}
