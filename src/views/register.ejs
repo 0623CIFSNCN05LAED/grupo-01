@@ -3,6 +3,7 @@
   <head>
     <%- include("partials/head") %>
     <title>Maunganui Tienda</title>
+    <script src="/js/registerValidation.js"></script>
   </head>
   <body>
     <!-- Header and NavBar -->
@@ -27,13 +28,19 @@
 
         <br />
 
-        <form class="form-imputs" action="/users/register" method="POST">
+        <form
+          class="form-imputs"
+          action="/users/register"
+          method="POST"
+          id="form"
+        >
           <label for="first_name"> Nombre </label>
           <input class="style-box" type="text" name="first_name" id="first_name"
           value="<%= oldData ? oldData.first_name : "" %>"/> <% if (errors &&
           errors.first_name) { %>
           <p class="errorstyle"><%= errors.first_name.msg %></p>
           <% } %>
+          <span class="errorstyle" id="first_nameError"></span>
 
           <label for="last_name">Apellido: </label>
           <input class="style-box" type="text" name="last_name" id="last_name"
@@ -41,18 +48,22 @@
           errors.last_name) { %>
           <p class="errorstyle"><%= errors.first_name.msg %></p>
           <% } %>
+          <span class="errorstyle" id="last_nameError"></span>
 
           <label for="phone"> Teléfono: </label>
           <input class="style-box" type="tel" name="phone" id="phone" value="<%=
           oldData ? oldData.phone : "" %>"/> <% if (errors && errors.phone) { %>
           <p><%= errors.phone.msg %></p>
           <% } %>
+          <span class="errorstyle" id="phoneError"></span>
+
           <label for="email"> E-mail: </label>
           <input class="style-box" type="email" name="email" id="email"
           value="<%= oldData ? oldData.email : "" %>"/> <% if (errors &&
           errors.email) { %>
           <p class="errorstyle"><%= errors.email.msg %></p>
           <% } %>
+          <span class="errorstyle" id="emailError"></span>
 
           <label for="password"> Contraseña: </label>
           <input
@@ -64,6 +75,7 @@
           <% if (errors && errors.password) { %>
           <p class="errorstyle"><%= errors.password.msg %></p>
           <% } %>
+          <span class="errorstyle" id="passwordError"></span>
 
           <label for="password_re"> Repetir contraseña: </label>
           <input
