@@ -56,7 +56,7 @@ window.onload = function () {
 
   function inputValidation(validation, input, inputErrorMsg) {
     if (!input.value|| !validation.check(input)) {
-      inputErrorMsg.innerText = !input.value ? "Debe completar el campo" : validation.message;
+      inputErrorMsg.innerText = validation.message;
       inputErrorMsg.style.display = "block";
       return false;
     } else {
