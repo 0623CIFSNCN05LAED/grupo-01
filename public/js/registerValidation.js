@@ -55,20 +55,15 @@ window.onload = function () {
   });
 
   function inputValidation(validation, input, inputErrorMsg) {
-    if (!input.value) {
-      inputErrorMsg.innerText = "Debe completar el campo";
-      inputErrorMsg.classList.add("display");
-      return;
+    if (!input.value|| !validation.check(input)) {
+      inputErrorMsg.innerText = !input.value ? "Debe completar el campo" : validation.message;
+      inputErrorMsg.style.display = "block";
+      return false;
+    } else {
+      inputErrorMsg.innerText = "";
+      inputErrorMsg.style.display = "none"; 
+      return true;
     }
-
-    if (!validation.check(input)) {
-      inputErrorMsg.innerText = validation.message;
-      inputErrorMsg.classList.add("display");
-      return;
-    }
-    inputErrorMsg.innerText = "";
-    inputErrorMsg.classList.remove("display");
-    return;
   }
 
   const lastname = document.getElementById("last_name");
