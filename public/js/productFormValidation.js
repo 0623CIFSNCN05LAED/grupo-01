@@ -1,30 +1,20 @@
 window.onload = function () {
   const validations = [
     {
-      field: "first_name",
-      check: (input) => input.value.length >= 2,
+      field: "name",
+      check: (input) => input.value.length >= 5,
       message: "Completar este campo",
     },
     {
-      field: "last_name",
-      check: (input) => input.value.length >= 2,
-      message: "Completar este campo",
+      field: "description",
+      check: (input) => input.value.length >= 20,
+      message: "Deberá ingresar más caracteres",
     },
     {
-      field: "phone",
+      field: "image",
       check: (input) => input.value.length >= 9,
-      message: "Ingresar unicamente números",
+      message: "Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).",
     },
-    {
-      field: "email",
-      check: (input) => validator.isEmail(input.value),
-      message: "Ingresar un mail valido",
-    } /*,
-    {
-      field: "password",
-      validation: () => true,
-      message: "Debe completar este campo",
-    }, */,
   ];
   validations.forEach((validation) => {
     const inputId = validation.field;
@@ -72,8 +62,4 @@ window.onload = function () {
       return true;
     }
   }
-
-  const phone = document.getElementById("phone");
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
 };

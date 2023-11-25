@@ -3,6 +3,7 @@
   <head>
     <%- include("partials/head") %>
     <title>Formulario del Creación de Producto</title>
+    <script src="/js/productFormValidation.js"></script>
   </head>
 
   <body>
@@ -26,6 +27,8 @@
           placeholder="Ej: Camiseta blanca"
           required
         />
+        <span class="errorstyle" id="nameError"></span>
+
         <label for="price">Precio del Producto:</label>
         <input
           type="number"
@@ -78,6 +81,7 @@
           <label class="photo" for="image" id="photoBtn"
             ><i class="fa-solid fa-upload"></i> Subir Foto</label
           >
+          <span class="errorstyle" id="imageError"></span>
         </div>
 
         <h2 class="form-container__title">Descripción del producto...</h2>
@@ -87,6 +91,7 @@
           id="description"
           placeholder="Características del producto"
         ></textarea>
+        <span class="errorstyle" id="descriptionError"></span>
       </div>
       <div class="buttons">
         <button>Guardar Producto</button>
