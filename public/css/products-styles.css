@@ -37,3 +37,8 @@ img{
     scale: 1.1;
 
 }
+.section-search__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

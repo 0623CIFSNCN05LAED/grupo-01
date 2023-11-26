@@ -14,7 +14,21 @@
       <section class="section-title__container">
         <h2>Todos los productos</h2>
       </section>
+      <section class="section-search__container">
+        <form class="search-form__products" action="/search" method="GET">
+          <input
+            type="text"
+            name="keywords"
+            placeholder="Filtro de productos..."
+            class="style-search-form-products"
+          />
+          <button type="submit" class="products-search__button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </section>
       <div class="product-list">
+        
         <% products.forEach(product=> { %>
         <div class="product-item">
           <div class="product-item-image">
@@ -37,6 +51,12 @@
 
             <s>$<%= product.price %></s>
             <p><%= product.discount %>% OFF</p>
+            <button class=""><i class="fa-solid fa-pen-to-square" style="color: #6b6884;"></i>
+              Editar
+          </button>
+          <button class=""><i class="fa-solid fa-trash" style="color: #db6262;"></i>
+              Eliminar
+          </button>
           </div>
         </div>
         <% }) %>
