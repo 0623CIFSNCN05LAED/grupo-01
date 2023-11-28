@@ -5,11 +5,21 @@ const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const upload = require("../middleware/multerUserMiddleware");
 const { Users } = require("../database/models");
+const { UUIDV4 } = require("sequelize");
 
 const controller = {
-  index: (req, res) => {
-    res.render();
+  index: async (req, res) => {
+    Users.findAll({}).then((users) => {
+      return res.json(users);
+    });
+    //res.render("lista-usuarios");
   },
+
+  /*async (req, res) => {
+    DB.products.findAll({}).then((products) => {
+      return res.json(products);
+    });*/
+
   show: (req, res) => {
     //Flash errors
     const errors = req.session.errors;
