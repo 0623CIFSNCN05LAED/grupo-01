@@ -11,7 +11,6 @@ const userServices = {
   },
   findByEmail: async (email) => {
     if (!email) {
-      console.error("Email no proporcionado");
       return null;
     }
     const usuario = await Users.findOne({
@@ -34,7 +33,7 @@ const userServices = {
   },
 
   updateUser: async (id, user) => {
-    return Users.update(
+    return await Users.update(
       {
         id: user.id,
         first_name: user.first_name,

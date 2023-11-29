@@ -7,7 +7,6 @@ const upload = require("../middleware/multerUserMiddleware");
 const { Users } = require("../database/models/users");
 
 const controller = {
-  index: async (req, res) => {
     const users = await userService.getAllUsers();
     res.render('users', { users });
     console.log({ users })
@@ -135,7 +134,7 @@ const controller = {
   deleteUser: (req, res) => {
     res.render();
   },
-  upload: (req, res) => {
+  upload: async (req, res) => {
     const avatar = req.body;
     const id = req.params.id;
     const uploadImage = req.file
@@ -143,7 +142,7 @@ const controller = {
       : userService.getUser(id).avatar;
     // req.session.usuario.avatar = image.filename;
     avatar.avatar = uploadImage;
-    userService.updateUser(id, avatar);
+    await userService.updateUser(id, avatar);
     res.redirect("/users/user-profile/" + id);
   },
 };
