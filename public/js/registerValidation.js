@@ -1,3 +1,4 @@
+const validator = require("validator");
 window.onload = function () {
   const validations = [
     {
@@ -15,16 +16,18 @@ window.onload = function () {
       check: (input) => input.value.length >= 9,
       message: "Ingresar unicamente números",
     },
+
     {
       field: "email",
       check: (input) => validator.isEmail(input.value),
       message: "Ingresar un mail valido",
-    } /*,
-    {
+    },
+    /* {
       field: "password",
       validation: () => true,
       message: "Debe completar este campo",
-    }, */,
+    }, */
+    ,
   ];
   validations.forEach((validation) => {
     const inputId = validation.field;

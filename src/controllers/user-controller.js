@@ -29,13 +29,18 @@ const controller = {
       last_name: req.body.last_name,
       phone: req.body.phone,
       avatar: req.file ? req.file.filename : "default.png",
-      user_type_id: 1,
+      user_type_id: 0,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       password_re: req.body.password,
     };
     //Verifico si este email se encuetra en DDBB
     console.log("Email antes de findByEmail:", req.body.email);
+    if (req.body.email.endsWith("@maunganui.com")) {
+      user.user_type_id = 1;
+    } else {
+      user.user_type_id = 2;
+    }
     const checkUser = await userService.findByEmail(req.body.email);
     if (checkUser) {
       return res.redirect("register", {
