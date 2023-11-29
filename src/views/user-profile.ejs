@@ -39,7 +39,7 @@
                             
                             <form action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                                 <div >
-                                    <img src="/images/users/<%= logueado.avatar %>" alt="<%= logueado.avatar %>">
+                                    <img src="/images/users/<%= user.avatar %>" alt="<%= user.avatar %>">
                                     <input type="file" name="avatar" accept="image/*">
                                 </div>
                             <button type="submit">Actualizar Foto</button> 
@@ -49,7 +49,7 @@
                     
                     
                     <section class="user-info__section-container">
-                            <form class="info-user__profile" action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST">
+                            <form class="info-user__profile" action="/users/user-profile/<%= user.id %>?_method=PUT" method="PUT">
                                 <div>
                                     <label for="first_name">Nombre</label>
                                     <input placeholder="Tu Nombre" type="text" name="first_name" class="style-box" value="<%= user.first_name %>">

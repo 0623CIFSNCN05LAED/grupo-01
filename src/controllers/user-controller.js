@@ -7,8 +7,10 @@ const upload = require("../middleware/multerUserMiddleware");
 const { Users } = require("../database/models");
 
 const controller = {
-  index: (req, res) => {
-    res.render();
+  index: async (req, res) => {
+    Users.findAll({}).then((users) => {
+      return res.json(users);
+    });
   },
   show: (req, res) => {
     //Flash errors
@@ -128,7 +130,7 @@ const controller = {
   deleteUser: (req, res) => {
     res.render();
   },
-  upload: (req, res) => {
+  upload: async (req, res) => {
     const avatar = req.body;
     const id = req.params.id;
     const uploadImage = req.file
@@ -136,7 +138,7 @@ const controller = {
       : userService.getUser(id).avatar;
     // req.session.usuario.avatar = image.filename;
     avatar.avatar = uploadImage;
-    userService.updateUser(id, avatar);
+    await userService.updateUser(id, avatar);
     res.redirect("/users/user-profile/" + id);
   },
 };
