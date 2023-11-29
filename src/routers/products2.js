@@ -21,9 +21,11 @@ router.get("/create", productsController.create); //Formulario de creación de p
 router.post("/", upload.single("image"), productsController.store); //Acción de creación (donde se envía el formulario)
 /*** DELETE ONE PRODUCT***/
 router.delete("/:id", productsController.destroy);
-/*** List Products***/
-router.get("/list-products", productsController.listProduct)
+/* Vista del crud de productos para el admin */
+router.get("/all-products-edit", productsController.productsAdmin)
 
+/*** EDIT ONE PRODUCT ***/
+router.post("/all-products-edit", upload.single("image"), productsController.edit); //Acción de creación (donde se envía el formulario)
 
 
 module.exports = router;
