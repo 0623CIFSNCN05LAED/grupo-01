@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("partials/head") %>
+        <title>Search Result</title>
+</head>
+
+<body>
+    <header class="header-container"><%- include("partials/header") %></header>
+    <main class="main-container">
+        <div class="breadcrumb">
+            <a href="/">Listado de productos </a> /
+            <span><%= logueado.first_name %></span>
+        </div>
+        <div class="grid-container">
+            <div class="product-list">
+                <% products.forEach(product=> { %>
+                <div class="grid-item product-item">
+                  <div>
+                    <a href="/products/details-product/<%= product.id %>">
+                      <img class="product-list-item-image"
+                        src="/images/products/<%= product.image %>"
+                        alt="<%= product.name %>"
+                      />
+                    </a>
+                  </div>
+                  <div class="product-info">
+                    <p><%= product.name %></p>
+                    <s>$<%= product.price %></s>
+                    <p><%= product.discount %>% OFF</p>
+                    <button class=""><i class="fa-solid fa-pen-to-square" style="color: #6b6884;"></i>
+                        Editar
+                    </button>
+                    <button class=""><i class="fa-solid fa-trash" style="color: #db6262;"></i>
+                        Eliminar
+                    </button>
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="footer"><%- include("partials/footer") %></footer>
+</body>
+</html>

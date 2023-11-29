@@ -4,11 +4,13 @@ const bcrypt = require("bcryptjs");
 // const { type, userInfo } = require("os");
 const fs = require("fs");
 const upload = require("../middleware/multerUserMiddleware");
-const { Users } = require("../database/models");
+const { Users } = require("../database/models/users");
 
 const controller = {
-  index: (req, res) => {
-    res.render();
+  index: async (req, res) => {
+    const users = await userService.getAllUsers();
+    res.render('users', { users });
+    console.log({ users })
   },
   show: (req, res) => {
     //Flash errors

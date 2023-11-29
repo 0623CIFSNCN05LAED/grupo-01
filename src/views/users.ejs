@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <%- include("partials/head") %>
+
+    <title>Maunganui Tienda</title>
+  </head>
+
+  <body>
+    <!-- Header and NavBar -->
+    <header class="header-container"><%- include("partials/header") %></header>
+    <main>
+      <section class="section-title__container">
+        <h2>Todos los Usuarios</h2>
+      </section>
+     <div class="product-list">
+      <% users.forEach(user => { %>
+        <div class="">
+          <div class="">
+            <form action="/users/user-profile/<%= user.id %>?_method=PUT">
+              <img
+                src="/images/users/<%= user.avatar %>"
+                alt="<%= user.first_name %>"
+              />
+          </div>
+          <div class="">
+            <p><%= user.first_name %></p>
+            <p><%= user.last_name %></p>
+            <p><%= user.email %></p>
+            <button class=""><i class="fa-solid fa-pen-to-square" style="color: #6b6884;"></i>
+              Editar
+          </button>
+          <button class="" type="submit"><i class="fa-solid fa-trash" style="color: #db6262;"></i>
+              Eliminar
+          </button>
+          </form>
+          </div>
+        </div>
+        <% }) %>
+     </div>
+    </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer"><%- include("partials/footer") %></footer>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

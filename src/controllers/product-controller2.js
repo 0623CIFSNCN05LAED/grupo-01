@@ -24,6 +24,12 @@ const controller = {
       sizeList: allSizes,
       genresList: allGenres,
     });
+
+  },
+   // Root - Show all products To Admin
+  productsAdmin: async (req, res) => {
+    const products = await productService.getAllProducts();
+    res.render("all-products-edit", { products });
   },
   // Create -  Method to store
   store: async (req, res) => {
