@@ -15,6 +15,7 @@ const userController = require("../controllers/user-controller");
 // *************** Get a List of All Users ***************
 router.get("/", userController.index);
 
+
 // ************ User Registration Form ************
 router.get("/register", guestMiddleware, userController.show); //Formulario de registro
 router.post("/register", validateRegister, userController.register); //Acción de creación (donde se envía el formulario)
