@@ -1,16 +1,18 @@
-const userServices = require("../../services/productService2");
-const Op = DB.sequelize.op;
+const productServices = require("../../services/productService2");
 const DB = require("../../database/models");
+const Op = DB.sequelize.op;
 module.exports = {
   list: async (req, res) => {
-    await DB.products.findAll();
-    return res.json(products);
-  },
-  show: async (req, res) => {
-    await DB.products.findByPk(req.params.id);
-    return res.status(200).json({
-      data: product,
+    const products = await productServices.getAllProducts();
+    return res.json({
+      total: products.length,
+      data: products,
       status: 200,
     });
+  },
+  show: async (req, res) => {
+    const id = req.params.id;
+    const product = await productServices.getProductDetail(id);
+    return res.json(product);
   },
 };
