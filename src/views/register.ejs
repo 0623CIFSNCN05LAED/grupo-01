@@ -3,6 +3,7 @@
   <head>
     <%- include("partials/head") %>
     <title>Maunganui Tienda</title>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="/js/registerValidation.js"></script>
   </head>
   <body>
@@ -29,7 +30,7 @@
         <br />
 
         <form
-          class="form-imputs"
+          class="form-inputs"
           action="/users/register"
           method="POST"
           id="form"

@@ -9,10 +9,9 @@ const { UUIDV4 } = require("sequelize");
 
 const controller = {
   index: async (req, res) => {
-    Users.findAll({}).then((users) => {
-      return res.json(users);
-    });
-    //res.render("lista-usuarios");
+    const users = await userService.getAllUsers();
+    res.render("users", { users });
+    console.log({ users });
   },
 
   /*async (req, res) => {
@@ -39,13 +38,18 @@ const controller = {
       last_name: req.body.last_name,
       phone: req.body.phone,
       avatar: req.file ? req.file.filename : "default.png",
-      user_type_id: 1,
+      user_type_id: 0,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       password_re: req.body.password,
     };
     //Verifico si este email se encuetra en DDBB
     console.log("Email antes de findByEmail:", req.body.email);
+    if (req.body.email.endsWith("@maunganui.com")) {
+      user.user_type_id = 1;
+    } else {
+      user.user_type_id = 2;
+    }
     const checkUser = await userService.findByEmail(req.body.email);
     if (checkUser) {
       return res.redirect("register", {
@@ -138,7 +142,7 @@ const controller = {
   deleteUser: (req, res) => {
     res.render();
   },
-  upload: (req, res) => {
+  upload: async (req, res) => {
     const avatar = req.body;
     const id = req.params.id;
     const uploadImage = req.file
@@ -146,7 +150,7 @@ const controller = {
       : userService.getUser(id).avatar;
     // req.session.usuario.avatar = image.filename;
     avatar.avatar = uploadImage;
-    userService.updateUser(id, avatar);
+    await userService.updateUser(id, avatar);
     res.redirect("/users/user-profile/" + id);
   },
 };

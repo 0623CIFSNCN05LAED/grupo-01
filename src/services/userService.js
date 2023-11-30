@@ -1,5 +1,6 @@
 const db = require("../data/db");
 const { Users } = require("../database/models");
+const { v4: uuidv4 } = require("uuid");
 
 const userServices = {
   getAllUsers: () => {
@@ -10,7 +11,6 @@ const userServices = {
   },
   findByEmail: async (email) => {
     if (!email) {
-      console.error("Email no proporcionado");
       return null;
     }
     const usuario = await Users.findOne({
@@ -21,6 +21,7 @@ const userServices = {
   },
   createUser: async (user) => {
     return await Users.create({
+      id: uuidv4(),
       first_name: user.first_name,
       last_name: user.last_name,
       phone: user.phone,
@@ -32,7 +33,7 @@ const userServices = {
   },
 
   updateUser: async (id, user) => {
-    return Users.update(
+    return await Users.update(
       {
         id: user.id,
         first_name: user.first_name,

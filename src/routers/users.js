@@ -8,12 +8,13 @@ const validateLogin = require("../middleware/validate-login");
 const validationsLogin = require("../validations/login");
 const guestMiddleware = require("../middleware/guestMiddleware");
 const authMiddleware = require("../middleware/authMiddleware");
-
+const adminMiddleware = require("../middleware/adminMiddleware");
 // ************ Controller Require ************
 const userController = require("../controllers/user-controller");
 
 // *************** Get a List of All Users ***************
 router.get("/", userController.index);
+
 
 // ************ User Registration Form ************
 router.get("/register", guestMiddleware, userController.show); //Formulario de registro
@@ -42,7 +43,7 @@ router.put("/user-profile/:id", authMiddleware, userController.updateUserData);
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
 
 // ************** User Profile Form ****************
-router.get("/admin-profile", userController.profileAdmin); //Perfil de Admin
+router.get("/admin-profile", adminMiddleware, userController.profileAdmin); //Perfil de Admin
 
 // ************** Password Reset Form ****************
 router.get("/forgot-password", userController.profileUser); // Formulario de reset de contraseña
