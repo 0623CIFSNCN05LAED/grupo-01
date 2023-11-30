@@ -1,7 +1,14 @@
+const { v4: uuidv4 } = require("uuid");
+
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
     "Users",
     {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: () => uuidv4(),
+        primaryKey: true,
+      },
       first_name: DataTypes.STRING,
       last_name: DataTypes.STRING,
       phone: DataTypes.STRING,
@@ -12,11 +19,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       tableName: "users",
-      //createdAt: "created_at",
-      //updatedAt: "updated_at",
       timestamps: false,
     }
   );
+
   Model.associate = (db) => {
     Model.belongsTo(db.User_type, {
       as: "user_type",
