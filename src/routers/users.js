@@ -13,8 +13,7 @@ const adminMiddleware = require("../middleware/adminMiddleware");
 const userController = require("../controllers/user-controller");
 
 // *************** Get a List of All Users ***************
-router.get("/", userController.index);
-
+router.get("/", adminMiddleware, userController.index);
 
 // ************ User Registration Form ************
 router.get("/register", guestMiddleware, userController.show); //Formulario de registro
