@@ -13,6 +13,16 @@ module.exports = {
   show: async (req, res) => {
     const id = req.params.id;
     const product = await productServices.getProductDetail(id);
-    return res.json(product);
+    return res.json({
+      data: product,
+      status: 200,
+    });
+  },
+  store: async (req, res) => {
+    const products = await productServices.createItem();
+    return res.json({
+      data: products,
+      status: 200,
+    });
   },
 };
