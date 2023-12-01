@@ -5,19 +5,7 @@ module.exports = {
   getAllProducts: () => {
     return Products.findAll();
   },
-  /*   getNewestProducts: () => {
-    return Products.findAll({
-      order: [["release_date", "DESC"]],
-      limit: 5,
-    });
-  }, */
-  /* getRecomendedMovies: () => {
-    return Movies.findAll({
-      where: {
-        rating: { [Sequelize.Op.gte]: 8 },
-      },
-    });
-  }, */
+
   getProductDetail: (id) => {
     return Products.findByPk(id, {
       include: ["color", "size", "genres"],
@@ -40,7 +28,7 @@ module.exports = {
     });
   },
   search: async (query) => {
-    const product = await Products.findOne({
+    const product = await Products.findAll({
       where: {
         name: {
           [Sequelize.Op.like]: "%" + query + "%",
