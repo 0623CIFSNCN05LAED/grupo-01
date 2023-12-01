@@ -2,24 +2,31 @@ gi## Retrospectiva
 
 ## Comenzar hacer:
 
-- Implementar las validaciones del back-end correspondientes al sprint n° 7 para campos de User.
-- Implementar las validaciones del back-end correspondientes al sprint n° 7 para Products.
-- Creación de validator.js, Validaciones de front-end
+- Crear Api para Products  y Users
+- Carpetas Dashboard y website.
+- Dashboard con los paneles solicitados de listados: Users, products 
+- Panel de detalle de último producto o usuario creado.
+- Panel de categorías con el total de productos de cada una.
+- Paginado de las listas.
 
 ## Mas de:
 
-- Implementar los Services faltantes para sequelize (discount, delete-image)
+- Dashboard con los paneles solicitado
 
 ## Seguir haciendo:
 
-- Filtros para listado de products, a través de talle, categoría, género.
-- Stock completo de products.
-- Revisiones detalladas de las vistas (corrección de errores ortográficos, diseño, etc).
+- Implementar las validaciones del front-end correspondientes al sprint n° 7 para Products.
+- Mejora de estilos de formularios.
+- Completar crud de sequalize delete en User
+- Conexión y funcionalidades de vista Admin con sus botones.
 
 ## Menos de:
 
 - No revisar tablero de tareas, ni chats
+- No consultar si hace falta con un profesor para no malgastar tiempo.
 
 ## Dejar de hacer:
 
 - No comunicarnos o asistir a las reuniones.
+
+
