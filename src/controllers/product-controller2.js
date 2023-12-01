@@ -2,6 +2,7 @@ const productService = require("../services/productService2");
 const genresService = require("../services/genresServices");
 const sizesService = require("../services/sizeServices");
 const colorService = require("../services/colorServices");
+const { v4: uuidv4 } = require("uuid");
 const controller = {
   // Root - Show all products
   index: async (req, res) => {
@@ -24,9 +25,8 @@ const controller = {
       sizeList: allSizes,
       genresList: allGenres,
     });
-
   },
-   // Root - Show all products To Admin
+  // Root - Show all products To Admin
   productsAdmin: async (req, res) => {
     const products = await productService.getAllProducts();
     res.render("all-products-edit", { products });
@@ -34,6 +34,7 @@ const controller = {
   // Create -  Method to store
   store: async (req, res) => {
     const product = {
+      id: uuidv4(),
       name: req.body.name,
       price: Number(req.body.price),
       sku: req.body.sku,
