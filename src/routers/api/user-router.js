@@ -4,6 +4,5 @@ const apiUserController = require("../../controllers/api/userController");
 
 router.get("/", apiUserController.list);
 router.get("/:id", apiUserController.show);
-router.use("/users", userRouter);
 
 module.exports = router;

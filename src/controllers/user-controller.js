@@ -115,8 +115,13 @@ const controller = {
         oldData: req.body,
       });
     } else {
-      req.session.usuario = findUser;
-      return res.redirect("/users/user-profile/" + findUser.id);
+      if (findUser.user_type_id == 1) {
+        req.session.usuario = findUser;
+        return res.render("admin-profile");
+      } else {
+        req.session.usuario = findUser;
+        return res.redirect("/users/user-profile/" + findUser.id);
+      }
     }
   },
   logout: (req, res) => {
@@ -124,8 +129,8 @@ const controller = {
     req.session.destroy();
     return res.redirect("/");
   },
-  profileAdmin: (req, res) => {
-    res.render("admin-profile");
+  profileAdmin: async (req, res) => {
+    res.render("admin-profile", { user });
   },
   profileUser: async (req, res) => {
     const id = req.params.id;
