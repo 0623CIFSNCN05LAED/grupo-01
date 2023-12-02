@@ -1,6 +1,8 @@
 const db = require("../data/db");
 const { Users } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
+const fs = require("fs").promises;
+const path = require("path");
 
 const userServices = {
   getAllUsers: () => {
@@ -46,9 +48,13 @@ const userServices = {
     );
   },
   deleteUser: async (id) => {
-    const { avatar } = Users.findById(id);
-    await Users.deleteImage(avatar);
-    await Users.delete(id);
+    const { avatar } = await Users.findByPk(id);
+    await fs.unlink(
+      path.join(__dirname, `../../public/images/products/${image}`)
+    );
+    await Users.destroy({
+      where: { id: id },
+    });
   },
 };
 
