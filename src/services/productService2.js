@@ -1,5 +1,7 @@
 const { Products, Color, Size, Genres } = require("../database/models");
 const Sequelize = require("sequelize");
+const fs = require("fs").promises;
+const path = require("path");
 
 module.exports = {
   getAllProducts: () => {
@@ -60,7 +62,11 @@ module.exports = {
     );
   },
 
-  deleteProduct: (id) => {
+  deleteProduct: async (id) => {
+    const { image } = await Products.findByPk(id);
+    await fs.unlink(
+      path.join(__dirname, `../../public/images/products/${image}`)
+    );
     return Products.destroy({
       where: { id: id },
     });

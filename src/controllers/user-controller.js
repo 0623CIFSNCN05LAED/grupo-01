@@ -11,7 +11,6 @@ const controller = {
   index: async (req, res) => {
     const users = await userService.getAllUsers();
     res.render("users", { users });
-    console.log({ users });
   },
 
   /*async (req, res) => {
@@ -89,7 +88,7 @@ const controller = {
   accessLogin: async (req, res) => {
     //Verifico si este email se encuetra en DDBB
     const findUser = await userService.findByEmail(req.body.email);
-    console.log(findUser);
+
     if (!findUser) {
       return res.redirect("login", {
         errors: {
@@ -144,8 +143,10 @@ const controller = {
     await userService.updateUser(id, updateFullName);
     res.redirect("/users/user-profile/" + id);
   },
-  deleteUser: (req, res) => {
-    res.render();
+  deleteUser: async (req, res) => {
+    const id = req.params.id;
+    await userService.deleteUser(id);
+    res.redirect("/");
   },
   upload: async (req, res) => {
     const avatar = req.body;
