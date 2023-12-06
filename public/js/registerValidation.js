@@ -1,33 +1,41 @@
-const validator = require("validator");
 window.onload = function () {
   const validations = [
     {
       field: "first_name",
       check: (input) => input.value.length >= 2,
-      message: "Completar este campo",
+      message: "Debe contener al menos 2 caracteres",
     },
     {
       field: "last_name",
       check: (input) => input.value.length >= 2,
-      message: "Completar este campo",
+      message: "Debe contener al menos 2 caracteres",
     },
     {
       field: "phone",
       check: (input) => input.value.length >= 9,
-      message: "Ingresar unicamente números",
+      message: "Ingresar número de teléfono válido con al menos 9 dígitos ",
     },
 
     {
       field: "email",
       check: (input) => validator.isEmail(input.value),
-      message: "Ingresar un mail valido",
+      message: "Ingresar un mail válido",
     },
-    /* {
+    {
       field: "password",
-      validation: () => true,
-      message: "Debe completar este campo",
-    }, */
-    ,
+      check: (input) => input.value.length >= 8,
+      //passwordValidation(input),
+      message: "La contraseña debe tener al menos 8 caracteres",
+    },
+
+    {
+      field: "password_re",
+      check: (input) => {
+        const password = document.getElementById("password");
+        return password.value === input.value;
+      },
+      message: "La contraseña no coincide",
+    },
   ];
   validations.forEach((validation) => {
     const inputId = validation.field;
@@ -37,6 +45,7 @@ window.onload = function () {
     function validate() {
       console.log("input", input.value);
       inputValidation(validation, input, inputErrorMsg);
+      passwordValidation(pass);
     }
 
     input.addEventListener("blur", validate);
@@ -65,8 +74,32 @@ window.onload = function () {
   });
 
   function inputValidation(validation, input, inputErrorMsg) {
-    if (!input.value || !validation.check(input)) {
+    if (!input.value) {
+      inputErrorMsg.innerText = "El campo no debe estar vacío";
+      inputErrorMsg.style.display = "block";
+      return false;
+    }
+
+    if (!validation.check(input)) {
       inputErrorMsg.innerText = validation.message;
+      inputErrorMsg.style.display = "block";
+      return false;
+    }
+
+    inputErrorMsg.innerText = "";
+    inputErrorMsg.style.display = "none";
+    return true;
+  }
+
+  const pass = document.getElementById("password");
+  function passwordValidation(pass, inputErrorMsg) {
+    console.log(passwordValidation);
+
+    const mayuscula = /[A-Z]/.test(pass.value);
+    const numero = /[0-9]/.test(pass.value);
+    if (!mayuscula && !numero) {
+      inputErrorMsg.innerText =
+        "La contraseña debe contener al menos una letra mayúscula y un número.";
       inputErrorMsg.style.display = "block";
       return false;
     } else {
@@ -75,8 +108,4 @@ window.onload = function () {
       return true;
     }
   }
-
-  const phone = document.getElementById("phone");
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
 };
