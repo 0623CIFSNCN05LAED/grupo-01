@@ -23,8 +23,13 @@ window.onload = function () {
     },
     {
       field: "password",
+      check: (input) => passwordValidation(input),
+      message: "La contraseña debe incluir minimo una mayúscula y un número",
+    },
+    {
+      field: "password",
       check: (input) => input.value.length >= 8,
-      //passwordValidation(input),
+
       message: "La contraseña debe tener al menos 8 caracteres",
     },
 
@@ -45,7 +50,6 @@ window.onload = function () {
     function validate() {
       console.log("input", input.value);
       inputValidation(validation, input, inputErrorMsg);
-      passwordValidation(pass);
     }
 
     input.addEventListener("blur", validate);
@@ -91,20 +95,12 @@ window.onload = function () {
     return true;
   }
 
-  const pass = document.getElementById("password");
-  function passwordValidation(pass, inputErrorMsg) {
-    console.log(passwordValidation);
-
+  function passwordValidation(pass) {
     const mayuscula = /[A-Z]/.test(pass.value);
     const numero = /[0-9]/.test(pass.value);
     if (!mayuscula && !numero) {
-      inputErrorMsg.innerText =
-        "La contraseña debe contener al menos una letra mayúscula y un número.";
-      inputErrorMsg.style.display = "block";
       return false;
     } else {
-      inputErrorMsg.innerText = "";
-      inputErrorMsg.style.display = "none";
       return true;
     }
   }
