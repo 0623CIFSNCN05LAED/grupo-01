@@ -85,3 +85,12 @@
     cursor: pointer;
     color: #9E4784;
 }
+.errorstyle {
+    font-size: 10px;
+    color: rgb(182, 177, 177);
+    font-style: italic;
+    display: none;
+  }
+.display {
+    display: block;
+}

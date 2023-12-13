@@ -4,6 +4,7 @@
 <head>
     <%- include("partials/head") %>
         <title>Search Result</title>
+        <script src="/js/userProfileValidation.js"></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                 <div class="user-info__edition-2">
                         <div class="photo-user">
                             
-                            <form action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <form action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="form-user">
                                 <div >
                                     <img src="/images/users/<%= user.avatar %>" alt="<%= user.avatar %>">
                                     <input type="file" name="avatar" accept="image/*">
@@ -49,16 +50,20 @@
                     
                     
                     <section class="user-info__section-container">
-                            <form class="info-user__profile" action="/users/user-profile/<%= user.id %>?_method=PUT" method="PUT">
+                            <form class="info-user__profile" action="/users/user-profile/<%= user.id %>?_method=PUT" method="PUT" id="form-data">
                                 <div>
                                     <label for="first_name">Nombre</label>
-                                    <input placeholder="Tu Nombre" type="text" name="first_name" class="style-box" value="<%= user.first_name %>">
+                                    <input placeholder="Tu Nombre" type="text" id="first_name" name="first_name" class="style-box" value="<%= user.first_name %>">
+                                    <span class="errorstyle" id="first_nameError"></span>
                                     <label for="last_name">Apellido</label>
-                                    <input placeholder="Tu Apellido" type="text" name="last_name" class="style-box" value="<%= user.last_name %>">
+                                    <input placeholder="Tu Apellido" type="text" id="last_name" name="last_name" class="style-box" value="<%= user.last_name %>">
+                                    <span class="errorstyle" id="last_nameError"></span>
                                     <label for="phone">Teléfono</label>
-                                    <input type="tel" name="phone" class="style-box" placeholder="Tu Teléfono" value="<%= user.phone %>">
+                                    <input type="tel" name="phone" id="phone" class="style-box" placeholder="Tu Teléfono" value="<%= user.phone %>">
+                                    <span class="errorstyle" id="phoneError"></span>
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" class="style-box" placeholder="Tu Email" value="<%= user.email %>">
+                                    <input type="email" name="email" id="email" class="style-box" placeholder="Tu Email" value="<%= user.email %>">
+                                    <span class="errorstyle" id="emailError"></span>
                                     <button type="submit">Actualizar</button>
                                 </div>
                             </form>
