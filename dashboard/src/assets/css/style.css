@@ -1,11 +1,9 @@
 * {
   box-sizing: border-box;
 }
-
-img {
+img{
   width: 100%;
 }
-
 html,
 body {
   color: #99a0b0;
@@ -17,7 +15,6 @@ body {
   line-height: 120%;
   font-family: Open Sans, Helvetica, sans-serif;
 }
-
 .dashboard {
   display: grid;
   width: 100%;
@@ -27,7 +24,6 @@ body {
   grid-template-rows: 80px auto;
   grid-template-areas: 'menu search' 'menu content';
 }
-
 .search-wrap {
   grid-area: search;
   background: #fff;
@@ -37,27 +33,22 @@ body {
   justify-content: space-between;
   padding: 0 3em;
 }
-
 .search-wrap .search {
   height: 40px;
 }
-
 .search-wrap .search label {
   display: flex;
   align-items: center;
   height: 100%;
 }
-
 .search-wrap .search label svg {
   display: block;
 }
-
 .search-wrap .search label svg path,
 .search-wrap .search label svg circle {
   fill: #b6bbc6;
   transition: fill 0.15s ease;
 }
-
 .search-wrap .search label input {
   display: block;
   padding-left: 1em;
@@ -65,16 +56,13 @@ body {
   margin: 0;
   border: 0;
 }
-
 .search-wrap .search label input:focus {
   background: #f5f5fa;
 }
-
 .search-wrap .search label:hover svg path,
 .search-wrap .search label:hover svg circle {
   fill: #2b3a60;
 }
-
 .search-wrap .user-actions button {
   border: 0;
   background: none;
@@ -84,23 +72,19 @@ body {
   padding: 0;
   margin-left: 0.5em;
 }
-
 .search-wrap .user-actions button svg {
   position: relative;
   top: 2px;
 }
-
 .search-wrap .user-actions button svg path,
 .search-wrap .user-actions button svg circle {
   fill: #b6bbc6;
   transition: fill 0.15s ease;
 }
-
 .search-wrap .user-actions button:hover svg path,
 .search-wrap .user-actions button:hover svg circle {
   fill: #2b3a60;
 }
-
 .menu-wrap {
   grid-area: menu;
   padding-bottom: 3em;
@@ -108,7 +92,6 @@ body {
   background: #fff;
   border-right: 1px solid #ede8f0;
 }
-
 .menu-wrap .user {
   height: 80px;
   display: flex;
@@ -117,22 +100,19 @@ body {
   margin: 0;
   padding: 0 3em;
 }
-
 .menu-wrap .user .user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
 }
-
 .menu-wrap .user .user-avatar img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
-
 .menu-wrap .user figcaption {
   margin: 0;
   padding: 0 0 0 1em;
@@ -141,17 +121,14 @@ body {
   font-size: 0.875em;
   line-height: 100%;
 }
-
 .menu-wrap nav {
   display: block;
   padding: 0 3em;
 }
-
 .menu-wrap nav section {
   display: block;
   padding: 3em 0 0;
 }
-
 .menu-wrap nav h3 {
   margin: 0;
   font-size: 0.875em;
@@ -159,19 +136,16 @@ body {
   color: #4b84fe;
   font-weight: 600;
 }
-
 .menu-wrap nav ul {
   display: block;
   padding: 0;
   margin: 0;
 }
-
 .menu-wrap nav li {
   display: block;
   padding: 0;
   margin: 1em 0 0;
 }
-
 .menu-wrap nav li a {
   display: flex;
   align-items: center;
@@ -182,48 +156,39 @@ body {
   font-size: 0.875em;
   transition: color 0.15s ease;
 }
-
 .menu-wrap nav li a svg {
   display: block;
   margin-right: 1em;
 }
-
 .menu-wrap nav li a svg path,
 .menu-wrap nav li a svg circle {
   fill: #b6bbc6;
   transition: fill 0.15s ease;
 }
-
 .menu-wrap nav li a:hover {
   color: #1b253d;
 }
-
 .menu-wrap nav li a:hover svg path,
 .menu-wrap nav li a:hover svg circle {
   fill: #2b3a60;
 }
-
 .menu-wrap nav li a.active {
   color: #4b84fe;
 }
-
 .menu-wrap nav li a.active svg path,
 .menu-wrap nav li a.active svg circle {
   fill: #4b84fe;
 }
-
 .content-wrap {
   grid-area: content;
   padding: 3em;
   overflow: auto;
 }
-
 .content-wrap .content-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .content-wrap .content-head h1 {
   font-size: 1.375em;
   line-height: 100%;
@@ -232,7 +197,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .content-wrap .content-head .action button {
   border: 0;
   background: #4b84fe;
@@ -246,23 +210,19 @@ body {
   font-weight: 600;
   transition: background-color 0.15s ease;
 }
-
 .content-wrap .content-head .action button:hover {
   background-color: #1861fe;
 }
-
 .content-wrap .content-head .action button:hover:active {
   background-color: #0149e2;
   transition: none;
 }
-
 .content-wrap .info-boxes {
   padding: 3em 0 2em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 2em;
 }
-
 .content-wrap .info-boxes .info-box {
   background: #fff;
   height: 160px;
@@ -273,42 +233,35 @@ body {
   border: 1px solid #ede8f0;
   border-radius: 5px;
 }
-
 .content-wrap .info-boxes .info-box .box-icon svg {
   display: block;
   width: 48px;
   height: 48px;
 }
-
 .content-wrap .info-boxes .info-box .box-icon svg path,
 .content-wrap .info-boxes .info-box .box-icon svg circle {
   fill: #99a0b0;
 }
-
 .content-wrap .info-boxes .info-box .box-content {
   padding-left: 1.25em;
   white-space: nowrap;
 }
-
 .content-wrap .info-boxes .info-box .box-content .big {
   display: block;
   font-size: 2em;
   line-height: 150%;
   color: #1b253d;
 }
-
 .content-wrap .info-boxes .info-box.active svg circle,
 .content-wrap .info-boxes .info-box.active svg path {
   fill: #4b84fe;
 }
-
 .content-wrap .person-boxes {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 2em;
 }
-
 .content-wrap .person-boxes .person-box {
   background: #fff;
   height: 320px;
@@ -317,15 +270,12 @@ body {
   border: 1px solid #ede8f0;
   border-radius: 5px;
 }
-
 .content-wrap .person-boxes .person-box:nth-child(2n) .box-avatar .no-name {
   background: #4b84fe;
 }
-
 .content-wrap .person-boxes .person-box:nth-child(5n) .box-avatar .no-name {
   background: #ffbb09;
 }
-
 .content-wrap .person-boxes .person-box .box-avatar {
   width: 100px;
   height: 100px;
@@ -333,15 +283,13 @@ body {
   margin: 0px auto;
   overflow: hidden;
 }
-
 .content-wrap .person-boxes .person-box .box-avatar img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
-
 .content-wrap .person-boxes .person-box .box-avatar .no-name {
   display: flex;
   align-items: center;
@@ -355,11 +303,9 @@ body {
   height: 100%;
   background: #fa5b67;
 }
-
 .content-wrap .person-boxes .person-box .box-bio {
   white-space: no-wrap;
 }
-
 .content-wrap .person-boxes .person-box .box-bio .bio-name {
   margin: 2em 0 0.75em;
   color: #1b253d;
@@ -367,13 +313,11 @@ body {
   font-weight: 700;
   line-height: 100%;
 }
-
 .content-wrap .person-boxes .person-box .box-bio .bio-position {
   margin: 0;
   font-size: 0.875em;
   line-height: 100%;
 }
-
 .content-wrap .person-boxes .person-box .box-actions {
   margin-top: 1.25em;
   padding-top: 1.25em;
@@ -383,7 +327,6 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
 .content-wrap .person-boxes .person-box .box-actions button {
   border: 0;
   background: none;
@@ -392,18 +335,15 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .content-wrap .person-boxes .person-box .box-actions button svg {
   position: relative;
   top: 2px;
 }
-
 .content-wrap .person-boxes .person-box .box-actions button svg path,
 .content-wrap .person-boxes .person-box .box-actions button svg circle {
   fill: #b6bbc6;
   transition: fill 0.15s ease;
 }
-
 .content-wrap .person-boxes .person-box .box-actions button:hover svg path,
 .content-wrap .person-boxes .person-box .box-actions button:hover svg circle {
   fill: #2b3a60;
