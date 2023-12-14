@@ -51,7 +51,7 @@ const controller = {
     }
     const checkUser = await userService.findByEmail(req.body.email);
     if (checkUser) {
-      return res.redirect("register", {
+      return res.render("register", {
         errors: {
           email: {
             msg: "Este email se encuentra registrado",
@@ -60,7 +60,7 @@ const controller = {
         oldData: req.body,
       });
     } else if (req.body.password !== req.body.password_re) {
-      return res.redirect("register", {
+      return res.render("register", {
         errors: {
           password_re: {
             msg: "Las contraseñas no coinciden",
@@ -90,7 +90,7 @@ const controller = {
     const findUser = await userService.findByEmail(req.body.email);
 
     if (!findUser) {
-      return res.redirect("login", {
+      return res.render("login", {
         errors: {
           email: {
             msg: "Este email no se encuentra registrado",
