@@ -1,22 +1,29 @@
 const productServices = require("../../services/productService2");
-const DB = require("../../database/models");
 const { v4: uuidv4 } = require("uuid");
 
 module.exports = {
   list: async (req, res) => {
     const products = await productServices.getAllProducts();
     return res.json({
+      meta: {
+        status: 200,
+        url: req.originalUrl,
+      },
       total: products.length,
       data: products,
-      status: 200,
     });
   },
   show: async (req, res) => {
     const id = req.params.id;
     const product = await productServices.getProductDetail(id);
+
     return res.json({
+      meta: {
+        url: req.originalUrl,
+        status: 200,
+      },
       data: product,
-      status: 200,
+      Urlimage: req.headers.host + "/images/products/" + product.image,
     });
   },
   store: async (req, res) => {
