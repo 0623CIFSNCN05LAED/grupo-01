@@ -56,6 +56,11 @@
     flex-direction: column;
     gap: 10px;
 }
+.user-info_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .info-user__profile{
     border-radius: 8px;
     padding: 25px 15px;

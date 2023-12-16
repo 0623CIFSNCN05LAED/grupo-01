@@ -48,7 +48,7 @@ label {
   border: 1px #fff solid;
   border-radius: 5px;
   padding: 8px;
-  width: 160px;
+  width: 200px;
 }
 .df {
   display: flex;
@@ -109,11 +109,5 @@ label {
   }
   .form-regis {
     width: 400px;
-  }
-}
-/* desktop*/
-@media (min-width: 1024px) {
-  .style-box {
-    width: 250px;
   }
 }
