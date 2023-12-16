@@ -47,22 +47,27 @@
             </a>
           </div>
           <div class="product-info">
-            <p><%= product.name %></p>
+            <div class="product-info_container">
+              <p class="product-info_name"><%= product.name %></p>
+              <div class="product-container_numbers">
+                <s class="product-info_price">$<%= product.price %></s>
+                <p class="product-info_discount"><%= product.discount %>% OFF</p>
+              </div>
+            </div>
+            <div class="product-buttons_container">
 
-            <s>$<%= product.price %></s>
-            <p><%= product.discount %>% OFF</p>
-            
-            <button
-              onclick="window.location.href='/products/edit/<%= product.id %>'"
-              class="admin-button-edit"
-              ><i class="fa-solid fa-pen-to-square" style="color: #6b6884;"></i>
-              Editar
-              </button>           
-            <form action="/products/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">            
-              <button type="submit" class=""><i class="fa-solid fa-trash" style="color: #db6262;"></i>
-                  Eliminar
-              </button>
-            </form>
+              <button
+                onclick="window.location.href='/products/edit/<%= product.id %>'"
+                class="admin-button-edit"
+                ><i class="fa-solid fa-pen-to-square" style="color: #6b6884;"></i>
+                Editar
+                </button>           
+              <form action="/products/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">            
+                <button type="submit" class="admin-button-delete"><i class="fa-solid fa-trash" style="color: #db6262;"></i>
+                    Eliminar
+                </button>
+              </form>
+            </div>
             
           </div>
         </div>
