@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include("partials/head") %>
+    <%- include("../partials/head") %>
     <title>Maunganui Tienda</title>
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="/js/registerValidation.js"></script>
   </head>
   <body>
     <!-- Header and NavBar -->
-    <header class="header-container"><%- include("partials/header") %></header>
+    <header class="header-container">
+      <%- include("../partials/header") %>
+    </header>
 
     <div class="sectregis">
       <section>
@@ -98,7 +100,7 @@
       </section>
     </div>
 
-    <footer class="footer"><%- include("partials/footer") %></footer>
+    <footer class="footer"><%- include("../partials/footer") %></footer>
     <script src="/js/popup.js"></script>
   </body>
 </html>
