@@ -129,6 +129,8 @@ const controller = {
     return res.redirect("/");
   },
   profileAdmin: async (req, res) => {
+    const id = req.params.id;
+    const user = await userService.getUser(id);
     res.render("admin-profile", { user });
   },
   profileUser: async (req, res) => {
@@ -158,6 +160,37 @@ const controller = {
     avatar.avatar = uploadImage;
     await userService.updateUser(id, avatar);
     res.redirect("/users/user-profile/" + id);
+  },
+  recoverpass: async (req, res) => {
+    res.render("forgot-password");
+  },
+  newPassword: async (req, res) => {
+    const findUser = await userService.findByEmail(req.body.email);
+    if (!findUser) {
+      return res.render("forgot-password", {
+        errors: {
+          email: {
+            msg: "Este email se encuentra registrado",
+          },
+        },
+        oldData: req.body,
+      });
+    } else if (req.body.password !== req.body.password_re) {
+      return res.render("forgot-password", {
+        errors: {
+          password_re: {
+            msg: "Las contraseñas no coinciden",
+          },
+        },
+        oldData: req.body,
+      });
+    } else {
+      const newPassword = bcrypt.hashSync(req.body.password, 10);
+
+      await userService.updatePassword(findUser.id, newPassword);
+
+      return res.redirect("/users/login");
+    }
   },
 };
 
