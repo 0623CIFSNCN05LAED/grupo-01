@@ -13,26 +13,27 @@
     </section>
     <section class="right-form">
         <form  action = "/users/login" method="POST">
-        <h5><a href="/"><img src="/images/logo-desktop.png" alt="Maunganui"></a></h5>
+        <div><a href="/"><img src="/images/logo-desktop.png" alt="Maunganui"></a></div>
         <div class="input-login">
-            <input class="style-box" type="text" name="email" placeholder="Tu Email" value="<%= oldData ? oldData.email : "" %>" required>
+            <input class="style-box_login" type="text" name="email" placeholder="Tu Email" value="<%= oldData ? oldData.email : "" %>" required>
             <% if (errors && errors.email) { %>
                 <p class="errorstyle"><%= errors.email.msg %></p>
             <% } %>
 
-            <input class="style-box" type="password" name="password" placeholder="Tu contraseña" required>
+            <input class="style-box_login" type="password" name="password" placeholder="Tu contraseña" required>
             <% if (errors && errors.password) { %>
                 <p class="errorstyle"><%= errors.password.msg %></p>
             <% } %>
         </div>
         <!-- <input class="boton" type="submit" name="" value="Ingresar"> -->
-        <button class="boton" type="submit">Ingresar</button>
+        <button class="login-button" type="submit">Ingresar</button>
 
-        <label for="recordame"><input type="checkbox" name="recordame"> Recordame </label>
-        <p>
+        <label class="login-label" for="recordame"><input type="checkbox" name="recordame"> Recordame </label>
+        <br>
+        <div class="auth-links-container">
             <a href="/users/forgot-password">Olvidaste tu Password?</a>
-            </br><a href="/users/register">Registrarse</a>
-        </p>
+            <a href="/users/register">Registrarse</a>
+        </div>
     </form>
     </section>
     
