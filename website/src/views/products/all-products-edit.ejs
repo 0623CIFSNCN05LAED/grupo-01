@@ -2,19 +2,22 @@
 
 <html lang="es">
   <head>
-    <%- include("partials/head") %>
+    <%- include("../partials/head") %>
 
     <title>Maunganui Tienda</title>
   </head>
 
   <body>
     <!-- Header and NavBar -->
-    <header class="header-container"><%- include("partials/header") %></header>
+    <header class="header-container">
+      <%- include("../partials/header") %>
+    </header>
     <main>
       <section class="section-title__container">
         <h2>Todos los productos</h2>
       </section>
-     <!--  <section class="section-search__container">
+
+      <section class="section-search__container">
         <form class="search-form__products" action="/search" method="GET">
           <input
             type="text"
@@ -26,9 +29,14 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
-      </section> -->
+        <button
+          onclick="window.location.href='/products/create/'"
+          class="admin-button-edit"
+        >
+          Crear producto
+        </button>
+      </section>
       <div class="product-list">
-        
         <% products.forEach(product=> { %>
         <div class="product-item">
           <div class="product-item-image">
@@ -38,32 +46,37 @@
                 alt="<%= product.name %>"
               />
             </a>
-            <a href="/cart">
-              <div>
-                <i
-                  class="cart-shopping-products-icon fa-solid fa-cart-shopping"
-                ></i>
-              </div>
-            </a>
           </div>
           <div class="product-info">
             <p><%= product.name %></p>
 
             <s>$<%= product.price %></s>
             <p><%= product.discount %>% OFF</p>
-<!--             <button class=""><i class="fa-solid fa-pen-to-square" style="color: #6b6884;"></i>
+
+            <button
+              onclick="window.location.href='/products/edit/<%= product.id %>'"
+              class="admin-button-edit"
+            >
+              <i class="fa-solid fa-pen-to-square" style="color: #6b6884"></i>
               Editar
-          </button>
-          <button class=""><i class="fa-solid fa-trash" style="color: #db6262;"></i>
-              Eliminar
-          </button> -->
+            </button>
+            <form
+              action="/products/<%= product.id %>?_method=DELETE"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <button type="submit" class="">
+                <i class="fa-solid fa-trash" style="color: #db6262"></i>
+                Eliminar
+              </button>
+            </form>
           </div>
         </div>
         <% }) %>
       </div>
     </main>
     <!-- Footer -->
-    <footer class="footer"><%- include("partials/footer") %></footer>
+    <footer class="footer"><%- include("../partials/footer") %></footer>
 
     <script src="/js/index.js"></script>
   </body>

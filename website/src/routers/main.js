@@ -9,14 +9,12 @@ const mainController = require("../controllers/main-controller");
 router.get("/", mainController.index);
 router.get("/search", mainController2.search);
 router.get("/cart", mainController.cart);
-// ************ Routes of Product ************
-/* const productRouter = require("./products");
-router.use("/products", productRouter); */
+
 // ************ Routes of Users ************
 const userRouter = require("./users");
 router.use("/users", userRouter);
-// ************ Routes of Product2 ************
-const productRouter2 = require("./products2");
-router.use("/products", productRouter2);
+// ************ Routes of Product ************
+const productRouter = require("./products");
+router.use("/products", productRouter);
 
 module.exports = router;
