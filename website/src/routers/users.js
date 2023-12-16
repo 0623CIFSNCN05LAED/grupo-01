@@ -45,7 +45,8 @@ router.get("/profile/:id", userController.profileUser); //Formulario de Cambio d
 router.get("/admin-profile", adminMiddleware, userController.profileAdmin); //Perfil de Admin
 
 // ************** Password Reset Form ****************
-router.get("/forgot-password", userController.profileUser); // Formulario de reset de contraseña
+router.get("/forgot-password", userController.recoverpass); // Formulario de reset de contraseña
+router.post("/forgot-password", userController.newPassword);
 
 // ************** Delete one user ******************
 router.delete("/:id", userController.deleteUser); //Ación de borrado

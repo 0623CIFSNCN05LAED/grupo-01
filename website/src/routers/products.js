@@ -4,7 +4,6 @@ const upload = require("../middleware/multerProductMiddleware");
 
 // ************ Controller Require ************
 const productsController = require("../controllers/product-controller2");
-const productService2 = require("../services/productService2");
 
 // /*** GET ALL PRODUCTS ***/
 router.get("/", productsController.index); //Listado de productos
@@ -22,10 +21,13 @@ router.post("/", upload.single("image"), productsController.store); //Acción de
 /*** DELETE ONE PRODUCT***/
 router.delete("/:id", productsController.destroy);
 /* Vista del crud de productos para el admin */
-router.get("/all-products-edit", productsController.productsAdmin)
+router.get("/all-products-edit", productsController.productsAdmin);
 
 /*** EDIT ONE PRODUCT ***/
-router.post("/all-products-edit", upload.single("image"), productsController.edit); //Acción de creación (donde se envía el formulario)
-
+router.post(
+  "/all-products-edit",
+  upload.single("image"),
+  productsController.edit
+); //Acción de creación (donde se envía el formulario)
 
 module.exports = router;
