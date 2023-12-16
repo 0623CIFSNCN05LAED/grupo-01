@@ -42,7 +42,7 @@ label {
     rgba(102, 52, 127, 0.55) 100%
   );
 }
-.style-box {
+.style-box_register {
   height: 30px;
   background-color: #d2768587;
   border: 1px #fff solid;
