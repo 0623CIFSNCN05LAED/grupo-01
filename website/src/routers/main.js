@@ -1,7 +1,6 @@
 // ************ Require's ************
 const { Router } = require("express");
 const router = Router();
-
 // ************ Controller Require ************
 const mainController2 = require("../controllers/main-controller2");
 const mainController = require("../controllers/main-controller");

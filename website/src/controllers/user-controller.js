@@ -132,20 +132,35 @@ const controller = {
     const id = req.params.id;
     const user = await userService.getUser(id);
     console.log("user: ", user);
-    res.render("users/admin-profile", { user })
+    res.render("users/admin-profile", { user });
   },
   profileUser: async (req, res) => {
     const id = req.params.id;
     const user = await userService.getUser(id);
-    // Vista de formulario del usuario perfil
+    // Vista de formulario del usuario perfil]
     res.render("users/user-profile", { user });
   },
   updateUserData: async (req, res) => {
     const updateFullName = req.body;
     const id = req.params.id;
+    const findUser = userService.getUser(id);
     await userService.updateUser(id, updateFullName);
-    res.redirect("/users/user-profile/" + id);
+    if (findUser.user_type_id == 1) {
+      req.session.usuario = findUser;
+      return await res.redirect("/users/admin-profile/" + id);
+    } else {
+      req.session.usuario = findUser;
+      return await res.redirect("/users/user-profile/" + id);
+    }
+
+    //res.redirect("/users/user-profile/" + id);
   },
+  /* updateAdminData: async (req, res) => {
+    const updateFullName = req.body;
+    const id = req.params.id;
+    await userService.updateUser(id, updateFullName);
+    res.redirect("/users/admin-profile" + id);
+  }, */
   deleteUser: async (req, res) => {
     const id = req.params.id;
     await userService.deleteUser(id);
@@ -159,8 +174,16 @@ const controller = {
       : userService.getUser(id).avatar;
     // req.session.usuario.avatar = image.filename;
     avatar.avatar = uploadImage;
+    const findUser = userService.getUser(id);
     await userService.updateUser(id, avatar);
-    res.redirect("/users/user-profile/" + id);
+    if (findUser.user_type_id == 1) {
+      req.session.usuario = findUser;
+      return await res.redirect("/users/admin-profile/" + id);
+    } else {
+      req.session.usuario = findUser;
+      return await res.redirect("/users/user-profile/" + id);
+    }
+    //res.redirect("/users/user-profile/" + id);
   },
   recoverpass: async (req, res) => {
     res.render("forgot-password");
