@@ -1,15 +1,17 @@
 <div class="header-logo">
-  <a href="/"
-    ><img
+  <a href="/">
+    <img
       class="header-logo__desktop"
       src="/images/logo-desktop.png"
       alt="logo-maunganui"
-      srcset="" /><img
+      srcset=""
+    /><img
       class="header-logo__mobile"
       src="/images/logo-M.png"
       alt="logo-maunganui"
       srcset=""
-  /></a>
+    />
+  </a>
 </div>
 <nav class="header-container__navbar">
   <form class="header-form__container" action="/search" method="GET">
@@ -25,9 +27,11 @@
   </form>
 
   <ul class="header-container__nav-links">
-    <li><a href="/products"> <strong>Tienda</strong> </a></li>
+    <li>
+      <a href="/products"> <strong>Tienda</strong> </a>
+    </li>
     <li><a href="#">Ofertas</a></li>
-    <li><a href="#">Sucursales</a></li>
+    <li><a href="/products">Productos</a></li>
   </ul>
   <div class="header-container-user__icons">
     <div class="header-cart__icon">
@@ -35,6 +39,19 @@
         ><span><i class="fa-solid fa-cart-shopping"></i></span
       ></a>
     </div>
+    <% if (locals.logueado) { %>
+    <div>
+      <a href="/users/user-profile/<%= locals.logueado.id %>">
+        <span
+          ><img
+            class="User-Icon"
+            src="/images/users/<%= locals.logueado.avatar %>"
+            alt="default.png"
+        /></span>
+        Hi <%= locals.logueado.first_name %>
+      </a>
+    </div>
+    <% } else { %>
     <div class="header-user__icon">
       <a href="/users/login"
         ><span><i class="fa-solid fa-user-astronaut"></i></span
@@ -42,8 +59,10 @@
     </div>
     <div class="header-menu__icon">
       <a href="/users/register" class="btn-abrir-popup" id="btn-abrir-popup"
-        ><span><i class="fa-solid fa-user-plus" style="color: #ffffff;"></i></span
+        ><span
+          ><i class="fa-solid fa-user-plus" style="color: #ffffff"></i></span
       ></a>
     </div>
+    <% } %>
   </div>
 </nav>

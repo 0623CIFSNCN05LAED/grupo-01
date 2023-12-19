@@ -186,7 +186,7 @@ const controller = {
     //res.redirect("/users/user-profile/" + id);
   },
   recoverpass: async (req, res) => {
-    res.render("forgot-password");
+    res.render("users/forgot-password");
   },
   newPassword: async (req, res) => {
     const findUser = await userService.findByEmail(req.body.email);
