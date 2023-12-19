@@ -1,14 +1,16 @@
 /* Styles product-edit-form  */
 
 .form-container{
-    margin: 25px 45px;
     background-color: #37306B;
     color: white;
     padding: 25px 18px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    width: 85%;
+    gap: 8px;
+    margin: 20px auto;
 }
 
 .form-container__title{
@@ -29,7 +31,7 @@
     padding: 4px;
 }
 textarea{
-    height: 250px;
+    height: 80px;
     background-color: #d2768587; 
     border: 1px #fff solid;
     color: white;
@@ -71,6 +73,7 @@ button:hover{
 
 @media (min-width: 768px){
     .form-container{
-        padding: 25px 70px;
+        padding: 25px 50px;
+        width: 50%;
     }
 }

@@ -42,13 +42,13 @@ label {
     rgba(102, 52, 127, 0.55) 100%
   );
 }
-.style-box {
+.style-box_register {
   height: 30px;
   background-color: #d2768587;
   border: 1px #fff solid;
   border-radius: 5px;
   padding: 8px;
-  width: 160px;
+  width: 200px;
 }
 .df {
   display: flex;
@@ -98,6 +98,7 @@ label {
 @media (min-width: 768px) {
   .sectregis {
     flex-direction: row;
+    margin: 20px 40px;
   }
   .sectregis-img-mb {
     display: none;
@@ -109,11 +110,5 @@ label {
   }
   .form-regis {
     width: 400px;
-  }
-}
-/* desktop*/
-@media (min-width: 1024px) {
-  .style-box {
-    width: 250px;
   }
 }
