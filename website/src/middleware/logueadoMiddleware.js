@@ -1,19 +1,18 @@
 const User = require("../services/userService");
 const { Model } = require("../database/models/users");
-function logueadoMiddleware(req, res, next) {
+
+async function logueadoMiddleware(req, res, next) {
   res.locals.logueado = false;
 
   const emailCookie = req.cookies.recordame;
-  const userCookie = User.findByEmail(emailCookie);
+  const userCookie = await User.findByEmail(emailCookie);
 
-  if (userCookie != undefined) {
+  if (req.session.usuario) {
+    res.locals.logueado = req.session.usuario;
+  } else if (userCookie) {
     res.locals.logueado = userCookie;
   }
 
-  if (req.session.usuario != undefined) {
-    res.locals.logueado = true;
-    res.locals.logueado = req.session.usuario;
-  }
   next();
 }
 
