@@ -32,11 +32,14 @@
                 </div>
                 <div class="user-info__edition-2">
                         <div class="photo-user">
-                            <!-- <img src="/images/products/default.png" alt="default.png"> -->
-                            <div>
-                                <input class="" type="file" name="image" id="image">
-                            </div>
-                            <label for="image">Selecciona tu imagen de perfil</label>
+                            
+                            <form action="/users/admin-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                                <div >
+                                    <img src="/images/users/<%= user.avatar %>" alt="<%= user.avatar %>">
+                                    <input type="file" name="avatar" accept="image/*">
+                                </div>
+                            <button type="submit">Actualizar Foto</button> 
+                            </form>
                         </div>
 
                     <section>

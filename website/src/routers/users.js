@@ -42,8 +42,24 @@ router.put("/user-profile/:id", authMiddleware, userController.updateUserData);
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
 
 // ************** User Profile Form ****************
-router.get("/admin-profile", adminMiddleware, userController.profileAdmin); //Perfil de Admin
-
+router.get(
+  "/admin-profile/:id",
+  authMiddleware,
+  adminMiddleware,
+  userController.profileAdmin
+); //Perfil de Admin
+router.put(
+  "/admin-profile/:id",
+  upload.single("avatar"),
+  authMiddleware,
+  userController.upload
+);
+router.put(
+  "/admin-profile/:id",
+  adminMiddleware,
+  authMiddleware,
+  userController.updateUserData
+);
 // ************** Password Reset Form ****************
 router.get("/forgot-password", userController.recoverpass); // Formulario de reset de contraseña
 router.post("/forgot-password", userController.newPassword);
