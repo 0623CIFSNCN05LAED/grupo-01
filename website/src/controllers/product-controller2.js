@@ -46,7 +46,7 @@ const controller = {
       description: req.body.description,
     };
     await productService.createProduct(product);
-    res.redirect("products/products");
+    res.redirect("/products");
   },
   // Detail - Detail from one product
   detail: async (req, res) => {
@@ -74,11 +74,11 @@ const controller = {
   // Update - Method to update
   update: async (req, res) => {
     await productService.updateProduct(req.params.id, req.body);
-    res.redirect("products/products");
+    res.redirect("/products");
   },
   destroy: async (req, res) => {
     await productService.deleteProduct(req.params.id);
-    res.redirect("products/products");
+    res.redirect("/products");
   },
 };
 
