@@ -55,7 +55,7 @@ const userServices = {
     await Users.destroy({
       where: { id: id },
     });
-  },
+  }
 };
 
 module.exports = userServices;
