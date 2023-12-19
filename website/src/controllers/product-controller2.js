@@ -31,6 +31,7 @@ const controller = {
     const products = await productService.getAllProducts();
     res.render("products/all-products-edit", { products });
   },
+
   // Create -  Method to store
   store: async (req, res) => {
     const product = {
@@ -53,6 +54,11 @@ const controller = {
     const product = await productService.getProductDetail(req.params.id);
     res.render("products/details-product", { product });
   },
+    // Root - Show all products To user
+    detailUser: async (req, res) => {
+      const product= await productService.getProductDetail(req.params.id);
+      res.render("products/details-product-user", { product });
+    },
   // Update - Form to edit
   edit: (req, res) => {
     const product = productService.getProductDetail(req.params.id);

@@ -113,24 +113,7 @@
     <div class="container-product__shop-buttons">
       <button class="shop-button">COMPRAR AHORA</button>
     </div>
-    <!-- CRUD BUTTONS -->
-    
-    <div class="container-product__admin-buttons">
-      <button
-        onclick="window.location.href='/products/create/'"
-        class="admin-button-edit"
-      >
-        Crear
-      </button>
-      <button
-        onclick="window.location.href='/products/edit/<%= product.id %>'"
-        class="admin-button-edit"
-      >
-        Editar
-      </button>
-      <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-        <button class="admin-button-delete">Eliminar</button>
-      </form>
     </div>
+
   </div>
 </div>

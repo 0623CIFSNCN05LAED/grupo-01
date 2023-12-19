@@ -12,6 +12,8 @@ router.get("/", productsController.index); //Listado de productos
 
 /*** GET ONE PRODUCT ***/
 router.get("/details-product/:id", productsController.detail); //Detalle de un producto
+/*** GET ONE PRODUCT ***/
+router.get("/details-product-user/:id", productsController.detailUser); //Detalle de un producto para el usuario
 
 /*** EDIT ONE PRODUCT ***/
 router.get(
@@ -44,7 +46,6 @@ router.get(
   adminMiddleware,
   productsController.productsAdmin
 );
-
 /*** EDIT ONE PRODUCT ***/
 router.post(
   "/all-products-edit",
