@@ -10,11 +10,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid red;
     align-items: center;
 }
 .product-info_container{
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -41,7 +39,6 @@
 .product-buttons_container{
     display: flex;
     flex-direction: row;
-    border: 1px solid blue;
     gap: 15px;
     align-items: center;
 }
