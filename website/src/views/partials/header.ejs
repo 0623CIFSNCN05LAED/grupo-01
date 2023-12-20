@@ -41,9 +41,13 @@
     </div>
     <% if (locals.logueado) { %>
     <div>
-      <a href="/users/user-profile/<%= locals.logueado.id %>">
-        <span
-          ><img
+      <% if (locals.logueado.user_type_id == 1) { %>
+      <a href="/users/admin-profile/<%= locals.logueado.id %>">
+        <% } else { %>
+        <a href="/users/user-profile/<%= locals.logueado.id %>">
+        <% } %>
+        <span>
+          <img
             class="User-Icon"
             src="/images/users/<%= locals.logueado.avatar %>"
             alt="default.png"
