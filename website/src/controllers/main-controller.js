@@ -8,6 +8,9 @@ const mainController = {
       inFeatured,
     });
   },
+  sucursales: (req, res) => {
+    res.render("sucursales");
+  },
   /*  search: (req, res) => {
     const keywords = req.query.keywords;
     const foundProducts = productService.searchProducts(keywords);

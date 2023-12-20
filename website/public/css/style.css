@@ -44,7 +44,7 @@
 .header-container__navbar{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
 }
 .header-form__container{
@@ -130,9 +130,6 @@ button:hover{
 }
 .header-cart__icon, .header-cart__icon{
     margin: 0px 5px;
-}
-.header-user__icon{
-    display: none;
 }
 .fa-user-astronaut{
     display: none;
@@ -348,7 +345,10 @@ span.contact img{
     }
 }
 @media (min-width: 790px) {
-
+    .header-logo{
+        display: flex;
+        flex: 1;
+    }
     .container-banner__img > img:nth-child(2) {
         display: none;
         
@@ -361,6 +361,8 @@ span.contact img{
     .header-form__container{
         margin-right: 15px;
         gap: 20px;
+        flex: 2;
+        text-align: center;
     }
     .header-form__container input{
         width: 180px;
@@ -369,9 +371,12 @@ span.contact img{
         width: 50px;
     }
     .header-container__nav-links{
-        display: block;
+        display: flex;
         margin-right: 10px;
-
+        flex-wrap: nowrap;
+    }
+    .header-container__navbar{
+        flex: 1;
     }
     .header-container__nav-links li{
         padding: 0 5px;
@@ -392,7 +397,20 @@ span.contact img{
 
 /* Estilos para pantallas mobile */
 @media (max-width: 789px) {
-
+    .header-logo{
+        display: flex;
+        flex: 1;
+    }
+    .header-form__container{
+        flex: 2;
+        text-align: center;
+    }
+    .header-container__navbar{
+        flex: 1;
+    }
+    .header-form__container input {
+        width: 95px;
+    }   
     .container-banner__img > img:nth-child(1) {
         display: none;
     }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("partials/head") %>
+    <title>Maunganui Tienda</title>
+  </head>
+  <body>
+    <!-- Header and NavBar -->
+    <header class="header-container"><%- include("partials/header") %></header>
+    <!-- Main Content -->
+    <main class="container">
+        <div>
+            <section class="section-title__container">
+                <h2>Sucursales</h2>
+            </section class="section">
+            <div>
+                <div class="img-map_container">
+                    <a href="https://maps.app.goo.gl/S4RAKxcTpvk3Gzg97">
+                        <img src="/images/mapa-sucursales.png" alt="mapa-stores">
+                    </a>
+                </div>
+                <div class="cards-stores_container">
+                    <ul class="stores-container">
+                        <li class="stores-li">
+                            <h3>Sucursal Av. SantaFe</h3>
+                            <p class="stores-p">
+                               <strong>Dirección:</strong>  Av. Santafe 3245 - planta baja
+                                (1425) - Capital Federal.
+                                Argentina
+                                <br>
+                               <strong>Horarios:</strong>  Martes a domingo 10:00 - 19:00
+                               <br>
+                               <strong>Teléfono: </strong> 5491126400001
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="stores-container">
+                        <li class="stores-li">
+                            <h3>Sucursal Av. Corrientes</h3>
+                            <p class="stores-p">
+                               <strong>Dirección:</strong>  Av. Corrientes 1526
+                               (1417) - Capital Federal.
+                               Argentina
+                               <br>
+                               <strong>Horarios:</strong>  Martes a domingo 10:00 - 19:00
+                               <br>
+                               <strong>Teléfono: </strong> 54911264456895
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer"><%- include("partials/footer") %></footer>
+
+    <script src="/js/popup.js"></script>
+    <!-- <script src="/js/index.js"></script> -->
+  </body>
+</html>
