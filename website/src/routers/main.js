@@ -8,6 +8,7 @@ const mainController = require("../controllers/main-controller");
 router.get("/", mainController.index);
 router.get("/search", mainController2.search);
 router.get("/cart", mainController.cart);
+router.get("/sucursales", mainController.sucursales);
 
 // ************ Routes of Users ************
 const userRouter = require("./users");
