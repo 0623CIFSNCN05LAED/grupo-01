@@ -114,7 +114,7 @@
       <button class="shop-button">COMPRAR AHORA</button>
     </div>
     <!-- CRUD BUTTONS -->
-    
+    <% if (locals.logueado && locals.logueado.user_type_id == 1) { %>
     <div class="container-product__admin-buttons">
       <button
         onclick="window.location.href='/products/create/'"
@@ -131,6 +131,7 @@
       <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
         <button class="admin-button-delete">Eliminar</button>
       </form>
+      <% } %>
     </div>
   </div>
 </div>
