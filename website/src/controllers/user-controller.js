@@ -191,7 +191,7 @@ const controller = {
   newPassword: async (req, res) => {
     const findUser = await userService.findByEmail(req.body.email);
     if (!findUser) {
-      return res.render("forgot-password", {
+      return res.render("users/forgot-password", {
         errors: {
           email: {
             msg: "Este email se encuentra registrado",
@@ -200,7 +200,7 @@ const controller = {
         oldData: req.body,
       });
     } else if (req.body.password !== req.body.password_re) {
-      return res.render("forgot-password", {
+      return res.render("users/forgot-password", {
         errors: {
           password_re: {
             msg: "Las contraseñas no coinciden",
