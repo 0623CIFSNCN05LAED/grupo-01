@@ -132,7 +132,7 @@ const controller = {
     const id = req.params.id;
     const user = await userService.getUser(id);
     console.log("user: ", user);
-    res.render("users/admin-profile", { user })
+    res.render("users/admin-profile", { user });
   },
   profileUser: async (req, res) => {
     const id = req.params.id;
@@ -163,7 +163,7 @@ const controller = {
     res.redirect("/users/user-profile/" + id);
   },
   recoverpass: async (req, res) => {
-    res.render("forgot-password");
+    res.render("users/forgot-password");
   },
   newPassword: async (req, res) => {
     const findUser = await userService.findByEmail(req.body.email);
