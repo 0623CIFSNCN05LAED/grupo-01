@@ -36,21 +36,24 @@
     gap: 5px;
 }
 .img-map_container{
-    border: 1px solid var(--violet);
     margin: 15px 10px;
-    box-shadow: 0 4px 8px rgb(55, 48, 107, 0.5)  ;
 }
 .img-map_container a{
     display: flex;
     justify-content: center;
 }
 .img-map_container img{
+    border: 1px solid var(--violet);
     width: 100%;
+    box-shadow: 0 4px 8px rgb(55, 48, 107, 0.5)  ;
 }
 
 @media screen and (min-width: 769px) {
     .cards-stores_container{
         flex-direction: row;
         justify-content: center;
+    }
+    .img-map_container img{
+        width: 70%;
     }
 }
