@@ -131,9 +131,8 @@ button:hover {
   color: #fff;
   margin: 0px 5px;
 }
-.header-cart__icon,
-.header-cart__icon {
-  margin: 0px 5px;
+.header-cart__icon{
+  margin: auto 5px;
 }
 .fa-user-astronaut{
     display: none;
@@ -339,7 +338,7 @@ span.contact img {
 .User-Icon {
   height: 35px;
   width: 35px;
-  border-radius: 10px;
+  border-radius: 17.25px;
 }
 
 /* Responsive */
@@ -401,7 +400,6 @@ span.contact img {
         justify-content: center;
         align-items: center;
     }
-
 }
 
 /* Estilos para pantallas mobile */
