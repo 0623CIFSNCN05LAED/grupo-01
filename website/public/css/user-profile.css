@@ -9,6 +9,9 @@
     justify-content: center;
     gap: 25px;
 }
+#custom-file-input{
+   width: 90px;
+}
 .user-info__leftColumn{
     padding: 15px;
     background-color: var(--violet);

@@ -39,7 +39,7 @@
                             <form action="/users/admin-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                                 <div >
                                     <img src="/images/users/<%= user.avatar %>" alt="<%= user.avatar %>">
-                                    <input type="file" name="avatar" accept="image/*">
+                                    <input id="custom-file-input"  type="file" name="avatar" accept="image/*">
                                 </div>
                             <button type="submit">Actualizar Foto</button> 
                             </form>
