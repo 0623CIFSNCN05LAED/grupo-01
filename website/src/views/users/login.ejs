@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-
+  <head>
     <%- include("../partials/head") %>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/login.css" />
 
     <title>Maunganui Tienda</title>
-</head>
-<body>
-    <section class="left-form">
-
-    </section>
+  </head>
+  <body>
+    <section class="left-form"></section>
     <section class="right-form">
-        <form  action = "/users/login" method="POST">
-        <div><a href="/"><img src="/images/logo-desktop.png" alt="Maunganui"></a></div>
+      <form action="/users/login" method="POST" id="form">
+        <div>
+          <a href="/"><img src="/images/logo-desktop.png" alt="Maunganui" /></a>
+        </div>
         <div class="input-login">
-            <input class="style-box_login" type="text" name="email" placeholder="Tu Email" value="<%= oldData ? oldData.email : "" %>" required>
-            <% if (errors && errors.email) { %>
-                <p class="errorstyle"><%= errors.email.msg %></p>
-            <% } %>
+          <input class="style-box_login" type="text" name="email" id="email"
+          placeholder="Tu Email" value="<%= oldData ? oldData.email : "" %>" >
+          <% if (errors && errors.email) { %>
+          <p class="errorstyle"><%= errors.email.msg %></p>
+          <% } %>
+          <span class="errorstyle" id="emailError"></span>
 
-            <input class="style-box_login" type="password" name="password" placeholder="Tu contraseña" required>
-            <% if (errors && errors.password) { %>
-                <p class="errorstyle"><%= errors.password.msg %></p>
-            <% } %>
+          <input
+            class="style-box_login"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Tu contraseña"
+          />
+          <% if (errors && errors.password) { %>
+          <p class="errorstyle"><%= errors.password.msg %></p>
+          <% } %>
+          <span class="errorstyle" id="passwordError"></span>
         </div>
         <!-- <input class="boton" type="submit" name="" value="Ingresar"> -->
         <button class="login-button" type="submit">Ingresar</button>
 
-        <label class="login-label" for="recordame"><input type="checkbox" name="recordame"> Recordame </label>
-        <br>
+        <label class="login-label" for="recordame"
+          ><input type="checkbox" name="recordame" /> Recordame
+        </label>
+        <br />
         <div class="auth-links-container">
-            <a href="/users/forgot-password">Olvidaste tu Password?</a>
-            <a href="/users/register">Registrarse</a>
+          <a href="/users/forgot-password">Olvidaste tu Password?</a>
+          <a href="/users/register">Registrarse</a>
         </div>
-    </form>
+      </form>
     </section>
-    
-</body>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/js/loginValidation.js"></script>
+  </body>
 </html>

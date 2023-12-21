@@ -143,8 +143,9 @@ const controller = {
   updateUserData: async (req, res) => {
     const updateFullName = req.body;
     const id = req.params.id;
-    const findUser = userService.getUser(id);
+    const findUser = await userService.getUser(id);
     await userService.updateUser(id, updateFullName);
+    console.log(findUser);
     if (findUser.user_type_id == 1) {
       req.session.usuario = findUser;
       return await res.redirect("/users/admin-profile/" + id);
@@ -174,7 +175,8 @@ const controller = {
       : userService.getUser(id).avatar;
     // req.session.usuario.avatar = image.filename;
     avatar.avatar = uploadImage;
-    const findUser = userService.getUser(id);
+    const findUser = await userService.getUser(id);
+    //console.log(findUser);
     await userService.updateUser(id, avatar);
     if (findUser.user_type_id == 1) {
       req.session.usuario = findUser;
