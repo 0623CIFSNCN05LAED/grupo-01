@@ -1,9 +1,16 @@
 import './Dashboard.css'
-import SearchWrape from './Search-wrap'
+import SearchWrap from './Search-wrap'
+import MenuWrap  from './Menu-wrap'
+import ContentWrap from './Content-wrap'
+
 
 function Dashboard(){
-    return <div className="dashboard">
-        <SearchWrape/>
+    return (
+    <div className="dashboard">
+        <SearchWrap/>
+        <MenuWrap/>
+        <ContentWrap/>
     </div>
+    )
 }
 export default Dashboard
