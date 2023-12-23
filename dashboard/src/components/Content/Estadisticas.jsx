@@ -6,34 +6,34 @@ function Estadisticas (){
           <div className="info-box">
             <div className="box-icon">
               <i
-                className="bi bi-film"
+                className="bi bi-qr-code"
                 style={{
                   fontSize: "1.5rem",
-                  color: "cornflowerblue",
-                }}
-              ></i>
-            </div>
-  
-            <div className="box-content">
-              <span className="big">15</span>
-              Productos
-            </div>
-          </div>
-  
-          <div className="info-box">
-            <div className="box-icon">
-              <i
-                className="bi bi-tags-fill"
-                style={{
-                  fontSize: "2.5rem",
                   color: "orange",
                 }}
               ></i>
             </div>
   
             <div className="box-content">
+              <span className="big">15</span>
+              Total productos
+            </div>
+          </div>
+  
+          <div className="info-box">
+            <div className="box-icon">
+              <i
+                className="bi bi-person-circle"
+                style={{
+                  fontSize: "2.5rem",
+                  color: "cornflowerblue",
+                }}
+              ></i>
+            </div>
+  
+            <div className="box-content">
               <span className="big">12</span>
-              Usuarios
+              Total usuarios
             </div>
           </div>
   

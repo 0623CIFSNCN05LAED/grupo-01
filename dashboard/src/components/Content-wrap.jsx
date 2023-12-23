@@ -4,8 +4,9 @@ import Hombres  from './Content/Hombres'*/
 import Ventas from './Content/Ventas'
 import Productos  from './Content/Productos'
 import Usuarios from './Content/Usuarios'
-
-
+import ProductosRecientes from './Content/productos-recientes'
+import MasVendidos from './Content/Mas-vendidos'
+import Categorias from './Content/categorias'
 
 function ContentWrap (){
     return(
@@ -22,6 +23,10 @@ function ContentWrap (){
       <Usuarios />
       <Estadisticas />
          <Ventas />
+         <ProductosRecientes/>
+         <MasVendidos/>
+         <Categorias/>
+         
     </main>
 
 
