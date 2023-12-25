@@ -7,6 +7,7 @@ const logger = require("morgan");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const logueadoMiddleware = require("./middleware/logueadoMiddleware");
+const cors = require("cors");
 
 //****************** Express() ******************/
 const app = express();
@@ -52,7 +53,14 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render("error");
 });
-
+//****************** React ******************/
+const corsOptions = {
+  origin: "http://localhost:5173",
+  methods: "GET,HEAD,PATCH,POST",
+  credentials: true,
+};
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 //****************** Export App ******************/
 const PORT = 3002;
 app.listen(PORT, () => {
