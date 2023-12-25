@@ -1,4 +1,4 @@
-function Productos (){
-    return 
+function Productos() {
+  return;
 }
-export default Productos
+export default Productos;
