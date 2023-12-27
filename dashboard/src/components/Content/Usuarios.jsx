@@ -23,7 +23,6 @@ function Usuarios() {
     <table className="table table-hover">
       <thead>
         <tr>
-          <th>Id</th>
           <th>Nombre</th>
           <th>Apellido</th>
           <th>Email</th>
@@ -34,7 +33,6 @@ function Usuarios() {
         {usuarios &&
           usuarios.map((usuario) => (
             <tr key={usuario.id}>
-              <td>{usuario.id}</td>
               <td>{usuario.first_name}</td>
               <td>{usuario.last_name}</td>
               <td>{usuario.email}</td>
