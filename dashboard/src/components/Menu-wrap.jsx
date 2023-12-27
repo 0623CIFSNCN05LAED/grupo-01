@@ -7,9 +7,13 @@ function Menuwrap() {
       <header className="menu-wrap">
         <figure className="user">
           <div className="user-avatar">
-            <img src={Logo} alt="Logo Maunganui" />
+            <Link to="/">
+              <img src={Logo} alt="Logo Maunganui" />
+            </Link>
           </div>
-          <figcaption>Maunganui</figcaption>
+          <Link to="/">
+            <figcaption>Maunganui</figcaption>
+          </Link>
         </figure>
         <nav>
           <section className="dicover">

@@ -5,7 +5,7 @@ async function ProductsApi() {
     const response = await fetch(`${API_URL}`, { credentials: "include" });
     const result = await response.json();
 
-    if (result && result.status === 200 && result.data) {
+    if (result && result.data) {
       return result;
     } else {
       console.error("Respuesta inesperada:", result);
