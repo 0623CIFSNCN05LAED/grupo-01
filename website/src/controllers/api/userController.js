@@ -26,6 +26,14 @@ module.exports = {
   show: async (req, res) => {
     const id = req.params.id;
     const user = await userServices.getUser(id);
+    if (!user) {
+      return res.status(404).json({
+        meta: {
+          status: 404,
+          error: "User not found",
+        },
+      });
+    }
     const detailUser = {
       id: user.id,
       first_name: user.first_name,
