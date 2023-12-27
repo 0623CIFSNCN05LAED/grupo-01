@@ -22,6 +22,7 @@ function Productos() {
   return (
     <table className="table table-hover">
       <thead>
+        <h1>Lista de Productos</h1>
         <tr>
           <th>Nombre</th>
           <th>Descripcion</th>
@@ -34,7 +35,6 @@ function Productos() {
           productos.map((producto) => (
             <tr key={producto.id}>
               <td>{producto.name}</td>
-              <td>{producto.image}</td>
               <td>{producto.description}</td>
               <td>{producto.price}</td>
               <td>{producto.created_at}</td>

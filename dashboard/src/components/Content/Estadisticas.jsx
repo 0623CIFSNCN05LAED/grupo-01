@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import UsersApi from "../../api/users";
+import ProductApi from "../../api/products";
 function Estadisticas() {
   const [totalUsuarios, setTotalUsuarios] = useState(0);
+  const [totalProductos, setTotalProductos] = useState(0);
 
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
         const resultado = await UsersApi();
+        const Productos = await ProductApi();
         setTotalUsuarios(resultado.total);
+        setTotalProductos(Productos.total);
       } catch (error) {
         console.error("Error obteniendo usuarios:", error);
       }
@@ -15,6 +19,7 @@ function Estadisticas() {
 
     fetchUsuarios();
   }, []);
+
   return (
     <section className="content">
       <h2 className="mt-3">Estadísticas</h2>
@@ -31,7 +36,7 @@ function Estadisticas() {
           </div>
 
           <div className="box-content">
-            <span className="big">15</span>
+            <span className="big">{totalProductos}</span>
             Total productos
           </div>
         </div>

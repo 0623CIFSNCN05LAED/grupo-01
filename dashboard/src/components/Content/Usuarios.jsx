@@ -22,6 +22,7 @@ function Usuarios() {
   return (
     <table className="table table-hover">
       <thead>
+        <h1>Lista de Usuarios</h1>
         <tr>
           <th>Nombre</th>
           <th>Apellido</th>
