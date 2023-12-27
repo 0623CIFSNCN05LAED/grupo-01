@@ -1,16 +1,12 @@
 import "./App.css";
 import Dashboard from "./components/Dashboard";
-import { Route, Routes } from "react-router-dom";
-import Usuarios from "./components/Content/Usuarios";
-import Productos from "./components/Content/Productos";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="usuarios" element={<Usuarios />} />
-      <Route path="productos" element={<Productos />} />
-    </Routes>
+    <BrowserRouter>
+      <Dashboard />
+    </BrowserRouter>
   );
 }
 

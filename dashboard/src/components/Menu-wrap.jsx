@@ -30,24 +30,19 @@ function Menuwrap() {
                 </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="/Hombres">
                   <i className="bi bi-gender-male iconStyleMW"></i>- Hombre
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="/Mujeres">
                   <i className="bi bi-gender-female iconStyleMW"></i>- Mujer
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">
-                  <i className="bi bi-tags"></i>- Descuentos
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                <Link to="/Estadisticas">
                   <i className="bi bi-graph-up"></i>- Estadísticas
-                </a>
+                </Link>
               </li>
             </ul>
           </section>

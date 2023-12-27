@@ -1,49 +1,51 @@
-function Mujeres (){
-    return(
-      <section className="content">
-      <h2 className="mt-3">Géneros</h2>
-      <div className="list-group shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-        <button
-          type="button"
-          className="list-group-item list-group-item-action active text-center"
-          aria-current="true"
-        >
-          Listado de Talles
-        </button>
-        <button
-          type="button"
-          className="list-group-item list-group-item-action text-center"
-        >
-          S
-        </button>
-        <button
-          type="button"
-          className="list-group-item list-group-item-action text-center"
-        >
-          M
-        </button>
-        <button
-          type="button"
-          className="list-group-item list-group-item-action text-center"
-        >
-          L
-        </button>
-        <button
-          type="button"
-          className="list-group-item list-group-item-action text-center"
-        >
-          XL
-        </button>
-        <button
-          type="button"
-          className="list-group-item list-group-item-action text-center"
-        >
-          XXL
-        </button>
-      
-      </div>
-    </section>
-    )
-    
+import { useState, useEffect } from "react";
+import ProductsApi from "../../api/products";
+function Mujeres() {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const resultado = await ProductsApi();
+
+      if (resultado && resultado.data) {
+        const productoMujeres = resultado.data.filter(
+          (producto) => producto.genre_id === 0
+        );
+        setProductos(productoMujeres);
+        console.log("Datos obtenidos:", resultado.data);
+      } else {
+        console.error("La respuesta no contiene datos válidos:", resultado);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const generoMap = {
+    0: "Femenino",
+    1: "Masculino",
+  };
+  return (
+    <table className="table table-hover">
+      <thead>
+        <h1>Lista de Usuarios</h1>
+        <tr>
+          <th>Nombre</th>
+          <th>Genero</th>
+          <th>Codigo Sku</th>
+        </tr>
+      </thead>
+      <tbody>
+        {productos &&
+          productos.map((producto) => (
+            <tr key={producto.id}>
+              <td>{producto.name}</td>
+              <td>{generoMap[producto.genre_id]}</td>
+              <td>{producto.sku}</td>
+            </tr>
+          ))}
+      </tbody>
+    </table>
+  );
 }
-export default Mujeres
+export default Mujeres;
