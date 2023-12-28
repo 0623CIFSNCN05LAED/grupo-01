@@ -7,11 +7,11 @@ function Menuwrap() {
       <header className="menu-wrap">
         <figure className="user">
           <div className="user-avatar">
-            <Link to="/">
+            <Link to="/Estadisticas">
               <img src={Logo} alt="Logo Maunganui" />
             </Link>
           </div>
-          <Link to="/">
+          <Link to="/Estadisticas">
             <figcaption>Maunganui</figcaption>
           </Link>
         </figure>
@@ -43,6 +43,11 @@ function Menuwrap() {
                 <Link to="/Estadisticas">
                   <i className="bi bi-graph-up"></i>- Estadísticas
                 </Link>
+              </li>
+              <li>
+                <a href="http://localhost:3002/">
+                  <i className="bi bi-bag-check-fill"></i>- Volver a la tienda
+                </a>
               </li>
             </ul>
           </section>

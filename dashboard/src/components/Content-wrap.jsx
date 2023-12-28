@@ -1,12 +1,12 @@
 import Estadisticas from "./Content/Estadisticas";
 import Mujeres from "./content/Mujeres";
 import Hombres from "./Content/Hombres";
-/* import Ventas from "./Content/Ventas"; */
+import Ventas from "./Content/Ventas";
 import Productos from "./Content/Productos";
 import Usuarios from "./Content/Usuarios";
-/* import ProductosRecientes from "./Content/productos-recientes";
+import ProductosRecientes from "./Content/productos-recientes";
 import MasVendidos from "./Content/Mas-vendidos";
-import Categorias from "./Content/categorias"; */
+import Categorias from "./Content/categorias";
 import { Route, Switch } from "react-router-dom";
 
 function ContentWrap() {
@@ -21,6 +21,9 @@ function ContentWrap() {
         <Switch>
           <Route path="/Estadisticas">
             <Estadisticas />
+            <ProductosRecientes />
+            <Ventas />
+            <Categorias />
           </Route>
           <Route path="/Usuarios">
             <Usuarios />
@@ -33,6 +36,7 @@ function ContentWrap() {
           </Route>
           <Route path="/Productos">
             <Productos />
+            <MasVendidos />
           </Route>
           <Route path="*">
             <p>404 - página no encontrada</p>
