@@ -2,11 +2,11 @@
 const { Router } = require("express");
 const router = Router();
 // ************ Controller Require ************
-const mainController2 = require("../controllers/main-controller2");
+
 const mainController = require("../controllers/main-controller");
 // ************ Routes of Index ************
 router.get("/", mainController.index);
-router.get("/search", mainController2.search);
+router.get("/search", mainController.search);
 router.get("/cart", mainController.cart);
 router.get("/sucursales", mainController.sucursales);
 

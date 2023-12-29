@@ -16,16 +16,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Model.associate = (db) => {
+    Model.belongsToMany(db.Cart_shopping, {
+      as: "cart_shopping",
+      through: "orders",
+      foreignKey: "product_id",
+      otherKey: "shopping_cart_id",
+      timestamps: false,
+    });
+
     Model.belongsToMany(db.Category, {
       as: "category",
       through: "products_category",
       foreignKey: "product_id",
       otherKey: "category_id",
-    });
-
-    Model.hasMany(db.Cart_shopping, {
-      as: "cart_shopping",
-      foreignKey: "product_id",
     });
 
     Model.belongsTo(db.Size, {

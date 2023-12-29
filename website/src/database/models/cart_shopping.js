@@ -2,27 +2,35 @@ module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.define(
     "Cart_shopping",
     {
-      order_id: DataTypes.INTEGER,
+      product_name: DataTypes.INTEGER,
       product_id: DataTypes.INTEGER,
-      price: DataTypes.DECIMAL,
+      image: DataTypes.INTEGER,
+      total: DataTypes.DECIMAL,
       quantity: DataTypes.INTEGER,
     },
     {
       tableName: "cart_shopping",
-      timestamps: false,
+      createdAt: "created_at",
+      updatedAt: "updated_at",
     }
   );
   Model.associate = (db) => {
-    Model.belongsTo(db.Products, {
+    Model.belongsToMany(db.Products, {
       as: "product",
-      foreignKey: "product_id",
-    });
-
-    Model.belongsTo(db.Orders, {
-      as: "orders",
-      foreignKey: "order_id",
+      through: "orders",
+      foreignKey: "shopping_cart_id",
+      otherKey: "product_id",
+      timestamps: false,
     });
   };
+
+  /*Model.belongsToMany(model.Products, {
+      as: "products",
+      through: "products_shopping_cart",
+      foreignKey: "id_shopping_cart",
+      otherKey: "id_product",
+      timestamps: false
+    });*/
 
   return Model;
 };
