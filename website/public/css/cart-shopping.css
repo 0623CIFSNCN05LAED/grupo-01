@@ -15,13 +15,14 @@
     right: 0;
     width: 90vw;
     max-width: 400px;
-    height: 100%;
+    height: 70%;
     max-height: 100vh;
     padding: 0 0 20px 0;
     background-color: var(--white);
     border: 1px solid var(--rose);
     transition: 0.5s;
     z-index: 10;
+    display: none;
 }
 img.img-logo{
     width: 37px;

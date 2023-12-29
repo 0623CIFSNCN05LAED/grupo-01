@@ -19,7 +19,7 @@ img{
     position: relative;
 }
 
-.cart-shopping-products-icon{
+.cart-shopping-products-icon, .add-to-cart-btn-icon{
     width: 35px;
     height: 35px;
     border: 1px solid #37306B ;

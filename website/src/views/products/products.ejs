@@ -39,25 +39,17 @@
                 alt="<%= product.name %>"
               />
             </a>
-            <a href="/cart">
-              <div>
-                <i
-                  class="cart-shopping-products-icon fa-solid fa-cart-shopping"
-                ></i>
-              </div>
-            </a>
+            <button class="add-to-cart-btn-icon add-to-cart-btn" data-product-id="<%= product.id %>">
+                <i class="cart-shopping-products-icon fa-solid fa-cart-shopping"></i>
+            </button>
           </div>
           <div class="product-info">
             <p><%= product.name %></p>
 
             <s>$<%= product.price %></s>
             <p><%= product.discount %>% OFF</p>
-            <!--             <button class=""><i class="fa-solid fa-pen-to-square" style="color: #6b6884;"></i>
-              Editar
-          </button>
-          <button class=""><i class="fa-solid fa-trash" style="color: #db6262;"></i>
-              Eliminar
-          </button> -->
+          <button class="add-to-cart-btn" data-product-id="<%= product.id %>">Agregar al carrito</button>
+
           </div>
         </div>
         <% }) %>
