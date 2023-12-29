@@ -1,4 +1,5 @@
 const productService = require("../services/productService");
+const productService2 = require("../services/productService2");
 const inOffers = productService.getItemByOffer();
 const inFeatured = productService.getItemByFeatured();
 const mainController = {
@@ -11,11 +12,12 @@ const mainController = {
   sucursales: (req, res) => {
     res.render("sucursales");
   },
-  /*  search: (req, res) => {
+  search: async (req, res) => {
     const keywords = req.query.keywords;
-    const foundProducts = productService.searchProducts(keywords);
+    const foundProducts = await productService2.search(keywords);
+    console.log(foundProducts);
     res.render("results", { foundProducts });
-  }, */
+  },
   cart: (req, res) => {
     res.render("cart", {
       inOffers,
