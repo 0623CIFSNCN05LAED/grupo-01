@@ -1,4 +1,3 @@
-const db = require("../data/db");
 const { Users } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs").promises;
@@ -17,7 +16,7 @@ const userServices = {
     }
     const usuario = await Users.findOne({
       where: { email },
-      //include: [{ model: User_type, as: "user_type" }], // Asegúrate de incluir el modelo User_type
+      //include: [{ model: User_type, as: "user_type" }],
     });
     return usuario;
   },
@@ -62,7 +61,7 @@ const userServices = {
     await Users.destroy({
       where: { id: id },
     });
-  }
+  },
 };
 
 module.exports = userServices;

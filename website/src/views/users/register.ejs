@@ -5,6 +5,7 @@
     <title>Maunganui Tienda</title>
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="/js/registerValidation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <!-- Header and NavBar -->
@@ -38,25 +39,25 @@
           id="form"
         >
           <label for="first_name"> Nombre* </label>
-          <input class="style-box_register" type="text" name="first_name" id="first_name"
-          value="<%= oldData ? oldData.first_name : "" %>"/> <% if (errors &&
-          errors.first_name) { %>
+          <input class="style-box_register" type="text" name="first_name"
+          id="first_name" value="<%= oldData ? oldData.first_name : "" %>"/> <%
+          if (errors && errors.first_name) { %>
           <p class="errorstyle"><%= errors.first_name.msg %></p>
           <% } %>
           <span class="errorstyle" id="first_nameError"></span>
 
           <label for="last_name">Apellido* </label>
-          <input class="style-box_register" type="text" name="last_name" id="last_name"
-          value="<%= oldData ? oldData.last_name : "" %>"/> <% if (errors &&
-          errors.last_name) { %>
+          <input class="style-box_register" type="text" name="last_name"
+          id="last_name" value="<%= oldData ? oldData.last_name : "" %>"/> <% if
+          (errors && errors.last_name) { %>
           <p class="errorstyle"><%= errors.first_name.msg %></p>
           <% } %>
           <span class="errorstyle" id="last_nameError"></span>
 
           <label for="phone"> Teléfono: </label>
-          <input class="style-box_register" type="number" name="phone" id="phone"
-          value="<%= oldData ? oldData.phone : "" %>"/> <% if (errors &&
-          errors.phone) { %>
+          <input class="style-box_register" type="number" name="phone"
+          id="phone" value="<%= oldData ? oldData.phone : "" %>"/> <% if (errors
+          && errors.phone) { %>
           <p><%= errors.phone.msg %></p>
           <% } %>
           <span class="errorstyle" id="phoneError"></span>

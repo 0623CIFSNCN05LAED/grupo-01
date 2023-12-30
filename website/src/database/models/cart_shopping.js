@@ -4,14 +4,14 @@ module.exports = (sequelize, DataTypes) => {
     {
       product_name: DataTypes.INTEGER,
       product_id: DataTypes.INTEGER,
+      user_id: DataTypes.INTEGER,
       image: DataTypes.INTEGER,
       total: DataTypes.DECIMAL,
       quantity: DataTypes.INTEGER,
     },
     {
       tableName: "cart_shopping",
-      createdAt: "created_at",
-      updatedAt: "updated_at",
+      timestamps: false,
     }
   );
   Model.associate = (db) => {
@@ -22,15 +22,12 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: "product_id",
       timestamps: false,
     });
-  };
 
-  /*Model.belongsToMany(model.Products, {
-      as: "products",
-      through: "products_shopping_cart",
-      foreignKey: "id_shopping_cart",
-      otherKey: "id_product",
-      timestamps: false
-    });*/
+    Model.belongsTo(db.Users, {
+      as: "users",
+      foreignKey: "user_id",
+    });
+  };
 
   return Model;
 };
