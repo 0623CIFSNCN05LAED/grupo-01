@@ -29,8 +29,8 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "user_type_id",
     });
 
-    Model.hasMany(db.Orders, {
-      as: "orders",
+    Model.hasMany(db.Cart_shopping, {
+      as: "cart_shopping",
       foreignKey: "user_id",
     });
   };

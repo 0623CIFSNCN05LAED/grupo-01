@@ -1,6 +1,8 @@
 const userService = require("../services/userService");
 const userID = require("../data/users/users");
 const bcrypt = require("bcryptjs");
+const Swal = require("sweetalert2");
+
 // const { type, userInfo } = require("os");
 const fs = require("fs");
 const upload = require("../middleware/multerUserMiddleware");
@@ -70,6 +72,13 @@ const controller = {
       });
     } else {
       await userService.createUser(user);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Te has registrado exitosamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       return res.redirect("/users/login");
     }
   },

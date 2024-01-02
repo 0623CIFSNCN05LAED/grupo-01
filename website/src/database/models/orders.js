@@ -16,17 +16,17 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: "updated_at",
     }
   );
-  Model.associate = (db) => {
+  /* Model.associate = (db) => {
     Model.hasMany(db.Cart_shopping, {
       as: "cart_shopping",
       foreignKey: "order_id",
-    });
+    }); */
 
-    Model.belongsTo(db.Users, {
+  /*   Model.belongsTo(db.Users, {
       as: "users",
       foreignKey: "user_id",
-    });
-  };
+    }); 
+  };*/
 
   return Model;
 };

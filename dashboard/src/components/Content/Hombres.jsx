@@ -28,7 +28,7 @@ function Mujeres() {
   return (
     <table className="table table-hover">
       <thead>
-        <h1>Lista de Productos</h1>
+        <h1>Lista de Productos de Hombre</h1>
         <tr>
           <th>Nombre</th>
           <th>Genero</th>

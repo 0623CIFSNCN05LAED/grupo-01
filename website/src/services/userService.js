@@ -17,7 +17,7 @@ const userServices = {
     }
     const usuario = await Users.findOne({
       where: { email },
-      //include: [{ model: User_type, as: "user_type" }], // Asegúrate de incluir el modelo User_type
+      //include: [{ model: User_type, as: "user_type" }],
     });
     return usuario;
   },
@@ -62,7 +62,7 @@ const userServices = {
     await Users.destroy({
       where: { id: id },
     });
-  }
+  },
 };
 
 module.exports = userServices;

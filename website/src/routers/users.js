@@ -16,7 +16,7 @@ const userController = require("../controllers/user-controller");
 router.get("/", adminMiddleware, userController.index);
 
 // ************ User Registration Form ************
-router.get("/register", guestMiddleware, userController.show); //Formulario de registro
+router.get("/register", authMiddleware, guestMiddleware, userController.show); //Formulario de registro
 router.post("/register", validateRegister, userController.register); //Acción de creación (donde se envía el formulario)
 
 // **************** User Login Form ****************
@@ -30,13 +30,13 @@ router.post(
 router.get("/logout/", userController.logout);
 // ************** User Profile Form ****************
 router.get("/user-profile/:id", authMiddleware, userController.profileUser); //Perfil de Usuario
-router.put(
+router.post(
   "/user-profile/:id",
   upload.single("avatar"),
   authMiddleware,
   userController.upload
 );
-router.put("/user-profile/:id", authMiddleware, userController.updateUserData);
+router.post("/user-profile/:id", authMiddleware, userController.updateUserData);
 
 // ************** User Password Change Form ****************
 router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
@@ -48,13 +48,13 @@ router.get(
   adminMiddleware,
   userController.profileAdmin
 ); //Perfil de Admin
-router.put(
+router.post(
   "/admin-profile/:id",
   upload.single("avatar"),
   authMiddleware,
   userController.upload
 );
-router.put(
+router.post(
   "/admin-profile/:id",
   adminMiddleware,
   authMiddleware,
