@@ -1,109 +1,111 @@
 <!DOCTYPE html>
 
 <html lang="es">
-
-<head>
+  <head>
     <%- include("partials/head") %>
-        <title>Carrito de compras</title>
-</head>
+    <title>Carrito de compras</title>
+  </head>
 
-<!-- Cart Shopping -->
-<div class="cart-container">
+  <!-- Cart Shopping -->
+  <div class="cart-container">
     <span class="drawer-overlay"></span>
     <div class="cart-header">
-        <div class="img-log">
-            <a href="/"><img src="/images/logo-M.png" class="img-logo" alt="logo-M"></a>
+      <div class="img-log">
+        <a href="/"
+          ><img src="/images/logo-M.png" class="img-logo" alt="logo-M"
+        /></a>
+      </div>
+      
+            </form>
         </div>
-        <div>
-            <strong class="cart-title">Carrito de compras</strong>
-        </div>
-        <div class="cart-shop btn-open">
-            <a href="#"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
-        </div>
+      </form>
     </div>
-    <div class="content">
-        <div class="cart-box">
-            <div class="cart-img">
-                <img src="/images/products/producto-1-vitrina-1.jpg  " class="img-product" alt="">
-            </div>
-            <div class="detail-product">
-                <div class="cart-product-title"><strong>Campera Univesitaria</strong></div>
-                <div class="cart-size">
-                    <label for="sizes-select">Talla :</label>
-                    <select name="tallas" class="sizes-select">
-                        <option value="">Elija</option>
-                        <option value="x-large">XL</option>
-                        <option value="large">L</option>
-                        <option value="medium">M</option>
-                        <option value="small">S</option>
-                        <option value="x-small">XS</option>
-                    </select>
-                </div>
-                <div class="cart-color">
-                    <label for="color-select">Color :</label>
-                    <select name="color" class="color-select">
-                        <option value="">Elija</option>
-                        <option value="amarilli">Amarrillo</option>
-                        <option value="rojo">Rojo</option>
-                        <option value="verde">Verde</option>
-                        <option value="azul">Azul</option>
-                        <option value="negro">Negro</option>
-                    </select>
-                </div>
-                <div class="cart-product-quantity-group">
-                    <span>Cantidad : </span>
-                    <span class="cart-product-quantity">
-                        <span class="minus">-</span>
-                        <span class="num">1</span>
-                        <span class="plus">+</span>
-                    </span>
-                </div>
-                <i class="fa-solid fa-trash cart-remove"></i>
-            </div>
-        </div>
-    </div>
-    <div class="cart-fast">
-        <form action="/cart" method="post">
-            <div class="cart-subtotal-container">
-                <span>Subtotal :</span>
-                <span class="cart-price">$80.000</span>
-            </div>
-            <div class="cart-note">
-                <span>Envío : </span>
-                <span>Por calcular</span>
-            </div>
-            <div class="cart-total-container">
-                <span>Total :</span>
-                <span class="cart-total">$80.000</span>
-            </div>
-            <div class="cart-buttons_container">
-                <button type="submit" class="cart-checkout">Comprar Ahora</button>
-                <button type="button" class="cart-follow"><a href="/">Seguir Comprando</a></button>
-            </div>
-
-        </form>
-    </div>
-</div>
-<body>
+  </div>
+  <body>
     <!-- Header and NavBar -->
     <header class="header-container"><%- include("partials/header") %></header>
     <!-- Main Content -->
     <main class="container">
-        <!-- Banner uno principal -->
-        <%- include("partials/banner-one") %>
-            <!-- Vitrina numero 1 (Feautured Products) -->
-            <%- include('partials/featured-products') %>
-                <!-- Banner dos secundario -->
-                <%- include('partials/banner-two') %>
-                    <!-- Vitrina numero 2 ofertas Sale Products-->
-                    <%- include('partials/sale-products.ejs') %>
+      <!-- Incio carrito de Compras -->
+              <% productsUser.forEach(product => { %> 
+                <strong class="cart-title">Carrito de compras</strong>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cart-box" id="cart-product-list">
+              
+                <div class="cart-img">
+                    <img src="/images/products/<%= product.image %>" class="img-product" alt="<%= product.name %>">
+                </div>
+                <div class="detail-product">
+                  <div class="cart-product-title"><strong> </strong></div>
+                    <div class="cart-size">
+                      <label for="sizes-select">Talla :</label>
+                      <select name="tallas" class="sizes-select">
+              <option value=" %>">Elija</option>
+              <!-- <option value="x-large">XL</option>
+              <option value="large">L</option>
+              <option value="medium">M</option>
+              <option value="small">S</option>
+              <option value="x-small">XS</option> -->
+            </select>
+                      <!-- <div class="container-product__size-buttons">
+                        <button class="size-button"> </button>
+                      </div> -->
+                    </div>
+                    <div class="cart-color">
+                        <label for="color-select">Color :  </label>
+                        <select name="color" class="color-select">
+              <option value="">Elija</option>
+              <option value="amarilli">Amarrillo</option>
+              <option value="rojo">Rojo</option>
+              <option value="verde">Verde</option>
+              <option value="azul">Azul</option>
+              <option value="negro">Negro</option>
+            </select>
+                    </div>
+                    <div class="cart-product-quantity-group">
+                      <span>Cantidad : </span>
+                      <span class="cart-product-quantity">
+                          <span class="minus">-</span>
+                          <span class="num">1</span>
+                          <span class="plus">+</span>
+                      </span>
+                      <i class="fa-solid fa-trash cart-remove" style="color: #66347F;"></i>
+                  <% }) %>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="cart-fast">
+            <form action="/cart" method="post">
+              <div class="cart-subtotal-container">
+                <span>Subtotal :</span>
+                <span class="cart-price" id="cart-subtotal">$ </span>
+                </div>
+                <% if(productsUser.length > 0) { %>
+                <div class="cart-note">
+                    <span>Envío : </span>
+                    <span>Por calcular</span>
+                </div>
+                <div class="cart-total-container">
+                    <span>Total :</span>
+                    <span class="cart-total" id="cart-total">$ <%= total %></span>
+                </div>
+                <% } else { %>
+                  <h2 class="mensaje-carrito-vacio">Empezá a agregar productos a tu carrito!</h2>
+                <div class="cart-buttons_container">
+                    <button type="submit" class="cart-checkout">Comprar Ahora</button>
+                    <button type="button" class="cart-follow"><a href="#" id="seguir-comprando-btn">Seguir Comprando</a></button>
+                </div>
+                <% } %>
+                  <!-- Final del Carrito de Compras-->
     </main>
 
     <!-- Footer -->
     <footer class="footer"><%- include("partials/footer") %></footer>
 
-    <script src="/js/popup.js"></script>
+    <!-- <script src="/js/popup.js"></script> -->
     <!-- <script src="/js/index.js"></script> -->
-</body>
-
+  </body>
 </html>

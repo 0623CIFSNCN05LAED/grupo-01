@@ -10,7 +10,7 @@ const cartShoppingController = require("../controllers/cartShoppingController");
 // ************ Routes of Index ************
 router.get("/", mainController.index);
 router.get("/search", mainController.search);
-router.get("/cart", mainController.cart);
+//router.get("/cart", mainController.cart);
 router.get("/sucursales", mainController.sucursales);
 
 // ************ Routes of Users ************

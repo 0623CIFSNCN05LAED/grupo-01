@@ -10,14 +10,13 @@ const cartShoppingServices = {
       where: { user_id: idUser },
     });
   },
-  addToCartShopping: (product, idUser, quantity, total) => {
-    Cart_shopping.create({
-      product_name: product.product_name,
-      product_id: product.id,
+  addToCartShopping: async (product, idUser, quantity, total) => {
+    await Cart_shopping.create({
+      product_name: product.name,
       user_id: idUser,
       image: product.image,
-      total: total,
-      quantity: quantity,
+      total: product.price,
+      quantity: 1,
     });
   },
   deleteProductFromCart: (id) => {
@@ -26,7 +25,7 @@ const cartShoppingServices = {
     });
   },
   productsFilter: (products, req) => {
-    const user = req.session.logueado;
+    const user = req.session.usuario;
     const userId = user.id;
     const productsUser = [];
 
@@ -58,17 +57,23 @@ const cartShoppingServices = {
       }
     );
   },
-  addToCartIteration: (idProduct, userId, quantity, cartProducts, res) => {
+  addToCartIteration: async (
+    idProduct,
+    userId,
+    quantity,
+    cartProducts,
+    res
+  ) => {
     if (cartProducts.length < 1) {
-      productServices.getProductDetail(idProduct).then((product) => {
+      await productServices.getProductDetail(idProduct).then((product) => {
         const total = product.price * quantity;
         cartShoppingServices.addToCartShopping(
           product,
           userId,
-
           quantity,
           total
         );
+
         return res.redirect("/cart");
       });
     } else {
@@ -92,7 +97,12 @@ const cartShoppingServices = {
 
       return productServices.getProductDetail(idProduct).then((product) => {
         const total = product.price * quantity;
-        cartShoppingServices.addToCartShopping(product, quantity, total);
+        cartShoppingServices.addToCartShopping(
+          product,
+          userId,
+          quantity,
+          total
+        );
         res.redirect("/cart");
       });
     }

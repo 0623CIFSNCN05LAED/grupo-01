@@ -1,3 +1,4 @@
+const db = require("../data/db");
 const { Users } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs").promises;
