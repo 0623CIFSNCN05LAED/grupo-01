@@ -39,9 +39,11 @@
                 alt="<%= product.name %>"
               />
             </a>
-            <button class="add-to-cart-btn-icon add-to-cart-btn" data-product-id="<%= product.id %>">
-                <i class="cart-shopping-products-icon fa-solid fa-cart-shopping"></i>
-            </button>
+            <a href="/cart">
+              <button class="add-to-cart-btn-icon add-to-cart-btn" data-product-id="<%= product.id %>">
+                  <i class=" fa-solid fa-cart-shopping"></i>
+              </button>
+            </a>
           </div>
           <div class="product-info">
             <p><%= product.name %></p>
