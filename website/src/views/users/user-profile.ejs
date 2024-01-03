@@ -50,7 +50,7 @@
                     
                     
                     <section class="user-info__section-container">
-                            <form class="info-user__profile" action="/users/user-profile/<%= user.id %>?_method=POST" method="POST" id="form-data">
+                            <form class="info-user__profile" action="/users/user-profile/<%= user.id %>?_method=PUT" method="POST" id="form-data">
                                 <div>
                                     <label for="first_name">Nombre</label>
                                     <input placeholder="Tu Nombre" type="text" id="first_name" name="first_name" class="style-box_register" value="<%= user.first_name %>">

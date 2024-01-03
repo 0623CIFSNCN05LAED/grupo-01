@@ -29,22 +29,17 @@ router.post(
 ); // Acción para acceder a la cuenta
 router.get("/logout/", userController.logout);
 // ************** User Profile Form ****************
-router.get(
-  "/user-profile/:id",
-  authMiddleware,
-  guestMiddleware,
-  userController.profileUser
-); //Perfil de Usuario
+router.get("/user-profile/:id", authMiddleware, userController.profileUser); //Perfil de Usuario
 router.post(
   "/user-profile/:id",
   upload.single("avatar"),
   authMiddleware,
   userController.upload
 );
-router.post("/user-profile/:id", authMiddleware, userController.updateUserData);
+router.put("/user-profile/:id", authMiddleware, userController.updateUserData);
 
 // ************** User Password Change Form ****************
-router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
+//router.get("/profile/:id", userController.profileUser); //Formulario de Cambio de Contraseña
 
 // ************** User Profile Form ****************
 router.get(

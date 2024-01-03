@@ -117,10 +117,10 @@ const controller = {
     } else {
       if (findUser.user_type_id == 1) {
         req.session.usuario = findUser;
-        return res.redirect("/users/admin-profile/" + findUser.id);
+        return await res.redirect("/users/admin-profile/" + findUser.id);
       } else {
         req.session.usuario = findUser;
-        return res.redirect("/users/user-profile/" + findUser.id);
+        return await res.redirect("/users/user-profile/" + findUser.id);
       }
     }
   },
@@ -138,7 +138,7 @@ const controller = {
   profileUser: async (req, res) => {
     const id = req.params.id;
     const user = await userService.getUser(id);
-    // Vista de formulario del usuario perfil]
+    console.log("user: ", user);
     res.render("users/user-profile", { user });
   },
   updateUserData: async (req, res) => {
