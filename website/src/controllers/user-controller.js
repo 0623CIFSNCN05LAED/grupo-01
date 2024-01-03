@@ -1,7 +1,6 @@
 const userService = require("../services/userService");
 const userID = require("../data/users/users");
 const bcrypt = require("bcryptjs");
-const Swal = require("sweetalert2");
 
 // const { type, userInfo } = require("os");
 const fs = require("fs");
@@ -72,13 +71,6 @@ const controller = {
       });
     } else {
       await userService.createUser(user);
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Te has registrado exitosamente",
-        showConfirmButton: false,
-        timer: 1500,
-      });
       return res.redirect("/users/login");
     }
   },
@@ -154,22 +146,17 @@ const controller = {
     const id = req.params.id;
     const findUser = userService.getUser(id);
     await userService.updateUser(id, updateFullName);
-    if (findUser.user_type_id == 1) {
-      req.session.usuario = findUser;
-      return await res.redirect("/users/admin-profile/" + id);
-    } else {
-      req.session.usuario = findUser;
-      return await res.redirect("/users/user-profile/" + id);
-    }
+    req.session.usuario = findUser;
+    return await res.redirect("/users/user-profile/" + id);
 
     //res.redirect("/users/user-profile/" + id);
   },
-  /* updateAdminData: async (req, res) => {
+  updateAdminData: async (req, res) => {
     const updateFullName = req.body;
     const id = req.params.id;
     await userService.updateUser(id, updateFullName);
-    res.redirect("/users/admin-profile" + id);
-  }, */
+    res.redirect("/users/admin-profile/" + id);
+  },
   deleteUser: async (req, res) => {
     const id = req.params.id;
     await userService.deleteUser(id);

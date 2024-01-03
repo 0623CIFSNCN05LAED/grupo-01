@@ -47,7 +47,7 @@
                         </div>
 
                     <section>
-                            <form class="info-user__profile" class="user-info__edition-3" action="/users/admin-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <form class="info-user__profile" class="user-info__edition-3" action="/users/admin-profile/<%= user.id %>?_method=PUT" method="POST" id="form-data">
                                 <div>
                                     <label for="first_name">Nombre</label>
                                     <input placeholder="Tu Nombre" type="text" name="first_name" class="style-box_register"value="<%= user.first_name %>">
@@ -65,7 +65,7 @@
                                     <input type="tel" name="phone" class="style-box_register" placeholder="Tu Teléfono"value="<%= user.phone %>">
                                 </div>
                                 <div>
-                                    <button>Actualizar</button>
+                                    <button type="submit">Actualizar</button>
                                 </div>
                             </form>
                     </section>
