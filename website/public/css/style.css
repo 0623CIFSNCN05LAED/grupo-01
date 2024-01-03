@@ -123,7 +123,6 @@ button:hover {
 }
 
 .header-container-user__icons {
-  display: flex;
   max-width: 100%;
 }
 .header-container-user__icons i {
@@ -132,10 +131,11 @@ button:hover {
   margin: 0px 5px;
 }
 .header-cart__icon{
+  display: flex;
   margin: auto 5px;
 }
 .fa-user-astronaut{
-    display: none;
+  display: none;
 }
 
 /* Main styles */
@@ -165,14 +165,14 @@ button:hover {
 }
 .container-banner-button {
   position: absolute;
-  width: 140px;
-  height: 50px;
+  width: 180px;
+  height: 60px;
   border-radius: 5px;
   border: 2px solid #fff;
   color: #fff;
   background: rgba(107, 104, 132, 0.55);
   text-align: center;
-  font-size: 16px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -190,7 +190,7 @@ button:hover {
   );
 }
 .container-banner-button:last-child {
-  top: calc(50% + 65px);
+  top: calc(50%);
 }
 .section-title__container {
   max-width: 100%;
