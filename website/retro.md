@@ -1,29 +1,23 @@
-gi## Retrospectiva
+gi## Retrospectiva (2024)
 
 ## Comenzar hacer:
 
-- Crear Api para Products  y Users
-- Carpetas Dashboard y website.
-- Dashboard con los paneles solicitados de listados: Users, products 
-- Panel de detalle de último producto o usuario creado.
-- Panel de categorías con el total de productos de cada una.
-- Paginado de las listas.
+- Agregar un sistema de correo
+- Agregar un sistema de pagos (Mercadopago)
+- Agregar notificaciones.
+- Uso de testing.
 
 ## Mas de:
 
-- Dashboard con los paneles solicitado
+- Dashboard con paneles informativos y estadísticas.
 
 ## Seguir haciendo:
 
-- Implementar las validaciones del front-end correspondientes al sprint n° 7 para Products.
-- Mejora de estilos de formularios.
-- Completar crud de sequalize delete en User
-- Conexión y funcionalidades de vista Admin con sus botones.
-
+- Continuar agregando las validaciones para los demás formularios.
+  
 ## Menos de:
 
 - No revisar tablero de tareas, ni chats
-- No consultar si hace falta con un profesor para no malgastar tiempo.
 
 ## Dejar de hacer:
 
