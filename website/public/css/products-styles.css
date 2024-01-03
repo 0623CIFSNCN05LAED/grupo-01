@@ -19,7 +19,7 @@ img{
     position: relative;
 }
 
-.cart-shopping-products-icon, .add-to-cart-btn-icon{
+.add-to-cart-btn-icon{
     width: 35px;
     height: 35px;
     border: 1px solid #37306B ;
@@ -31,7 +31,7 @@ img{
     text-align: center;
     padding: 8px;
 }
-.cart-shopping-products-icon:hover{
+.add-to-cart-btn-icon:hover{
     border: 1px solid #9E4784 ;
     color: #9E4784;
     scale: 1.1;
